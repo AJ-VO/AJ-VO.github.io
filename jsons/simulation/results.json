@@ -1,0 +1,1012 @@
+[
+    {
+        "winner": "NAME",
+        "loser": "NAME",
+        "score": "SCORE",
+        "date": "DATE",
+        "winnerELO": 1500,
+        "loserELO": 1500,
+        "winnerGain": 100,
+        "loserGain": -101
+    },
+    {
+        "winner": "Marilou Marceau",
+        "loser": "Charles Normandin",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1500,
+        "winnerGain": 200,
+        "loserGain": -100
+    },
+    {
+        "winner": "Thierry Hotte-Belanger",
+        "loser": "Christina Ciurlej",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1500,
+        "winnerGain": 50.0,
+        "loserGain": -50.0
+    },
+    {
+        "winner": "Mathis Roux",
+        "loser": "Thierry Hotte-Belanger",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1550.0,
+        "winnerGain": 108,
+        "loserGain": -108
+    },
+    {
+        "winner": "Anne Catherine Forcier",
+        "loser": "Paulina Desmarais",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1500,
+        "winnerGain": 100,
+        "loserGain": -100
+    },
+    {
+        "winner": "Mathieu Lefebvre",
+        "loser": "Thierry Hotte-Belanger",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1442.0,
+        "winnerGain": 90,
+        "loserGain": -90
+    },
+    {
+        "winner": "Felix Ostiguy",
+        "loser": "Samuel Douville",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1500,
+        "winnerGain": 100,
+        "loserGain": -100
+    },
+    {
+        "winner": "Justin Gautrais",
+        "loser": "Anne Catherine Forcier",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1600,
+        "winnerGain": 58.0,
+        "loserGain": -58.0
+    },
+    {
+        "winner": "Felix Ostiguy",
+        "loser": "Christina Ciurlej",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1600,
+        "loserELO": 1450.0,
+        "winnerGain": 38.0,
+        "loserGain": -38.0
+    },
+    {
+        "winner": "Koen Vdzouwen",
+        "loser": "Alexis Turcotte",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1500,
+        "winnerGain": 100,
+        "loserGain": -100
+    },
+    {
+        "winner": "Paulina Desmarais",
+        "loser": "Camille Girard",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1400,
+        "loserELO": 1500,
+        "winnerGain": 116,
+        "loserGain": -116
+    },
+    {
+        "winner": "Nicolas Ladouceur",
+        "loser": "Alexis Turcotte",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1400,
+        "winnerGain": 84,
+        "loserGain": -84
+    },
+    {
+        "winner": "Charles Normandin",
+        "loser": "Nathan Richard",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1400,
+        "loserELO": 1500,
+        "winnerGain": 116,
+        "loserGain": -116
+    },
+    {
+        "winner": "Charles Normandin",
+        "loser": "Justin Gautrais",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1516,
+        "loserELO": 1558.0,
+        "winnerGain": 106,
+        "loserGain": -106
+    },
+    {
+        "winner": "Alexandre Laplante",
+        "loser": "Paulina Desmarais",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1516,
+        "winnerGain": 51.0,
+        "loserGain": -51.0
+    },
+    {
+        "winner": "Mathis Roux",
+        "loser": "Alexy Le Menn",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1608,
+        "loserELO": 1500,
+        "winnerGain": 82,
+        "loserGain": -82
+    },
+    {
+        "winner": "Nicolas Ladouceur",
+        "loser": "Camille Girard",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1584,
+        "loserELO": 1384,
+        "winnerGain": 34.0,
+        "loserGain": -34.0
+    },
+    {
+        "winner": "Nicolas Ladouceur",
+        "loser": "Mathieu Lefebvre",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1618.0,
+        "loserELO": 1590,
+        "winnerGain": 95,
+        "loserGain": -95
+    },
+    {
+        "winner": "Alexandre Laplante",
+        "loser": "Nathan Richard",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1551.0,
+        "loserELO": 1384,
+        "winnerGain": 73,
+        "loserGain": -73
+    },
+    {
+        "winner": "Nicolas Ladouceur",
+        "loser": "Mathis Roux",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1713.0,
+        "loserELO": 1690,
+        "winnerGain": 96,
+        "loserGain": -96
+    },
+    {
+        "winner": "Alexis Turcotte",
+        "loser": "Charles Normandin",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1316,
+        "loserELO": 1622,
+        "winnerGain": 148,
+        "loserGain": -148
+    },
+    {
+        "winner": "Thierry Hotte-Belanger",
+        "loser": "Felix Ostiguy",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1352.0,
+        "loserELO": 1500,
+        "winnerGain": 123,
+        "loserGain": -123
+    },
+    {
+        "winner": "Alexy Le Menn",
+        "loser": "Alexis Turcotte",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1418,
+        "loserELO": 1464,
+        "winnerGain": 107,
+        "loserGain": -107
+    },
+    {
+        "winner": "Mathis Roux",
+        "loser": "Felix Ostiguy",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1594,
+        "loserELO": 1638.0,
+        "winnerGain": 107,
+        "loserGain": -107
+    },
+    {
+        "winner": "Justin Gautrais",
+        "loser": "Antoine Barthelemy",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1452.0,
+        "loserELO": 1500,
+        "winnerGain": 107,
+        "loserGain": -107
+    },
+    {
+        "winner": "Erika Leclerc",
+        "loser": "Nicolas Ladouceur",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1809.0,
+        "winnerGain": 298,
+        "loserGain": -149
+    },
+    {
+        "winner": "Felix Ostiguy",
+        "loser": "Thierry Hotte-Belanger",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1377,
+        "loserELO": 1475.0,
+        "winnerGain": 115,
+        "loserGain": -115
+    },
+    {
+        "winner": "Alexis Turcotte",
+        "loser": "Erika Leclerc",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1357,
+        "loserELO": 1798,
+        "winnerGain": 85.0,
+        "loserGain": -85.0
+    },
+    {
+        "winner": "Camille Girard",
+        "loser": "Alexis Turcotte",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1350.0,
+        "loserELO": 1442.0,
+        "winnerGain": 228,
+        "loserGain": -114
+    },
+    {
+        "winner": "Felix Ostiguy",
+        "loser": "Alexandre Laplante",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1531.0,
+        "loserELO": 1624.0,
+        "winnerGain": 114,
+        "loserGain": -114
+    },
+    {
+        "winner": "Marilou Marceau",
+        "loser": "Alexy Le Menn",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1700,
+        "loserELO": 1525,
+        "winnerGain": 144,
+        "loserGain": -72
+    },
+    {
+        "winner": "Justin Gautrais",
+        "loser": "Mathieu Lefebvre",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1559.0,
+        "loserELO": 1495,
+        "winnerGain": 89,
+        "loserGain": -89
+    },
+    {
+        "winner": "Theo Aicardi",
+        "loser": "Mathis Roux",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1701,
+        "winnerGain": 132,
+        "loserGain": -132
+    },
+    {
+        "winner": "Samuel Douville",
+        "loser": "Thierry Hotte-Belanger",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1400,
+        "loserELO": 1360.0,
+        "winnerGain": 93,
+        "loserGain": -93
+    },
+    {
+        "winner": "Nathan Richard",
+        "loser": "Erika Leclerc",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1311,
+        "loserELO": 1713.0,
+        "winnerGain": 82.0,
+        "loserGain": -82.0
+    },
+    {
+        "winner": "Anne Catherine Forcier",
+        "loser": "Alexandre Laplante",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1542.0,
+        "loserELO": 1510.0,
+        "winnerGain": 188,
+        "loserGain": -94
+    },
+    {
+        "winner": "Paulina Desmarais",
+        "loser": "Felix Ostiguy",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1465.0,
+        "loserELO": 1492,
+        "winnerGain": 208,
+        "loserGain": -104
+    },
+    {
+        "winner": "Nathan Richard",
+        "loser": "Felix Ostiguy",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1393.0,
+        "loserELO": 1645.0,
+        "winnerGain": 140,
+        "loserGain": -140
+    },
+    {
+        "winner": "Mathieu Lefebvre",
+        "loser": "Charles Normandin",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1406,
+        "loserELO": 1474,
+        "winnerGain": 110,
+        "loserGain": -110
+    },
+    {
+        "winner": "Thierry Hotte-Belanger",
+        "loser": "Mathis Roux",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1267.0,
+        "loserELO": 1569,
+        "winnerGain": 148,
+        "loserGain": -148
+    },
+    {
+        "winner": "Felix Ostiguy",
+        "loser": "Koen Vdzouwen",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1388,
+        "loserELO": 1600,
+        "winnerGain": 133,
+        "loserGain": -133
+    },
+    {
+        "winner": "Anne Catherine Forcier",
+        "loser": "Vicky Lachance",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1730.0,
+        "loserELO": 1500,
+        "winnerGain": 63,
+        "loserGain": -63
+    },
+    {
+        "winner": "Mathieu Lefebvre",
+        "loser": "Mathis Roux",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1516,
+        "loserELO": 1421,
+        "winnerGain": 84,
+        "loserGain": -84
+    },
+    {
+        "winner": "Mathieu Lefebvre",
+        "loser": "Alexy Le Menn",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1600,
+        "loserELO": 1453,
+        "winnerGain": 76,
+        "loserGain": -76
+    },
+    {
+        "winner": "Mathieu Lefebvre",
+        "loser": "Samuel Douville",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1676,
+        "loserELO": 1493,
+        "winnerGain": 70,
+        "loserGain": -70
+    },
+    {
+        "winner": "Charles Normandin",
+        "loser": "Camille Girard",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1364,
+        "loserELO": 1578.0,
+        "winnerGain": 67.0,
+        "loserGain": -67.0
+    },
+    {
+        "winner": "Mathieu Lefebvre",
+        "loser": "Koen Vdzouwen",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1746,
+        "loserELO": 1467,
+        "winnerGain": 55,
+        "loserGain": -55
+    },
+    {
+        "winner": "Theo Aicardi",
+        "loser": "Vicky Lachance",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1632,
+        "loserELO": 1437,
+        "winnerGain": 34.0,
+        "loserGain": -34.0
+    },
+    {
+        "winner": "Alexis Turcotte",
+        "loser": "Felix Ostiguy",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1328.0,
+        "loserELO": 1521,
+        "winnerGain": 130,
+        "loserGain": -130
+    },
+    {
+        "winner": "Theo Aicardi",
+        "loser": "Erika Leclerc",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1666.0,
+        "loserELO": 1631.0,
+        "winnerGain": 47.0,
+        "loserGain": -47.0
+    },
+    {
+        "winner": "Paulina Desmarais",
+        "loser": "Anne Catherine Forcier",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1673.0,
+        "loserELO": 1793.0,
+        "winnerGain": 119,
+        "loserGain": -119
+    },
+    {
+        "winner": "Justin Gautrais",
+        "loser": "Thierry Hotte-Belanger",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1648.0,
+        "loserELO": 1415.0,
+        "winnerGain": 62,
+        "loserGain": -62
+    },
+    {
+        "winner": "Felix Ostiguy",
+        "loser": "Nathan Richard",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1505.0,
+        "loserELO": 1533.0,
+        "winnerGain": 104,
+        "loserGain": -104
+    },
+    {
+        "winner": "Camille Girard",
+        "loser": "Charles Normandin",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1511.0,
+        "loserELO": 1431.0,
+        "winnerGain": 174,
+        "loserGain": -87
+    },
+    {
+        "winner": "Felix Ostiguy",
+        "loser": "Alexis Turcotte",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1609.0,
+        "loserELO": 1458.0,
+        "winnerGain": 75,
+        "loserGain": -75
+    },
+    {
+        "winner": "Vicky Lachance",
+        "loser": "Koen Vdzouwen",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1403.0,
+        "loserELO": 1412,
+        "winnerGain": 202,
+        "loserGain": -101
+    },
+    {
+        "winner": "Christina Ciurlej",
+        "loser": "Mathieu Lefebvre",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1412.0,
+        "loserELO": 1801,
+        "winnerGain": 324,
+        "loserGain": -162
+    },
+    {
+        "winner": "Samuel Douville",
+        "loser": "Felix Ostiguy",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1423,
+        "loserELO": 1391,
+        "winnerGain": 94,
+        "loserGain": -94
+    },
+    {
+        "winner": "Samuel Douville",
+        "loser": "Paulina Desmarais",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1517,
+        "loserELO": 1792.0,
+        "winnerGain": 72.0,
+        "loserGain": -72.0
+    },
+    {
+        "winner": "Nicolas Ladouceur",
+        "loser": "Nathan Richard",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1660.0,
+        "loserELO": 1429.0,
+        "winnerGain": 63,
+        "loserGain": -63
+    },
+    {
+        "winner": "Samuel Douville",
+        "loser": "Alexy Le Menn",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1589.0,
+        "loserELO": 1377,
+        "winnerGain": 66,
+        "loserGain": -66
+    },
+    {
+        "winner": "Alexandre Laplante",
+        "loser": "Charles Normandin",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1416.0,
+        "loserELO": 1344.0,
+        "winnerGain": 88,
+        "loserGain": -88
+    },
+    {
+        "winner": "Thierry Hotte-Belanger",
+        "loser": "Koen Vdzouwen",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1353.0,
+        "loserELO": 1311,
+        "winnerGain": 93,
+        "loserGain": -93
+    },
+    {
+        "winner": "Samuel Douville",
+        "loser": "Nicolas Ladouceur",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1655.0,
+        "loserELO": 1723.0,
+        "winnerGain": 110,
+        "loserGain": -110
+    },
+    {
+        "winner": "Vicky Lachance",
+        "loser": "Antoine Barthelemy",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1605.0,
+        "loserELO": 1393,
+        "winnerGain": 132,
+        "loserGain": -66
+    },
+    {
+        "winner": "Alexandre Laplante",
+        "loser": "Vicky Lachance",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1504.0,
+        "loserELO": 1737.0,
+        "winnerGain": 68.5,
+        "loserGain": -68.5
+    },
+    {
+        "winner": "Camille Girard",
+        "loser": "Alexy Le Menn",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1685.0,
+        "loserELO": 1311,
+        "winnerGain": 80,
+        "loserGain": -40
+    },
+    {
+        "winner": "Marilou Marceau",
+        "loser": "Justin Gautrais",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1844,
+        "loserELO": 1710.0,
+        "winnerGain": 156,
+        "loserGain": -78
+    },
+    {
+        "winner": "Samuel Douville",
+        "loser": "Felix Ostiguy",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1765.0,
+        "loserELO": 1297,
+        "winnerGain": 25,
+        "loserGain": -25
+    },
+    {
+        "winner": "Alexis Turcotte",
+        "loser": "Nicolas Ladouceur",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1383.0,
+        "loserELO": 1613.0,
+        "winnerGain": 136,
+        "loserGain": -136
+    },
+    {
+        "winner": "Justin Gautrais",
+        "loser": "Vicky Lachance",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1632.0,
+        "loserELO": 1668.5,
+        "winnerGain": 52.5,
+        "loserGain": -52.5
+    },
+    {
+        "winner": "Koen Vdzouwen",
+        "loser": "Samuel Douville",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1218,
+        "loserELO": 1790.0,
+        "winnerGain": 180,
+        "loserGain": -180
+    },
+    {
+        "winner": "Samuel Douville",
+        "loser": "Felix Ostiguy",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1610.0,
+        "loserELO": 1272,
+        "winnerGain": 45,
+        "loserGain": -45
+    },
+    {
+        "winner": "Justin Gautrais",
+        "loser": "Charles Normandin",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1684.5,
+        "loserELO": 1256.0,
+        "winnerGain": 31,
+        "loserGain": -31
+    },
+    {
+        "winner": "Justin Gautrais",
+        "loser": "Nicolas Ladouceur",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1715.5,
+        "loserELO": 1477.0,
+        "winnerGain": 61,
+        "loserGain": -61
+    },
+    {
+        "winner": "Mathis Roux",
+        "loser": "Nicolas Ladouceur",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1337,
+        "loserELO": 1416.0,
+        "winnerGain": 112,
+        "loserGain": -112
+    },
+    {
+        "winner": "Erika Leclerc",
+        "loser": "Marilou Marceau",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1584.0,
+        "loserELO": 2000,
+        "winnerGain": 166,
+        "loserGain": -166
+    },
+    {
+        "winner": "Thierry Hotte-Belanger",
+        "loser": "Christina Ciurlej",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1446.0,
+        "loserELO": 1736.0,
+        "winnerGain": 73.0,
+        "loserGain": -73.0
+    },
+    {
+        "winner": "Alexandre Laplante",
+        "loser": "Alexy Le Menn",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1572.5,
+        "loserELO": 1271,
+        "winnerGain": 51,
+        "loserGain": -51
+    },
+    {
+        "winner": "Alexy Le Menn",
+        "loser": "Thierry Hotte-Belanger",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1220,
+        "loserELO": 1519.0,
+        "winnerGain": 147,
+        "loserGain": -147
+    },
+    {
+        "winner": "Erika Leclerc",
+        "loser": "Nathan Richard",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1750.0,
+        "loserELO": 1366.0,
+        "winnerGain": 76,
+        "loserGain": -38
+    },
+    {
+        "winner": "Mathis Roux",
+        "loser": "Camille Girard",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1449,
+        "loserELO": 1765.0,
+        "winnerGain": 75.0,
+        "loserGain": -75.0
+    },
+    {
+        "winner": "Mathieu Lefebvre",
+        "loser": "Theo Aicardi",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1639,
+        "loserELO": 1713.0,
+        "winnerGain": 111,
+        "loserGain": -111
+    },
+    {
+        "winner": "Mathis Roux",
+        "loser": "Alexis Turcotte",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1524.0,
+        "loserELO": 1519.0,
+        "winnerGain": 99,
+        "loserGain": -99
+    },
+    {
+        "winner": "Paulina Desmarais",
+        "loser": "Thierry Hotte-Belanger",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1720.0,
+        "loserELO": 1372.0,
+        "winnerGain": 88,
+        "loserGain": -44
+    },
+    {
+        "winner": "Thierry Hotte-Belanger",
+        "loser": "Nicolas Ladouceur",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1328.0,
+        "loserELO": 1304.0,
+        "winnerGain": 96,
+        "loserGain": -96
+    },
+    {
+        "winner": "Justin Gautrais",
+        "loser": "Antoine Barthelemy",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1776.5,
+        "loserELO": 1327,
+        "winnerGain": 28,
+        "loserGain": -28
+    },
+    {
+        "winner": "Camille Girard",
+        "loser": "Mathieu Lefebvre",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1690.0,
+        "loserELO": 1750,
+        "winnerGain": 218,
+        "loserGain": -109
+    },
+    {
+        "winner": "Alexy Le Menn",
+        "loser": "Paulina Desmarais",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1367,
+        "loserELO": 1808.0,
+        "winnerGain": 85.0,
+        "loserGain": -85.0
+    },
+    {
+        "winner": "Camille Girard",
+        "loser": "Felix Ostiguy",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1908.0,
+        "loserELO": 1227,
+        "winnerGain": 40,
+        "loserGain": -20
+    },
+    {
+        "winner": "Paulina Desmarais",
+        "loser": "Alexy Le Menn",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1723.0,
+        "loserELO": 1452.0,
+        "winnerGain": 112,
+        "loserGain": -56
+    },
+    {
+        "winner": "Anne Catherine Forcier",
+        "loser": "Mathis Roux",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1674.0,
+        "loserELO": 1623.0,
+        "winnerGain": 182,
+        "loserGain": -91
+    },
+    {
+        "winner": "Mathis Roux",
+        "loser": "Vicky Lachance",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1532.0,
+        "loserELO": 1616.0,
+        "winnerGain": 56.5,
+        "loserGain": -56.5
+    },
+    {
+        "winner": "Christina Ciurlej",
+        "loser": "Paulina Desmarais",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1663.0,
+        "loserELO": 1835.0,
+        "winnerGain": 127,
+        "loserGain": -127
+    },
+    {
+        "winner": "Mathieu Lefebvre",
+        "loser": "Vicky Lachance",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1641,
+        "loserELO": 1559.5,
+        "winnerGain": 43.0,
+        "loserGain": -43.0
+    },
+    {
+        "winner": "Alexandre Laplante",
+        "loser": "Mathis Roux",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1623.5,
+        "loserELO": 1588.5,
+        "winnerGain": 94,
+        "loserGain": -94
+    },
+    {
+        "winner": "Nicolas Ladouceur",
+        "loser": "Marilou Marceau",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1208.0,
+        "loserELO": 1834,
+        "winnerGain": 90.0,
+        "loserGain": -90.0
+    },
+    {
+        "winner": "Anne Catherine Forcier",
+        "loser": "Paulina Desmarais",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1856.0,
+        "loserELO": 1708.0,
+        "winnerGain": 76,
+        "loserGain": -76
+    },
+    {
+        "winner": "Camille Girard",
+        "loser": "Marilou Marceau",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1948.0,
+        "loserELO": 1744.0,
+        "winnerGain": 67,
+        "loserGain": -67
+    },
+    {
+        "winner": "Justin Gautrais",
+        "loser": "Paulina Desmarais",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1804.5,
+        "loserELO": 1632.0,
+        "winnerGain": 36.0,
+        "loserGain": -36.0
+    },
+    {
+        "winner": "Antoine Barthelemy",
+        "loser": "Alexis Turcotte",
+        "score": "Score",
+        "date": "September 18, 2022",
+        "winnerELO": 1299,
+        "loserELO": 1420.0,
+        "winnerGain": 119,
+        "loserGain": -119
+    }
+]
