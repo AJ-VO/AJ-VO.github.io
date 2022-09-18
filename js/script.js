@@ -11,7 +11,7 @@ fetch("https://aj-vo.github.io/jsons/players.json")
     for(let product of products){
         out+= `
             <tr>
-                <td>(${position})${product.name}</td>
+                <td>(${position}) ${product.name}</td>
                 <td>${product.elo}</td>
                 <td>${product.wins}</td>
                 <td>${product.losses}</td>
