@@ -1,0 +1,9 @@
+[
+    {
+        "winner": "NAME",
+        "loser": "NAME",
+        "score": "SCORE",
+        "date": "DATE",
+        "tourny": "TEAM#HOME/AWAY"
+    }
+]
