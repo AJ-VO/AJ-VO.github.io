@@ -15,7 +15,7 @@ def main():
         if games > 0:
             with open("jsons/simulation/players_"+simulationTime+"_"+str(numberMatches)+".json", "r") as f:
                 playerDATA = json.load(f)
-            with open("jsons/simulation/results"+simulationTime+"_"+str(numberMatches)+".json", "r") as fp:
+            with open("jsons/simulation/results_"+simulationTime+"_"+str(numberMatches)+".json", "r") as fp:
                 resultDATA = json.load(fp)
         
         winnerDict = random.randint(0, 22)
@@ -70,7 +70,7 @@ def main():
         match_data["winnerGain"] = information[6]
         match_data["loserGain"] = information[7]
         resultDATA.append(match_data)
-        with open("jsons/simulation/results"+simulationTime+"_"+str(numberMatches)+".json", "w") as fp:
+        with open("jsons/simulation/results_"+simulationTime+"_"+str(numberMatches)+".json", "w") as fp:
             json.dump(resultDATA, fp, indent = 4)
 
 if __name__ == "__main__":

@@ -1,12 +1,12 @@
 [
     {
-        "winner": "NAME",
-        "loser": "NAME",
-        "score": "SCORE",
-        "date": "DATE",
+        "winner": "Alexandre Jasmin",
+        "loser": "Dominic Longpré",
+        "score": "7-5 3-6 6-1",
+        "date": "18 septembre 2022",
         "winnerELO": 1500,
         "loserELO": 1500,
         "winnerGain": 100,
-        "loserGain": -101
+        "loserGain": -100
     }
 ]
