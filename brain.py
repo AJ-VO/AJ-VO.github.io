@@ -35,10 +35,10 @@ def main():
             information.append(eloGain*-1)#L7
         else:
             if information[4] == "w":
-                information.append(eloGain*1.5)#W6
+                information.append(eloGain*2)#W6
                 information.append(eloGain*-1)#L7
             else:
-                information.append(eloGain*0.3)#W6
+                information.append(eloGain*0.5)#W6
                 information.append(eloGain*-0.5)#L7
 
         information.append(playerDATA[winnerDict]["name"])
