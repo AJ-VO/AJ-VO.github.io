@@ -7,12 +7,12 @@ fetch("https://aj-vo.github.io/jsons/players.json")
 .then(function(products){
     let placeholder = document.querySelector("#data-output");
     let out = "";
-    position = 1;
+    var position = 1;
     for(let product of products){
         out+= `
             <tr>
                 <td>${position}</td>
-                <td>${product.name}</td>
+                <td><a href="player.html?=${product.id}">${product.name}</a></td>
                 <td>${product.elo}</td>
                 <td>${product.wins}</td>
                 <td>${product.losses}</td>
