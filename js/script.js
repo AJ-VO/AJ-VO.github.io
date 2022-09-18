@@ -1,4 +1,4 @@
-fetch("http://127.0.0.1:8000/jsons/players.json")
+fetch("https://aj-vo.github.io/jsons/players.json")
 
 .then(function(response){
     return response.json();
@@ -22,7 +22,7 @@ fetch("http://127.0.0.1:8000/jsons/players.json")
 
 })
 
-fetch("http://127.0.0.1:8000/jsons/results.json")
+fetch("https://aj-vo.github.io/jsons/results.json")
 
 .then(function(response){
     return response.json();
