@@ -102,6 +102,8 @@ def main():
         with open("jsons/t_results.json", "w") as fr:
             json.dump(resultDATA, fr, indent=4)
         main()
+    else:
+        main()
         
 if __name__ == "__main__":
     main()

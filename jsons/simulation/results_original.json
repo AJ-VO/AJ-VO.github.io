@@ -1,0 +1,12 @@
+[
+    {
+        "winner": "NAME",
+        "loser": "NAME",
+        "score": "SCORE",
+        "date": "DATE",
+        "winnerELO": 1500,
+        "loserELO": 1500,
+        "winnerGain": 100,
+        "loserGain": -100
+    }
+]

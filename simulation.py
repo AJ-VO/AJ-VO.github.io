@@ -2,11 +2,21 @@ from utils import *
 
 def main():
 
-    for games in range(100):#Matches
-        with open("jsons/simulation/players.json", "r") as f:
-            playerDATA = json.load(f)
-        with open("jsons/simulation/results.json", "r") as fp:
-            resultDATA = json.load(fp)
+    simulationTime = current_milli_time()
+    numberMatches = 100
+
+    with open("jsons/simulation/players_original.json", "r") as f:
+        playerDATA = json.load(f)
+    with open("jsons/simulation/results_original.json", "r") as fp:
+        resultDATA = json.load(fp)
+
+    for games in range(numberMatches):#Matches
+        
+        if games > 0:
+            with open("jsons/simulation/players_"+simulationTime+"_"+str(numberMatches)+".json", "r") as f:
+                playerDATA = json.load(f)
+            with open("jsons/simulation/results"+simulationTime+"_"+str(numberMatches)+".json", "r") as fp:
+                resultDATA = json.load(fp)
         
         winnerDict = random.randint(0, 22)
         loserDict = choice([i for i in range(0,22) if i not in [winnerDict]])
@@ -47,7 +57,7 @@ def main():
         playerDATA[loserDict]["gp"] = playerDATA[loserDict]["gp"] + 1
         #Dump player information
         playerDATA.sort(reverse=True, key=lambda x: x["elo"])
-        with open("jsons/simulation/players.json", "w") as fr:
+        with open("jsons/simulation/players_"+simulationTime+"_"+str(numberMatches)+".json", "w") as fr:
             json.dump(playerDATA, fr, indent=4)
         #Create Result
         match_data = {}
@@ -60,7 +70,7 @@ def main():
         match_data["winnerGain"] = information[6]
         match_data["loserGain"] = information[7]
         resultDATA.append(match_data)
-        with open("jsons/simulation/results.json", "w") as fp:
+        with open("jsons/simulation/results"+simulationTime+"_"+str(numberMatches)+".json", "w") as fp:
             json.dump(resultDATA, fp, indent = 4)
 
 if __name__ == "__main__":
