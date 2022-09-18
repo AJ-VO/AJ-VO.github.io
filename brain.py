@@ -74,11 +74,34 @@ def main():
         print_tournament_information()
         with open("jsons/t_players.json", "r") as f:
             playerDATA = json.load(f)
+        with open("jsons/t_results.json", "r") as fp:
+            resultDATA = json.load(fp)
         winnerDict = int(input("Winner Key: "))
         loserDict = int(input("Loser Key: "))
+        score = input("Score: ")
+        tournament = input("Tournament (TEAM#AWAY/HOME)")
         information = []#winnerid, loserid,
+
+        #Player Data
+        #Winner
+        playerDATA[winnerDict]["gp"] = playerDATA[winnerDict]["gp"] + 1
+        playerDATA[winnerDict]["wins"] = playerDATA[winnerDict]["wins"] + 1
+        #Loser
+        playerDATA[loserDict]["gp"] = playerDATA[loserDict]["gp"] + 1
+        playerDATA[loserDict]["losses"] = playerDATA[loserDict]["losses"] + 1
+        with open("jsons/t_players.json", "w") as fr:
+            json.dump(playerDATA, fr, indent=4)
+        #Match Data
+        match_data = {}
+        match_data["winner"] = playerDATA[winnerDict]["name"]
+        match_data["loser"] = playerDATA[loserDict]["name"]
+        match_data["score"] = score
+        match_data["date"] = get_date()
+        match_data["tourny"] = tournament
+        resultDATA.append(match_data)
+        with open("jsons/t_results.json", "w") as fr:
+            json.dump(resultDATA, fr, indent=4)
+        main()
         
-
-
 if __name__ == "__main__":
     main()

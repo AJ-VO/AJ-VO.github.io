@@ -11,6 +11,7 @@ def print_main_menu():
     print("0) Show Players Information")
     print("1) Add Result")
     print("2) Add Tournament Result")
+    print("3)")
 
 def print_database_information():
     players = load_players()
@@ -32,12 +33,6 @@ def load_players():
     with open('jsons/players.json', 'r') as f:
         data = json.load(f)
     return data
-
-    with open("results.json", "r") as f:
-        resultJSON = json.load(f)
-    resultJSON.append(match_data)
-    with open("results.json", "w") as fp:
-        json.dump(resultJSON, fp, indent = 4)
 
 def load_tournament():
     with open('jsons/t_players.json', 'r') as f:
