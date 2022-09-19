@@ -50,4 +50,5 @@ max = max(diff)
 
 > 1182
 
-La moyenne est plus grande que la médiane. En général, 
+La moitié des matchs n'ont qu'une différence de 31 rangs.
+
