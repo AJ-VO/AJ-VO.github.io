@@ -6,6 +6,7 @@ import pandas as pd
 import random
 from random import choice
 import time
+import xlrd
 
 def print_main_menu():
     print("======== V&O Bra1n ========")
