@@ -27,3 +27,13 @@ Points perdus par la fille = y/-2
 [ATP_ALL](ATP_ALL.xls) est un fichier contenant de l'information sur des matchs de tennis professionnel joués entre 2008 et 2017. *n = 27148*
 
 ### À quelle fréquence est-ce que le joueur moins bien classé gagne le match?
+```
+outcome = []#bool
+for i in range(1, n):
+    if Rang_G < Rang_P:
+        outcome.append(True)
+    else:
+        outcome.append(False)
+frequence = outcome.count(True)/n
+```
+> 33.06%
