@@ -22,3 +22,5 @@ Si un garçon gagne contre une fille
 Points gagnés par le garçon = y/2
 Points perdus par la fille = y/-2
 ```
+
+# Analyse ATP_ALL
