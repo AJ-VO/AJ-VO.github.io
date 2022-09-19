@@ -7,6 +7,7 @@ import random
 from random import choice
 import time
 import xlrd
+import statistics
 
 def print_main_menu():
     print("======== V&O Bra1n ========")
