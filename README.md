@@ -37,13 +37,13 @@ for i in range(1, n):
 frequence = outcome.count(True)/len(outcome)
 ```
 > 33.06%
+
 Regardons maintenant les différence entre les rangs.
 ```
 diff = []
 if Rang_G > Rang_P:
     diff.append(Rang_P-Rang_G)#Toujours positif
-moyenne = statistics.mean(diff)
-mediane = statistics.median(diff)
+moyenne, mediane = statistics.mean(diff), statistics.median(diff)
 ```
-> 56.57
-> 31
+
+> 56.57, 31
