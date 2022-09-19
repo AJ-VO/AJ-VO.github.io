@@ -8,9 +8,9 @@ x = Points du gagnant - points du perdant
 ```
 ```
 y = {
-    180 si x < -500
-    -4/25x + 100 si -500 <= x <= 500
-    20 si x > 500
+    = 180 si x < -500
+    = -4/25x + 100 si -500 <= x <= 500
+    = 20 si x > 500
 }
 ```
 Si une fille gagne contre un garçon
