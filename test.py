@@ -23,8 +23,8 @@ def main():
             continue
 
     print(l_won.count(True)/len(l_won))
-    print(statistics.median(diff))
-    print(statistics.mean(diff))
+    print(max(diff))
+    print(min(diff))
 
 if __name__ == "__main__":
     main()

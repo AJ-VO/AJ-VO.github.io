@@ -30,7 +30,7 @@ Points perdus par la fille = y/-2
 ```
 outcome = []#bool
 for i in range(1, n):
-    if Rang_G > Rang_P:
+    if Rang_G > Rang_P:#Meilleur le joueur, plus petit le rang
         outcome.append(True)
     else:
         outcome.append(False)
@@ -44,6 +44,10 @@ diff = []
 if Rang_G > Rang_P:
     diff.append(Rang_P-Rang_G)#Toujours positif
 moyenne, mediane = statistics.mean(diff), statistics.median(diff)
+max = max(diff)
 ```
-
 > 56.57, 31
+
+> 1182
+
+La moyenne est plus grande que la médiane. En général, 
