@@ -53,5 +53,5 @@ max = max(diff)
 
 > 1182
 
-La moitié des matchs n'ont qu'une différence de 31 rangs.
+La moitié des matchs n'ont qu'une différence de 31 rangs ou moins.
 
