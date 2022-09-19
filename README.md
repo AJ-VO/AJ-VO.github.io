@@ -1,7 +1,7 @@
 # AJ-VO.github.io
 Tennis Vert &amp; Or
 ## Ligue Maison
-Chaque joueur commence la ligue avec 1500 points. [référence : utils.py](utils.py)
+Chaque joueur commence la ligue avec 1500 points. [référence : utils.py.def get_eloGain(matchDelta)](utils.py)
 ```
 y = Points gagnés ou perdus
 x = Points du gagnant - points du perdant
