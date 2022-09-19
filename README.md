@@ -38,6 +38,7 @@ frequence = outcome.count(True)/len(outcome)
 ```
 > 33.06%
 
+Le joueur mieux classé gagne **2 matchs sur 3**.
 Regardons maintenant les différence entre les rangs.
 ```
 diff = []
