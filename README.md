@@ -24,3 +24,4 @@ Points perdus par la fille = y/-2
 ```
 
 # Analyse ATP_ALL
+ATP_ALL est un fichier contenant de l'information sur des matchs de tennis professionnel joués entre 2008 et 2017. n = 27 148
