@@ -50,10 +50,9 @@ def main():
     analysisData["first_serve_avg_l"] = statistics.mean(first_serve_p)
 
     with open("jsons/analysis.json", "w") as f:
-        json.dump(analysisData, f, indent = 4)
+        json.dump(analysisData, f, indent = 4, )
         print("Dumped")
 
-    
 
 if __name__ == "__main__":
     main()
