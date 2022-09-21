@@ -40,7 +40,7 @@ def main():
 
     analysisData = {}
     analysisData["moins_bien_classe_gagne"] = {}
-    analysisData["moins_bien_classe_gagne"]["description"] = "Lorsque le joueur moins bien classé gagne le match"
+    analysisData["moins_bien_classe_gagne"]["description"] = "Lorsque le joueur moins bien classe gagne le match"
     analysisData["moins_bien_classe_gagne"]["frequence"] = l_won.count(True)/(l_won.count(True)+l_won.count(False))
     analysisData["moins_bien_classe_gagne"]["moyenne"] = statistics.mean(diff)
     analysisData["moins_bien_classe_gagne"]["mediane"] = statistics.median(diff)
