@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST['submit']))
+if(isset($_POST['submit'])) {
  $mailto = "alexwinnable@gmail.com";//my email
  //getting match data
  $gagnant = $_POST['winner'];
@@ -20,4 +20,7 @@ if(isset($_POST['submit']))
  } else {
     $failed = "Sorry!"
  }
+
+}
+
 ?>
