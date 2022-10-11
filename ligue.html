@@ -74,6 +74,7 @@ a{
 <div style="padding-left:16px">
   <h2>Ligue Maison</h2>
 </div>
+
 </center>
 
 <table align="center">
@@ -109,6 +110,22 @@ a{
         </td>
     </tr>
 </table>
+
+<center>
+<h3>Rajouter un match :</h3>
+<form action="/action_page.php">
+  <label for="winner">Gagnant :</label><br>
+  <input type="text" id="winner" name="winner" value="W"><br>
+  <label for="loser">Perdant :</label><br>
+  <input type="text" id="loser" name="loser" value="L"><br>
+  <label for="score">Score :</label><br>
+  <input type="text" id="score" name="score" value="S"><br>
+  <br>
+  <input type="submit" value="Submit" name="submit">
+  <br>
+  <textarea name = "confirmation_message" placeholder="Waiting..."></textarea>
+</form> 
+</center>
 
 <script src="js/script.js"></script>
 
