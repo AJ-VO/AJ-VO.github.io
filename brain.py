@@ -57,7 +57,6 @@ def main():
             currentStreak = information[i]
             newStreak = playerStreak(currentStreak, ending)
             streaks.append(newStreak)
-        
         playerDATA[winnerDict]["streak"] = streaks[0]
         playerDATA[loserDict]["streak"] = streaks[1]
         

@@ -14,7 +14,6 @@ def print_main_menu():
     print("0) Show Players Information")
     print("1) Add Result")
     print("2) Add Tournament Result")
-    print("3) ")
 
 def current_milli_time():
     return str(round(time.time() * 1000))

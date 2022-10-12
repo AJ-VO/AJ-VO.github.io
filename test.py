@@ -1,16 +1,33 @@
-from utils import *
+# Importing libraries
+import numpy as np
+import matplotlib.pyplot as plt
+import json
 
-def main():
+# A custom function to calculate
+# probability distribution function
+def pdf(x):
+	mean = np.mean(x)
+	std = np.std(x)
+	y_out = 1/(std * np.sqrt(2 * np.pi)) * np.exp( - (x - mean)**2 / (2 * std**2))
+	return y_out
+	
+# To generate an array of x-values
+x = []#<class 'numpy.ndarray'>
+with open("jsons\simulation\players_1663542213296_100.json", "r") as f:
+    data = json.load(f)
+for i in data:
+    x.append(i["elo"])
 
-    with open("jsons/players.json", "r") as f:
-        data = json.load(f)
-    f.close()
 
-    for i in data:
-        i["streak"] = 0
+# To generate an array of
+# y-values using corresponding x-values
+y = pdf(x)
 
-    with open("jsons/players.json", "w") as f:
-        json.dump(data, f, indent=4)
+# Plotting the bell-shaped curve
+plt.style.use('seaborn')
+plt.figure(figsize = (6, 6))
+plt.plot(x, y, color = 'black',
+		linestyle = 'dashed')
 
-if __name__ == "__main__":
-    main()
+plt.scatter( x, y, marker = 'o', s = 25, color = 'red')
+plt.show()
