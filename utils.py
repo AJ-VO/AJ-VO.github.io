@@ -59,3 +59,16 @@ def get_eloGain(matchDelta):
         eloGain = int(((-4/25)*matchDelta)+100)
 
     return eloGain
+
+def updateImages():
+
+    with open("jsons/players.json", "r") as f:
+        data = json.load(f)
+    f.close()
+
+    for i in data:
+        myKey = str(i["id"])
+        i["img"] = "img/players/"+myKey+".png"
+
+    with open("jsons/players.json", "w") as f:
+        json.dump(data, f, indent=4)

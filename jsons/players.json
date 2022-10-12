@@ -9,7 +9,7 @@
         "elo": 1500,
         "t_wins": 0,
         "t_losses": 0,
-        "img": "photolink"
+        "img": "img/players/test.png"
     },
     {
         "name": "Vicky Lachance",
@@ -21,7 +21,7 @@
         "elo": 1500,
         "t_wins": 0,
         "t_losses": 0,
-        "img": "photolink"
+        "img": "img/players/test.png"
     },
     {
         "name": "Camille Girard",
@@ -33,7 +33,7 @@
         "elo": 1500,
         "t_wins": 0,
         "t_losses": 0,
-        "img": "photolink"
+        "img": "img/players/test.png"
     },
     {
         "name": "Christina Ciurlej",
@@ -45,7 +45,7 @@
         "elo": 1500,
         "t_wins": 0,
         "t_losses": 0,
-        "img": "photolink"
+        "img": "img/players/test.png"
     },
     {
         "name": "Erika Leclerc",
@@ -57,7 +57,7 @@
         "elo": 1500,
         "t_wins": 0,
         "t_losses": 0,
-        "img": "photolink"
+        "img": "img/players/test.png"
     },
     {
         "name": "Paulina Desmarais",
@@ -69,7 +69,7 @@
         "elo": 1500,
         "t_wins": 0,
         "t_losses": 0,
-        "img": "photolink"
+        "img": "img/players/test.png"
     },
     {
         "name": "Alexandre Laplante",
@@ -81,7 +81,7 @@
         "elo": 1500,
         "t_wins": 0,
         "t_losses": 0,
-        "img": "photolink"
+        "img": "img/players/test.png"
     },
     {
         "name": "Cornelis van der Zouwen",
@@ -93,7 +93,7 @@
         "elo": 1500,
         "t_wins": 0,
         "t_losses": 0,
-        "img": "photolink"
+        "img": "img/players/test.png"
     },
     {
         "name": "Felix Ostiguy",
@@ -105,7 +105,7 @@
         "elo": 1500,
         "t_wins": 0,
         "t_losses": 0,
-        "img": "photolink"
+        "img": "img/players/test.png"
     },
     {
         "name": "Alexis Turcotte",
@@ -117,7 +117,7 @@
         "elo": 1500,
         "t_wins": 0,
         "t_losses": 0,
-        "img": "photolink"
+        "img": "img/players/test.png"
     },
     {
         "name": "Mathis Roux",
@@ -129,7 +129,7 @@
         "elo": 1500,
         "t_wins": 0,
         "t_losses": 0,
-        "img": "photolink"
+        "img": "img/players/test.png"
     },
     {
         "name": "Nicolas Ladouceur",
@@ -141,7 +141,7 @@
         "elo": 1500,
         "t_wins": 0,
         "t_losses": 0,
-        "img": "photolink"
+        "img": "img/players/test.png"
     },
     {
         "name": "Nathan Richard",
@@ -153,7 +153,7 @@
         "elo": 1500,
         "t_wins": 0,
         "t_losses": 0,
-        "img": "photolink"
+        "img": "img/players/test.png"
     },
     {
         "name": "Alexy Le Menn",
@@ -165,7 +165,7 @@
         "elo": 1500,
         "t_wins": 0,
         "t_losses": 0,
-        "img": "photolink"
+        "img": "img/players/test.png"
     },
     {
         "name": "Thierry Hotte-Belanger",
@@ -177,7 +177,7 @@
         "elo": 1500,
         "t_wins": 0,
         "t_losses": 0,
-        "img": "photolink"
+        "img": "img/players/test.png"
     },
     {
         "name": "Justin Gautrais",
@@ -189,7 +189,7 @@
         "elo": 1500,
         "t_wins": 0,
         "t_losses": 0,
-        "img": "photolink"
+        "img": "img/players/test.png"
     },
     {
         "name": "Mathieu Lefebvre",
@@ -201,7 +201,7 @@
         "elo": 1500,
         "t_wins": 0,
         "t_losses": 0,
-        "img": "photolink"
+        "img": "img/players/test.png"
     },
     {
         "name": "Antoine Barthelemy",
@@ -213,7 +213,7 @@
         "elo": 1500,
         "t_wins": 0,
         "t_losses": 0,
-        "img": "photolink"
+        "img": "img/players/test.png"
     },
     {
         "name": "Theo Aicardi",
@@ -225,7 +225,7 @@
         "elo": 1500,
         "t_wins": 0,
         "t_losses": 0,
-        "img": "photolink"
+        "img": "img/players/test.png"
     },
     {
         "name": "Samuel Douville",
@@ -237,7 +237,7 @@
         "elo": 1500,
         "t_wins": 0,
         "t_losses": 0,
-        "img": "photolink"
+        "img": "img/players/test.png"
     },
     {
         "name": "Charles Normandin",
@@ -249,7 +249,7 @@
         "elo": 1500,
         "t_wins": 0,
         "t_losses": 0,
-        "img": "photolink"
+        "img": "img/players/test.png"
     },
     {
         "name": "Marilou Marceau",
@@ -261,6 +261,6 @@
         "elo": 1500,
         "t_wins": 0,
         "t_losses": 0,
-        "img": "photolink"
+        "img": "img/players/test.png"
     }
 ]
