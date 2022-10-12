@@ -41,9 +41,26 @@ def main():
                 information.append(eloGain*0.5)#W6
                 information.append(eloGain*-0.5)#L7
 
-        information.append(playerDATA[winnerDict]["name"])
-        information.append(playerDATA[loserDict]["name"])
+        information.append(playerDATA[winnerDict]["name"])#8
+        information.append(playerDATA[loserDict]["name"])#9
 
+        information.append(playerDATA[winnerDict]["streak"])#10
+        information.append(playerDATA[loserDict]["streak"])#11
+
+        #Create Streak
+        streaks = []
+        for i in range(10, 12):#10-11
+            if i == 10:
+                ending = True
+            else:
+                ending = False
+            currentStreak = information[i]
+            newStreak = playerStreak(currentStreak, ending)
+            streaks.append(newStreak)
+        
+        playerDATA[winnerDict]["streak"] = streaks[0]
+        playerDATA[loserDict]["streak"] = streaks[1]
+        
         #Change ELO
         playerDATA[winnerDict]["elo"] = playerDATA[winnerDict]["elo"]+information[6]
         playerDATA[loserDict]["elo"] = playerDATA[loserDict]["elo"]+information[7]

@@ -72,3 +72,15 @@ def updateImages():
 
     with open("jsons/players.json", "w") as f:
         json.dump(data, f, indent=4)
+
+def playerStreak(currentStreak, ending):
+    if ending == True:
+        if currentStreak >= 0:
+            return currentStreak+1
+        else:
+            return 1
+    else:
+        if currentStreak >= 0:
+            return -1
+        else:
+            return currentStreak-1
