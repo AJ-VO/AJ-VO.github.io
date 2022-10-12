@@ -1,0 +1,1012 @@
+[
+    {
+        "winner": "NAME",
+        "loser": "NAME",
+        "score": "SCORE",
+        "date": "DATE",
+        "winnerELO": 1500,
+        "loserELO": 1500,
+        "winnerGain": 100,
+        "loserGain": -100
+    },
+    {
+        "winner": "Koen Vdzouwen",
+        "loser": "Thierry Hotte-Belanger",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1500,
+        "winnerGain": 100,
+        "loserGain": -100
+    },
+    {
+        "winner": "Anne Catherine Forcier",
+        "loser": "Charles Normandin",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1500,
+        "winnerGain": 200,
+        "loserGain": -100
+    },
+    {
+        "winner": "Paulina Desmarais",
+        "loser": "Theo Aicardi",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1500,
+        "winnerGain": 200,
+        "loserGain": -100
+    },
+    {
+        "winner": "Vicky Lachance",
+        "loser": "Alexy Le Menn",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1500,
+        "winnerGain": 200,
+        "loserGain": -100
+    },
+    {
+        "winner": "Erika Leclerc",
+        "loser": "Mathis Roux",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1500,
+        "winnerGain": 200,
+        "loserGain": -100
+    },
+    {
+        "winner": "Charles Normandin",
+        "loser": "Mathieu Lefebvre",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1400,
+        "loserELO": 1500,
+        "winnerGain": 116,
+        "loserGain": -116
+    },
+    {
+        "winner": "Felix Ostiguy",
+        "loser": "Anne Catherine Forcier",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1700,
+        "winnerGain": 66.0,
+        "loserGain": -66.0
+    },
+    {
+        "winner": "Antoine Barthelemy",
+        "loser": "Marilou Marceau",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1500,
+        "winnerGain": 50.0,
+        "loserGain": -50.0
+    },
+    {
+        "winner": "Justin Gautrais",
+        "loser": "Erika Leclerc",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1700,
+        "winnerGain": 66.0,
+        "loserGain": -66.0
+    },
+    {
+        "winner": "Alexy Le Menn",
+        "loser": "Vicky Lachance",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1400,
+        "loserELO": 1700,
+        "winnerGain": 74.0,
+        "loserGain": -74.0
+    },
+    {
+        "winner": "Nathan Richard",
+        "loser": "Alexy Le Menn",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1474.0,
+        "winnerGain": 95,
+        "loserGain": -95
+    },
+    {
+        "winner": "Mathieu Lefebvre",
+        "loser": "Erika Leclerc",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1384,
+        "loserELO": 1634.0,
+        "winnerGain": 70.0,
+        "loserGain": -70.0
+    },
+    {
+        "winner": "Mathieu Lefebvre",
+        "loser": "Felix Ostiguy",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1454.0,
+        "loserELO": 1500,
+        "winnerGain": 107,
+        "loserGain": -107
+    },
+    {
+        "winner": "Charles Normandin",
+        "loser": "Theo Aicardi",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1516,
+        "loserELO": 1400,
+        "winnerGain": 81,
+        "loserGain": -81
+    },
+    {
+        "winner": "Mathis Roux",
+        "loser": "Marilou Marceau",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1400,
+        "loserELO": 1450.0,
+        "winnerGain": 54.0,
+        "loserGain": -54.0
+    },
+    {
+        "winner": "Camille Girard",
+        "loser": "Vicky Lachance",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1626.0,
+        "winnerGain": 120,
+        "loserGain": -120
+    },
+    {
+        "winner": "Anne Catherine Forcier",
+        "loser": "Nicolas Ladouceur",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1634.0,
+        "loserELO": 1500,
+        "winnerGain": 156,
+        "loserGain": -78
+    },
+    {
+        "winner": "Alexis Turcotte",
+        "loser": "Alexy Le Menn",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1379.0,
+        "winnerGain": 80,
+        "loserGain": -80
+    },
+    {
+        "winner": "Charles Normandin",
+        "loser": "Alexandre Laplante",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1597,
+        "loserELO": 1500,
+        "winnerGain": 84,
+        "loserGain": -84
+    },
+    {
+        "winner": "Alexandre Laplante",
+        "loser": "Alexis Turcotte",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1416,
+        "loserELO": 1580,
+        "winnerGain": 126,
+        "loserGain": -126
+    },
+    {
+        "winner": "Erika Leclerc",
+        "loser": "Nathan Richard",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1564.0,
+        "loserELO": 1595,
+        "winnerGain": 208,
+        "loserGain": -104
+    },
+    {
+        "winner": "Marilou Marceau",
+        "loser": "Christina Ciurlej",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1396.0,
+        "loserELO": 1500,
+        "winnerGain": 116,
+        "loserGain": -116
+    },
+    {
+        "winner": "Mathieu Lefebvre",
+        "loser": "Nathan Richard",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1561.0,
+        "loserELO": 1491,
+        "winnerGain": 88,
+        "loserGain": -88
+    },
+    {
+        "winner": "Koen Vdzouwen",
+        "loser": "Christina Ciurlej",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1600,
+        "loserELO": 1384,
+        "winnerGain": 32.5,
+        "loserGain": -32.5
+    },
+    {
+        "winner": "Samuel Douville",
+        "loser": "Felix Ostiguy",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1566.0,
+        "winnerGain": 110,
+        "loserGain": -110
+    },
+    {
+        "winner": "Alexis Turcotte",
+        "loser": "Samuel Douville",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1454,
+        "loserELO": 1610,
+        "winnerGain": 124,
+        "loserGain": -124
+    },
+    {
+        "winner": "Alexandre Laplante",
+        "loser": "Charles Normandin",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1542,
+        "loserELO": 1681,
+        "winnerGain": 122,
+        "loserGain": -122
+    },
+    {
+        "winner": "Alexy Le Menn",
+        "loser": "Felix Ostiguy",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1299.0,
+        "loserELO": 1393,
+        "winnerGain": 115,
+        "loserGain": -115
+    },
+    {
+        "winner": "Alexy Le Menn",
+        "loser": "Koen Vdzouwen",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1414.0,
+        "loserELO": 1632.5,
+        "winnerGain": 134,
+        "loserGain": -134
+    },
+    {
+        "winner": "Alexy Le Menn",
+        "loser": "Christina Ciurlej",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1548.0,
+        "loserELO": 1351.5,
+        "winnerGain": 34.0,
+        "loserGain": -34.0
+    },
+    {
+        "winner": "Koen Vdzouwen",
+        "loser": "Paulina Desmarais",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1498.5,
+        "loserELO": 1700,
+        "winnerGain": 66.0,
+        "loserGain": -66.0
+    },
+    {
+        "winner": "Samuel Douville",
+        "loser": "Nathan Richard",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1486,
+        "loserELO": 1403,
+        "winnerGain": 86,
+        "loserGain": -86
+    },
+    {
+        "winner": "Marilou Marceau",
+        "loser": "Camille Girard",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1512.0,
+        "loserELO": 1620,
+        "winnerGain": 117,
+        "loserGain": -117
+    },
+    {
+        "winner": "Thierry Hotte-Belanger",
+        "loser": "Mathis Roux",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1400,
+        "loserELO": 1454.0,
+        "winnerGain": 108,
+        "loserGain": -108
+    },
+    {
+        "winner": "Christina Ciurlej",
+        "loser": "Nathan Richard",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1317.5,
+        "loserELO": 1317,
+        "winnerGain": 198,
+        "loserGain": -99
+    },
+    {
+        "winner": "Nathan Richard",
+        "loser": "Koen Vdzouwen",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1218,
+        "loserELO": 1564.5,
+        "winnerGain": 155,
+        "loserGain": -155
+    },
+    {
+        "winner": "Vicky Lachance",
+        "loser": "Thierry Hotte-Belanger",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1506.0,
+        "loserELO": 1508,
+        "winnerGain": 200,
+        "loserGain": -100
+    },
+    {
+        "winner": "Nicolas Ladouceur",
+        "loser": "Theo Aicardi",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1422,
+        "loserELO": 1319,
+        "winnerGain": 83,
+        "loserGain": -83
+    },
+    {
+        "winner": "Nicolas Ladouceur",
+        "loser": "Thierry Hotte-Belanger",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1505,
+        "loserELO": 1408,
+        "winnerGain": 84,
+        "loserGain": -84
+    },
+    {
+        "winner": "Paulina Desmarais",
+        "loser": "Vicky Lachance",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1634.0,
+        "loserELO": 1706.0,
+        "winnerGain": 111,
+        "loserGain": -111
+    },
+    {
+        "winner": "Nicolas Ladouceur",
+        "loser": "Nathan Richard",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1589,
+        "loserELO": 1373,
+        "winnerGain": 65,
+        "loserGain": -65
+    },
+    {
+        "winner": "Samuel Douville",
+        "loser": "Mathis Roux",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1572,
+        "loserELO": 1346.0,
+        "winnerGain": 63,
+        "loserGain": -63
+    },
+    {
+        "winner": "Mathis Roux",
+        "loser": "Camille Girard",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1283.0,
+        "loserELO": 1503,
+        "winnerGain": 67.5,
+        "loserGain": -67.5
+    },
+    {
+        "winner": "Paulina Desmarais",
+        "loser": "Samuel Douville",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1745.0,
+        "loserELO": 1635,
+        "winnerGain": 164,
+        "loserGain": -82
+    },
+    {
+        "winner": "Theo Aicardi",
+        "loser": "Justin Gautrais",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1236,
+        "loserELO": 1566.0,
+        "winnerGain": 152,
+        "loserGain": -152
+    },
+    {
+        "winner": "Felix Ostiguy",
+        "loser": "Samuel Douville",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1278,
+        "loserELO": 1553,
+        "winnerGain": 144,
+        "loserGain": -144
+    },
+    {
+        "winner": "Paulina Desmarais",
+        "loser": "Marilou Marceau",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1909.0,
+        "loserELO": 1629.0,
+        "winnerGain": 55,
+        "loserGain": -55
+    },
+    {
+        "winner": "Anne Catherine Forcier",
+        "loser": "Paulina Desmarais",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1790.0,
+        "loserELO": 1964.0,
+        "winnerGain": 127,
+        "loserGain": -127
+    },
+    {
+        "winner": "Alexis Turcotte",
+        "loser": "Charles Normandin",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1578,
+        "loserELO": 1559,
+        "winnerGain": 96,
+        "loserGain": -96
+    },
+    {
+        "winner": "Mathis Roux",
+        "loser": "Samuel Douville",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1350.5,
+        "loserELO": 1409,
+        "winnerGain": 109,
+        "loserGain": -109
+    },
+    {
+        "winner": "Anne Catherine Forcier",
+        "loser": "Camille Girard",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1917.0,
+        "loserELO": 1435.5,
+        "winnerGain": 22,
+        "loserGain": -22
+    },
+    {
+        "winner": "Erika Leclerc",
+        "loser": "Vicky Lachance",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1772.0,
+        "loserELO": 1595.0,
+        "winnerGain": 71,
+        "loserGain": -71
+    },
+    {
+        "winner": "Alexis Turcotte",
+        "loser": "Felix Ostiguy",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1674,
+        "loserELO": 1456.0,
+        "winnerGain": 65,
+        "loserGain": -65
+    },
+    {
+        "winner": "Marilou Marceau",
+        "loser": "Alexis Turcotte",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1574.0,
+        "loserELO": 1739,
+        "winnerGain": 252,
+        "loserGain": -126
+    },
+    {
+        "winner": "Felix Ostiguy",
+        "loser": "Paulina Desmarais",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1391.0,
+        "loserELO": 1837.0,
+        "winnerGain": 85.5,
+        "loserGain": -85.5
+    },
+    {
+        "winner": "Camille Girard",
+        "loser": "Nathan Richard",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1413.5,
+        "loserELO": 1308,
+        "winnerGain": 166,
+        "loserGain": -83
+    },
+    {
+        "winner": "Koen Vdzouwen",
+        "loser": "Nicolas Ladouceur",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1409.5,
+        "loserELO": 1654,
+        "winnerGain": 139,
+        "loserGain": -139
+    },
+    {
+        "winner": "Erika Leclerc",
+        "loser": "Alexandre Laplante",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1843.0,
+        "loserELO": 1664,
+        "winnerGain": 142,
+        "loserGain": -71
+    },
+    {
+        "winner": "Nathan Richard",
+        "loser": "Thierry Hotte-Belanger",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1225,
+        "loserELO": 1324,
+        "winnerGain": 115,
+        "loserGain": -115
+    },
+    {
+        "winner": "Charles Normandin",
+        "loser": "Anne Catherine Forcier",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1463,
+        "loserELO": 1939.0,
+        "winnerGain": 88.0,
+        "loserGain": -88.0
+    },
+    {
+        "winner": "Mathis Roux",
+        "loser": "Charles Normandin",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1459.5,
+        "loserELO": 1551.0,
+        "winnerGain": 114,
+        "loserGain": -114
+    },
+    {
+        "winner": "Marilou Marceau",
+        "loser": "Nathan Richard",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1826.0,
+        "loserELO": 1340,
+        "winnerGain": 44,
+        "loserGain": -22
+    },
+    {
+        "winner": "Thierry Hotte-Belanger",
+        "loser": "Alexy Le Menn",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1209,
+        "loserELO": 1582.0,
+        "winnerGain": 159,
+        "loserGain": -159
+    },
+    {
+        "winner": "Samuel Douville",
+        "loser": "Felix Ostiguy",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1300,
+        "loserELO": 1476.5,
+        "winnerGain": 128,
+        "loserGain": -128
+    },
+    {
+        "winner": "Marilou Marceau",
+        "loser": "Mathis Roux",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1870.0,
+        "loserELO": 1573.5,
+        "winnerGain": 104,
+        "loserGain": -52
+    },
+    {
+        "winner": "Koen Vdzouwen",
+        "loser": "Vicky Lachance",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1548.5,
+        "loserELO": 1524.0,
+        "winnerGain": 48.0,
+        "loserGain": -48.0
+    },
+    {
+        "winner": "Nicolas Ladouceur",
+        "loser": "Thierry Hotte-Belanger",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1515,
+        "loserELO": 1368,
+        "winnerGain": 76,
+        "loserGain": -76
+    },
+    {
+        "winner": "Felix Ostiguy",
+        "loser": "Antoine Barthelemy",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1348.5,
+        "loserELO": 1550.0,
+        "winnerGain": 132,
+        "loserGain": -132
+    },
+    {
+        "winner": "Paulina Desmarais",
+        "loser": "Camille Girard",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1751.5,
+        "loserELO": 1579.5,
+        "winnerGain": 72,
+        "loserGain": -72
+    },
+    {
+        "winner": "Alexis Turcotte",
+        "loser": "Paulina Desmarais",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1613,
+        "loserELO": 1823.5,
+        "winnerGain": 66.5,
+        "loserGain": -66.5
+    },
+    {
+        "winner": "Nicolas Ladouceur",
+        "loser": "Theo Aicardi",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1591,
+        "loserELO": 1388,
+        "winnerGain": 67,
+        "loserGain": -67
+    },
+    {
+        "winner": "Thierry Hotte-Belanger",
+        "loser": "Marilou Marceau",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1292,
+        "loserELO": 1974.0,
+        "winnerGain": 90.0,
+        "loserGain": -90.0
+    },
+    {
+        "winner": "Felix Ostiguy",
+        "loser": "Mathieu Lefebvre",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1422,
+        "loserELO": 1649.0,
+        "winnerGain": 136,
+        "loserGain": -136
+    },
+    {
+        "winner": "Camille Girard",
+        "loser": "Theo Aicardi",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1507.5,
+        "loserELO": 1321,
+        "winnerGain": 140,
+        "loserGain": -70
+    },
+    {
+        "winner": "Erika Leclerc",
+        "loser": "Alexy Le Menn",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1985.0,
+        "loserELO": 1423.0,
+        "winnerGain": 40,
+        "loserGain": -20
+    },
+    {
+        "winner": "Antoine Barthelemy",
+        "loser": "Erika Leclerc",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1418.0,
+        "loserELO": 2025.0,
+        "winnerGain": 90.0,
+        "loserGain": -90.0
+    },
+    {
+        "winner": "Alexis Turcotte",
+        "loser": "Paulina Desmarais",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1679.5,
+        "loserELO": 1757.0,
+        "winnerGain": 56.0,
+        "loserGain": -56.0
+    },
+    {
+        "winner": "Mathieu Lefebvre",
+        "loser": "Justin Gautrais",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1513.0,
+        "loserELO": 1414.0,
+        "winnerGain": 84,
+        "loserGain": -84
+    },
+    {
+        "winner": "Alexis Turcotte",
+        "loser": "Anne Catherine Forcier",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1735.5,
+        "loserELO": 1851.0,
+        "winnerGain": 59.0,
+        "loserGain": -59.0
+    },
+    {
+        "winner": "Justin Gautrais",
+        "loser": "Mathieu Lefebvre",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1330.0,
+        "loserELO": 1597.0,
+        "winnerGain": 142,
+        "loserGain": -142
+    },
+    {
+        "winner": "Camille Girard",
+        "loser": "Marilou Marceau",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1647.5,
+        "loserELO": 1884.0,
+        "winnerGain": 137,
+        "loserGain": -137
+    },
+    {
+        "winner": "Thierry Hotte-Belanger",
+        "loser": "Mathieu Lefebvre",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1382.0,
+        "loserELO": 1455.0,
+        "winnerGain": 111,
+        "loserGain": -111
+    },
+    {
+        "winner": "Vicky Lachance",
+        "loser": "Felix Ostiguy",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1476.0,
+        "loserELO": 1558,
+        "winnerGain": 226,
+        "loserGain": -113
+    },
+    {
+        "winner": "Theo Aicardi",
+        "loser": "Antoine Barthelemy",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1251,
+        "loserELO": 1508.0,
+        "winnerGain": 141,
+        "loserGain": -141
+    },
+    {
+        "winner": "Justin Gautrais",
+        "loser": "Thierry Hotte-Belanger",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1472.0,
+        "loserELO": 1493.0,
+        "winnerGain": 103,
+        "loserGain": -103
+    },
+    {
+        "winner": "Thierry Hotte-Belanger",
+        "loser": "Theo Aicardi",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1390.0,
+        "loserELO": 1392,
+        "winnerGain": 100,
+        "loserGain": -100
+    },
+    {
+        "winner": "Koen Vdzouwen",
+        "loser": "Alexy Le Menn",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1596.5,
+        "loserELO": 1403.0,
+        "winnerGain": 69,
+        "loserGain": -69
+    },
+    {
+        "winner": "Nicolas Ladouceur",
+        "loser": "Nathan Richard",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1658,
+        "loserELO": 1318,
+        "winnerGain": 45,
+        "loserGain": -45
+    },
+    {
+        "winner": "Charles Normandin",
+        "loser": "Justin Gautrais",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1437.0,
+        "loserELO": 1575.0,
+        "winnerGain": 122,
+        "loserGain": -122
+    },
+    {
+        "winner": "Erika Leclerc",
+        "loser": "Felix Ostiguy",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1935.0,
+        "loserELO": 1480.5,
+        "winnerGain": 54,
+        "loserGain": -27
+    },
+    {
+        "winner": "Vicky Lachance",
+        "loser": "Anne Catherine Forcier",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1702.0,
+        "loserELO": 1792.0,
+        "winnerGain": 114,
+        "loserGain": -114
+    },
+    {
+        "winner": "Theo Aicardi",
+        "loser": "Justin Gautrais",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1292,
+        "loserELO": 1453.0,
+        "winnerGain": 125,
+        "loserGain": -125
+    },
+    {
+        "winner": "Christina Ciurlej",
+        "loser": "Charles Normandin",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1515.5,
+        "loserELO": 1559.0,
+        "winnerGain": 212,
+        "loserGain": -106
+    },
+    {
+        "winner": "Antoine Barthelemy",
+        "loser": "Paulina Desmarais",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1367.0,
+        "loserELO": 1701.0,
+        "winnerGain": 76.5,
+        "loserGain": -76.5
+    },
+    {
+        "winner": "Justin Gautrais",
+        "loser": "Koen Vdzouwen",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1328.0,
+        "loserELO": 1665.5,
+        "winnerGain": 154,
+        "loserGain": -154
+    },
+    {
+        "winner": "Samuel Douville",
+        "loser": "Camille Girard",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1428,
+        "loserELO": 1784.5,
+        "winnerGain": 78.5,
+        "loserGain": -78.5
+    },
+    {
+        "winner": "Camille Girard",
+        "loser": "Alexy Le Menn",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1706.0,
+        "loserELO": 1334.0,
+        "winnerGain": 80,
+        "loserGain": -40
+    },
+    {
+        "winner": "Christina Ciurlej",
+        "loser": "Vicky Lachance",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1727.5,
+        "loserELO": 1816.0,
+        "winnerGain": 114,
+        "loserGain": -114
+    },
+    {
+        "winner": "Koen Vdzouwen",
+        "loser": "Theo Aicardi",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1511.5,
+        "loserELO": 1417,
+        "winnerGain": 84,
+        "loserGain": -84
+    },
+    {
+        "winner": "Nicolas Ladouceur",
+        "loser": "Thierry Hotte-Belanger",
+        "score": "Score",
+        "date": "October 12, 2022",
+        "winnerELO": 1703,
+        "loserELO": 1490.0,
+        "winnerGain": 65,
+        "loserGain": -65
+    }
+]
