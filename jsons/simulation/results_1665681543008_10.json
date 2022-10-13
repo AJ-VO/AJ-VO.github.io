@@ -1,0 +1,112 @@
+[
+    {
+        "winner": "NAME",
+        "loser": "NAME",
+        "score": "SCORE",
+        "date": "DATE",
+        "winnerELO": 1500,
+        "loserELO": 1500,
+        "winnerGain": 100,
+        "loserGain": -100
+    },
+    {
+        "winner": "Alexandre Laplante",
+        "loser": "Charles Normandin",
+        "score": "Score",
+        "date": "October 13, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1500,
+        "winnerGain": 100,
+        "loserGain": -100
+    },
+    {
+        "winner": "Christina Ciurlej",
+        "loser": "Alexis Turcotte",
+        "score": "Score",
+        "date": "October 13, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1500,
+        "winnerGain": 200,
+        "loserGain": -100
+    },
+    {
+        "winner": "Justin Gautrais",
+        "loser": "Nathan Richard",
+        "score": "Score",
+        "date": "October 13, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1500,
+        "winnerGain": 100,
+        "loserGain": -100
+    },
+    {
+        "winner": "Theo Aicardi",
+        "loser": "Nathan Richard",
+        "score": "Score",
+        "date": "October 13, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1400,
+        "winnerGain": 84,
+        "loserGain": -84
+    },
+    {
+        "winner": "Alexis Turcotte",
+        "loser": "Erika Leclerc",
+        "score": "Score",
+        "date": "October 13, 2022",
+        "winnerELO": 1400,
+        "loserELO": 1500,
+        "winnerGain": 58.0,
+        "loserGain": -58.0
+    },
+    {
+        "winner": "Samuel Douville",
+        "loser": "Camille Girard",
+        "score": "Score",
+        "date": "October 13, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1500,
+        "winnerGain": 50.0,
+        "loserGain": -50.0
+    },
+    {
+        "winner": "Antoine Barthelemy",
+        "loser": "Alexis Turcotte",
+        "score": "Score",
+        "date": "October 13, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1458.0,
+        "winnerGain": 93,
+        "loserGain": -93
+    },
+    {
+        "winner": "Alexis Turcotte",
+        "loser": "Justin Gautrais",
+        "score": "Score",
+        "date": "October 13, 2022",
+        "winnerELO": 1365.0,
+        "loserELO": 1600,
+        "winnerGain": 137,
+        "loserGain": -137
+    },
+    {
+        "winner": "Vicky Lachance",
+        "loser": "Erika Leclerc",
+        "score": "Score",
+        "date": "October 13, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1442.0,
+        "winnerGain": 90,
+        "loserGain": -90
+    },
+    {
+        "winner": "Paulina Desmarais",
+        "loser": "Anne Catherine Forcier",
+        "score": "Score",
+        "date": "October 13, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1500,
+        "winnerGain": 100,
+        "loserGain": -100
+    }
+]

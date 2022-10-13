@@ -3,7 +3,7 @@ from utils import *
 def main():
 
     simulationTime = current_milli_time()
-    numberMatches = 100
+    numberMatches = 2000
 
     with open("jsons/simulation/players_original.json", "r") as f:
         playerDATA = json.load(f)

@@ -13,7 +13,7 @@ def pdf(x):
 	
 # To generate an array of x-values
 x = []#<class 'numpy.ndarray'>
-with open("jsons\simulation\players_1665608561626_100.json", "r") as f:
+with open("jsons\simulation\players_1665681834078_2000.json", "r") as f:
     data = json.load(f)
 for i in data:
     x.append(i["elo"])
