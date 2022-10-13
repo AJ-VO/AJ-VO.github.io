@@ -8,9 +8,9 @@ def main():
         print_database_information()
         main()
     elif choice == "1":
-        with open("jsons/players.json", "r") as f:
+        with open("jsons/players.json", "r", encoding='utf8') as f:
             playerDATA = json.load(f)
-        with open("jsons/results.json", "r") as fp:
+        with open("jsons/results.json", "r", encoding='utf8') as fp:
             resultDATA = json.load(fp)
 
         print_database_information()
@@ -70,7 +70,7 @@ def main():
         playerDATA[loserDict]["gp"] = playerDATA[loserDict]["gp"] + 1
         #Dump player information
         playerDATA.sort(reverse=True, key=lambda x: x["elo"])
-        with open("jsons/players.json", "w") as fr:
+        with open("jsons/players.json", "w", encoding='utf8') as fr:
             json.dump(playerDATA, fr, indent=4)
         #Create Result
         match_data = {}
@@ -83,14 +83,14 @@ def main():
         match_data["winnerGain"] = information[6]
         match_data["loserGain"] = information[7]
         resultDATA.append(match_data)
-        with open("jsons/results.json", "w") as fp:
+        with open("jsons/results.json", "w", encoding='utf8') as fp:
             json.dump(resultDATA, fp, indent = 4)
         main()
     elif choice == "2":
         print_tournament_information()
-        with open("jsons/t_players.json", "r") as f:
+        with open("jsons/t_players.json", "r", encoding='utf8') as f:
             playerDATA = json.load(f)
-        with open("jsons/t_results.json", "r") as fp:
+        with open("jsons/t_results.json", "r", encoding='utf8') as fp:
             resultDATA = json.load(fp)
         winnerDict = int(input("Winner Key: "))
         loserDict = int(input("Loser Key: "))
@@ -105,7 +105,7 @@ def main():
         #Loser
         playerDATA[loserDict]["gp"] = playerDATA[loserDict]["gp"] + 1
         playerDATA[loserDict]["losses"] = playerDATA[loserDict]["losses"] + 1
-        with open("jsons/t_players.json", "w") as fr:
+        with open("jsons/t_players.json", "w", encoding='utf8') as fr:
             json.dump(playerDATA, fr, indent=4)
         #Match Data
         match_data = {}
@@ -115,7 +115,7 @@ def main():
         match_data["date"] = get_date()
         match_data["tourny"] = tournament
         resultDATA.append(match_data)
-        with open("jsons/t_results.json", "w") as fr:
+        with open("jsons/t_results.json", "w", encoding='utf8') as fr:
             json.dump(resultDATA, fr, indent=4)
         main()
     else:

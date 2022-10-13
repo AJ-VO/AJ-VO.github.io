@@ -35,12 +35,12 @@ def print_tournament_information():
         j = j+1
 
 def load_players():
-    with open('jsons/players.json', 'r') as f:
+    with open('jsons/players.json', 'r', encoding='utf8') as f:
         data = json.load(f)
     return data
 
 def load_tournament():
-    with open('jsons/t_players.json', 'r') as f:
+    with open('jsons/t_players.json', 'r', encoding='utf8') as f:
         data = json.load(f)
     return data
 
@@ -61,7 +61,7 @@ def get_eloGain(matchDelta):
 
 def updateImages():
 
-    with open("jsons/players.json", "r") as f:
+    with open("jsons/players.json", "r", encoding='utf8') as f:
         data = json.load(f)
     f.close()
 
@@ -69,7 +69,7 @@ def updateImages():
         myKey = str(i["id"])
         i["img"] = "img/players/"+myKey+".png"
 
-    with open("jsons/players.json", "w") as f:
+    with open("jsons/players.json", "w", encoding='utf8') as f:
         json.dump(data, f, indent=4)
 
 def playerStreak(currentStreak, ending):

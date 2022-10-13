@@ -1,1 +1,1 @@
-Fix Encoding Issues
+Create function for general READ or WRITE file
