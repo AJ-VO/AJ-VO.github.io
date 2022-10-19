@@ -1,0 +1,26 @@
+=================================
+ORDERS.JSON
+=================================
+"order_id":
+    Randomly generated id number of 6 digits (str)
+
+"raket_id":
+    Id of the raquet, locates client information (str)
+
+"order_date":
+    Time of the order (YYYY-MM-DD HH:MM(24H)) (str)
+
+"status": (int)
+    100 (Open and Unpaid)
+    200 (Closed and Unpaid)
+
+"payment_status": (bool)
+    false (default): Unpaid
+    true: paid
+
+"due_date": 
+    Expected date of completion YYYY-MM-DD (str)
+    
+"due_balance":
+    Ammount to pay (double)
+=================================

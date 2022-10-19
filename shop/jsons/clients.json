@@ -1,0 +1,61 @@
+[
+    {
+        "name": "Alexandre Jasmin",
+        "client_id": "00000",
+        "rakets": {
+            "0": {
+                "id": "-1",
+                "type": "Yonex Vcore 98",
+                "tension": "56lbs",
+                "vertical": "RPM",
+                "horizontal": "RPM",
+                "pattern": "16X19"
+            },
+            "1": {
+                "id": "-2",
+                "type": "Wilson ProStaff 98 2020",
+                "tension": "52lbs",
+                "vertical": "RPM",
+                "horizontal": "Excel",
+                "pattern": "16X19"
+            }
+        },
+        "past_orders": {
+            "0": {
+                "date": "18 octobre 2020",
+                "raket_id": "-2",
+                "money_status": false
+            }
+        },
+        "notes": "Bon gars"
+    },
+    {
+        "name": "Pascal Huot",
+        "client_id": "11111",
+        "rakets": {
+            "0": {
+                "id": "1",
+                "type": "Babolat Pro Drive",
+                "tension": "53lbs",
+                "vertical": "RPM",
+                "horizontal": "RPM",
+                "pattern": "16X19"
+            }
+        },
+        "past_orders": {
+            "0": {
+                "date": "9 octobre 2020",
+                "raket_id": "1",
+                "money_status": false
+            }
+        },
+        "notes": "Bon gars"
+    },
+    {
+        "name": "Dominic Longpre",
+        "client_id": "63471",
+        "rakets": {},
+        "past_orders": {},
+        "notes": "Coordonateur a GLP"
+    }
+]
