@@ -1,3 +1,41 @@
 <html>
-    <h1>BOUTIQUE</h1>
+
+<head>
+
+</head>
+
+<body>
+
+    <h1 align="center">BOUTIQUE</h1>
+
+    <h2 align="center"><u>Clients</u></h2>
+    <div id="clients">
+
+    </div>
+
+</body>
+
 </html>
+
+<script>
+
+    fetch("https://aj-vo.github.io/shop/jsons/clients.json")
+
+    .then(function(response){
+        return response.json();
+    })
+
+    .then(function(products){
+    let out = "";
+    let winrate = 0;
+    for(let product of products){
+        let clientName = product.name
+        out += `
+            <h4 align="center">(${product.client_id}) ${clientName}</h4>
+        `;
+    }
+    document.getElementById("clients").innerHTML = out
+
+})
+
+</script>
