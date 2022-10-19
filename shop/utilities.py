@@ -59,6 +59,13 @@ def list_clients():#Returns list of clients
         myL.append(i["name"])
     return myL
 
+def list_clients_id():#Returns list of clients ids
+    myL = []
+    clientJSON = get_clients()
+    for i in clientJSON:
+        myL.append(i["client_id"])
+    return myL
+
 def show_clients():#Prints Clients
     clientJSON = get_clients()
     for i in clientJSON:
@@ -72,5 +79,3 @@ def get_list_of_rakets():
 
 def check_admin_status():#Checks if person is admin
     print("Hello")
-
-show_clients()

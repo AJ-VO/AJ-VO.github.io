@@ -24,3 +24,31 @@ ORDERS.JSON
 "due_balance":
     Ammount to pay (double)
 =================================
+
+=================================
+CLIENTS.JSON
+=================================
+"name":
+    Name of the client (str)
+
+"client_id":
+    Id of the client (str)
+
+"rakets": (dict)
+    Includes all the tennis racquets of the client
+
+    "id": Id of the raquet, locates client information (str)
+    "type": Description of racquet (str)
+    "tension": Tension (str)
+    "vertical": Vertial strings (str)
+    "horizontal": Horizontal strings (str)
+    "pattern": Pattern of strings (str)
+
+"past_orders": (int)
+    100 (Open and Unpaid)
+    200 (Closed and Unpaid)
+
+"notes": (bool)
+    false (default): Unpaid
+    true: paid
+=================================

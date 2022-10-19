@@ -1,3 +1,4 @@
+from re import L
 from tkinter import E
 from utilities import *
 
@@ -127,7 +128,38 @@ def main():
         #Choose client
         #Information, raket_id, description(type), tension, Xcords, Ycords, pattern
         show_clients()
-        myClient = input("Enter Client ID (ID) - Name")
+        listOfClientsIds = list_clients_id()
+        clientJSON = get_clients()
+        myClient = input("Enter Client ID (ID) - Name: ")
+        if myClient not in listOfClientsIds:
+            print("Client not in list")
+        else:
+            #Check client rakets
+            for i in clientJSON:
+                if i["client_id"] == myClient:
+                    raketKey = str(len(i["rakets"]))
+                    currentRaketDict = i["rakets"]
+                    i["rakets"][raketKey] = {}
+                    #Generate random 10 digit ID
+                    order_id = ""
+                    for i in range(10):
+                        tank = str(random.randint(0,9))
+                        order_id = order_id+tank
+                    i["rakets"][raketKey]["id"] = order_id
+                    i["rakets"][raketKey]["type"] = input("Racquet Description: ")
+                    i["rakets"][raketKey]["tension"] = input("Tension (lbs, K) If x and y diff, mention: ")
+                    i["rakets"][raketKey]["vertical"] = input("Vertical Strings: ")
+                    i["rakets"][raketKey]["horizontal"] = input("Horiztontal Strings: ")
+                    i["rakets"][raketKey]["pattern"] = input("String Pattern: ")
+
+        with open("jsons/clients.json", "w") as f:
+            json.dump(clientJSON, f, indent=4)
+        f.close()
+        main()
+
+
+            
+                    
         
 
 
