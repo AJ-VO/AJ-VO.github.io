@@ -7,7 +7,8 @@ def main():
     print_main_menu()
     choice = input("Choix: ")
     if choice == "1":#Create Order
-        #Create dict
+
+        #Create dictonnary for order
         data = {}
 
         #Generate random 6 digit ID
@@ -16,6 +17,7 @@ def main():
             tank = str(random.randint(0,9))
             order_id = order_id+tank
         data["order_id"] = order_id
+
         #Enter Raket ID
 
         #Get rakets

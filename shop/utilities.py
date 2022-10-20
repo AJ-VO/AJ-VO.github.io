@@ -8,6 +8,8 @@ from tabnanny import check
 from difflib import SequenceMatcher
 import time
 
+prix_fixe_pose = 20
+
 def print_main_menu():#Print main menu for main.py
     print("MENU")
     print("0) Quit")
@@ -87,3 +89,4 @@ def match_raket_to_client(raquet_id):#Input a raketId, output client name
         for j in range(key):
             if i["rakets"][str(j)]["id"] == raquet_id:
                 return i["name"]
+                foundName = True

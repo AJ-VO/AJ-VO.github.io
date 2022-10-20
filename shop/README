@@ -7,12 +7,17 @@ ORDERS.JSON
 "raket_id":
     Id of the raquet, locates client information (str)
 
+"order_name": 
+    Name of the person associated to order (str)
+
 "order_date":
     Time of the order (YYYY-MM-DD HH:MM(24H)) (str)
 
 "status": (int)
     100 (Open and Unpaid)
     200 (Closed and Unpaid)
+    300 (Closed, Unpaid and Late)
+    500 (Processed)
 
 "payment_status": (bool)
     false (default): Unpaid
