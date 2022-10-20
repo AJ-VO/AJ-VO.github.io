@@ -133,24 +133,28 @@ def main():
         myClient = input("Enter Client ID (ID) - Name: ")
         if myClient not in listOfClientsIds:
             print("Client not in list")
+            main()
         else:
             #Check client rakets
-            for i in clientJSON:
-                if i["client_id"] == myClient:
-                    raketKey = str(len(i["rakets"]))
-                    currentRaketDict = i["rakets"]
-                    i["rakets"][raketKey] = {}
-                    #Generate random 10 digit ID
+            print("Current Client: ("+myClient+")")
+            time.sleep(2)
+
+            #Add raket to client from id
+
+            for i in range(len(listOfClientsIds)):
+                if clientJSON[i]["client_id"] == myClient:
+                    raketKey = str(len(clientJSON[i]["rakets"]))
+                    clientJSON[i]["rakets"][raketKey] = {}
                     order_id = ""
-                    for i in range(10):
+                    for j in range(10):
                         tank = str(random.randint(0,9))
                         order_id = order_id+tank
-                    i["rakets"][raketKey]["id"] = order_id
-                    i["rakets"][raketKey]["type"] = input("Racquet Description: ")
-                    i["rakets"][raketKey]["tension"] = input("Tension (lbs, K) If x and y diff, mention: ")
-                    i["rakets"][raketKey]["vertical"] = input("Vertical Strings: ")
-                    i["rakets"][raketKey]["horizontal"] = input("Horiztontal Strings: ")
-                    i["rakets"][raketKey]["pattern"] = input("String Pattern: ")
+                    clientJSON[i]["rakets"][raketKey]["id"] = order_id
+                    clientJSON[i]["rakets"][raketKey]["type"] = input("Racquet Description: ")
+                    clientJSON[i]["rakets"][raketKey]["tension"] = input("Tension (lbs, K) If x and y diff, mention: ")
+                    clientJSON[i]["rakets"][raketKey]["vertical"] = input("Vertical Strings: ")
+                    clientJSON[i]["rakets"][raketKey]["horizontal"] = input("Horiztontal Strings: ")
+                    clientJSON[i]["rakets"][raketKey]["pattern"] = input("String Pattern: ")
 
         with open("jsons/clients.json", "w") as f:
             json.dump(clientJSON, f, indent=4)

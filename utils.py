@@ -8,6 +8,7 @@ from random import choice
 import time
 import xlrd
 import statistics
+import json
 
 def print_main_menu():
     print("======== V&O Bra1n ========")
@@ -83,3 +84,12 @@ def playerStreak(currentStreak, ending):
             return -1
         else:
             return currentStreak-1
+
+    print("MENU")
+    print("0) Quit")
+    print("1) Create Order")
+    print("2) Complete Order")
+    print("3) Take Payment")
+    print("ADMIN")
+    print("-1) Add Client")
+    print("-2) Add Raket")

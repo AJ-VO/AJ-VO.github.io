@@ -68,16 +68,7 @@
     {
         "name": "Nathaly Meunier",
         "client_id": "02525",
-        "rakets": {
-            "0": {
-                "id": "6472719338",
-                "type": "Yonez Ezone Light",
-                "tension": "54L",
-                "vertical": "Syn Gut",
-                "horizontal": "Syn Gut",
-                "pattern": "16x19"
-            }
-        },
+        "rakets": {},
         "past_orders": {},
         "notes": "Intermediaire"
     }

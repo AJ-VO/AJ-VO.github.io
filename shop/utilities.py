@@ -6,9 +6,9 @@ from datetime import datetime
 import sys
 from tabnanny import check
 from difflib import SequenceMatcher
-from this import d
+import time
 
-def print_main_menu():
+def print_main_menu():#Print main menu for main.py
     print("MENU")
     print("0) Quit")
     print("1) Create Order")
@@ -70,12 +70,3 @@ def show_clients():#Prints Clients
     clientJSON = get_clients()
     for i in clientJSON:
         print("("+i["client_id"]+")"+i["name"])
-
-########TEST
-
-def get_list_of_rakets():
-    
-    return
-
-def check_admin_status():#Checks if person is admin
-    print("Hello")
