@@ -70,3 +70,20 @@ def show_clients():#Prints Clients
     clientJSON = get_clients()
     for i in clientJSON:
         print("("+i["client_id"]+")"+i["name"])
+
+def get_rakets():#Returns list of rakets
+    myL = []
+    data = get_clients()
+    for i in data:
+        key = (len(i["rakets"]))#Numbers of rakets
+        for j in range(key):
+            myL.append(i["rakets"][str(j)]["id"])
+    return myL
+
+def match_raket_to_client(raquet_id):#Input a raketId, output client name
+    data = get_clients()
+    for i in data:
+        key = (len(i["rakets"]))#Numbers of rakets
+        for j in range(key):
+            if i["rakets"][str(j)]["id"] == raquet_id:
+                return i["name"]

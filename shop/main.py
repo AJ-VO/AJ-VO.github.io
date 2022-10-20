@@ -19,19 +19,28 @@ def main():
         #Enter Raket ID
 
         #Get rakets
-        
-        """ confirmed_raket = False
-        while confirmed_raket == False:
-            raquet_id = input("Racquet information: ") """
 
         #Check if id exists, or main()
-        raquet_id = input("Racquet information: ")
+        raket_confirmed = False
+        listOfRakets = get_rakets()
+        while raket_confirmed == False:
+            raquet_id = input("Racquet information (ID): ")
+            if raquet_id not in listOfRakets:
+                print("Racquet does not exist")
+                main()
+            else:
+                raket_confirmed = True
+
         data["raket_id"] = raquet_id
+
+        #Get name
+        clientName = match_raket_to_client(raquet_id)
+        data["order_name"] = clientName
 
         #Generate Time
         data["order_date"] = get_date()
         #Generate Status
-        data["status"] = 100
+        data["status"] = 100#Open and Unpaid
         #Generate payment_status
         data["payment_status"] = False
         #Generate balance
@@ -146,7 +155,7 @@ def main():
                     raketKey = str(len(clientJSON[i]["rakets"]))
                     clientJSON[i]["rakets"][raketKey] = {}
                     order_id = ""
-                    for j in range(10):
+                    for j in range(4):
                         tank = str(random.randint(0,9))
                         order_id = order_id+tank
                     clientJSON[i]["rakets"][raketKey]["id"] = order_id

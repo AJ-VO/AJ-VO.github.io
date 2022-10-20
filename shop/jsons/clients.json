@@ -18,6 +18,14 @@
                 "vertical": "RPM",
                 "horizontal": "Excel",
                 "pattern": "16X19"
+            },
+            "2": {
+                "id": "3134",
+                "type": "Yonex Vcore 98",
+                "tension": "56",
+                "vertical": "Excel",
+                "horizontal": "RPM",
+                "pattern": "16x19"
             }
         },
         "past_orders": {
@@ -70,7 +78,7 @@
         "client_id": "02525",
         "rakets": {
             "0": {
-                "id": "6472719338",
+                "id": "2831",
                 "type": "Yonez Ezone Light",
                 "tension": "54L",
                 "vertical": "Syn Gut",
@@ -80,5 +88,21 @@
         },
         "past_orders": {},
         "notes": "Intermediaire"
+    },
+    {
+        "name": "Anne-Catherine Forcier",
+        "client_id": "74384",
+        "rakets": {
+            "0": {
+                "id": "1351",
+                "type": "Babolat Drive Old",
+                "tension": "56L",
+                "vertical": "Hurricaine",
+                "horizontal": "Hurricane",
+                "pattern": "16x19"
+            }
+        },
+        "past_orders": {},
+        "notes": "V&O"
     }
 ]
