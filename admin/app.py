@@ -54,11 +54,11 @@ class HomePage(tk.Frame):
         label1 = tk.Label(self, text=U.get_date(), font=('Times', '12'))
         label1.pack(pady=0,padx=0)
 
-        button = tk.Button(self, text="Créer une commande", font=('Times', '20'), command=lambda: parent.show_frame(parent.Create), bg='#6f9da1')
+        button = tk.Button(self, width=20, height=2, text="Créer une commande", font=('Times', '20'), command=lambda: parent.show_frame(parent.Create), bg='#6f9da1')
         button.pack(pady=10,padx=10)
-        button1 = tk.Button(self, text="Voir les commandes", font=('Times', '20'), command=lambda: parent.show_frame(parent.ShowOrders), bg='#6f9da1')
+        button1 = tk.Button(self, width=20, height=2, text="Voir les commandes", font=('Times', '20'), command=lambda: parent.show_frame(parent.ShowOrders), bg='#6f9da1')
         button1.pack(pady=10,padx=10)
-        button2 = tk.Button(self, text="Terminer une commande", font=('Times', '20'), command=lambda: parent.show_frame(parent.Create), bg='#6f9da1')
+        button2 = tk.Button(self, width=20, height=2, text="Terminer une commande", font=('Times', '20'), command=lambda: parent.show_frame(parent.Create), bg='#6f9da1')
         button2.pack(pady=10,padx=10)
 
         ## ADD CODE HERE TO DESIGN THIS PAGE
