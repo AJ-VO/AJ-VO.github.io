@@ -7,6 +7,13 @@ import random
 def about():
     messagebox.showinfo('About', "Alexandre Jasmin\n514-553-6209")
 
+def id_generator(myAmount):#Generate random x digit ID (str)
+    order_id = ""
+    for i in range(myAmount):
+        tank = str(random.randint(0,9))
+        order_id = order_id+tank
+    return order_id
+
 def get_date():#YYYY-MM-DD HH:MM
     now = datetime.now()
     moshi = now.strftime("%Y-%m-%d %H:%M")
@@ -44,24 +51,17 @@ def checkOrder(client, price):#Check the parameters of the order
 
 def createOrder(client, price):#Create order dict, returns json
     #Get order.json
+    orderId = id_generator(6)
     orderJSON = get_orders()
     orderDict = {}
-    #Generate random 6 digit ID
-    order_id = ""
-    for i in range(5):
-        tank = str(random.randint(0,9))
-        order_id = order_id+tank
-    #Get Date
-    date_id = get_date()
-
     orderDict["client_name"] = client
-    orderDict["order_id"] = order_id
-    orderDict["order_date"] = date_id
+    orderDict["order_id"] = orderId
+    orderDict["order_date"] = get_date()
     orderDict["price"] = price
     orderDict["payment_status"] = False
     orderJSON.append(orderDict)
 
     info = {}
-    info["id"] = order_id
+    info["id"] = orderId
 
     return orderJSON, info

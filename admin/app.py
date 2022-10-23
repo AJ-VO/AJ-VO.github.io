@@ -134,12 +134,14 @@ class Create(tk.Frame):
     def __init__(self, parent, container):
         super().__init__(container)
 
-        def submitRaket(clientName, price, name_entry, name_entry1, confirmation_label):
+        def quitRefresh():
+            confirmation_label.config(text="")
+            #Delete Entry Text
+            name_entry.delete(0, END)
+            name_entry1.delete(0, END)
+            parent.show_frame(parent.HomePage)
 
-            def quitCreation():
-                confirmation_label.config(text="")
-                button.pack_forget()
-                parent.show_frame(parent.HomePage)
+        def submitRaket(clientName, price, name_entry, name_entry1, confirmation_label):
 
             myStatus = U.checkOrder(clientName.get(), price.get())
 
@@ -157,10 +159,6 @@ class Create(tk.Frame):
             #Update label
             confirmation_label.config(text = confirmationStr)
 
-            #Create Menu Button
-            button = tk.Button(self, text="Menu Principal", font=('Times', '15'), command=lambda: quitCreation())
-            button.pack(pady=20,padx=20)
-
             #Delete Entry Text
             name_entry.delete(0, END)
             name_entry1.delete(0, END)
@@ -173,10 +171,10 @@ class Create(tk.Frame):
 
         name_label = tk.Label(self, text = 'Nom', font=('Times',20, 'bold'))
         name_label.pack(pady=10,padx=10)
-        name_entry = tk.Entry(self, textvariable = name_var, font=('Times',20,'normal'))
+        name_entry = tk.Entry(self, textvariable = name_var, font=('Times',18,'normal'))
         name_entry.pack(pady=10,padx=10)
 
-        name_label1 = tk.Label(self, text = 'Prix Total (xx.xx ou xx)', font=('Times',20, 'bold'))
+        name_label1 = tk.Label(self, text = 'Prix Total (xx.xx ou xx)', font=('Times',18, 'bold'))
         name_label1.pack(pady=10,padx=10)
         name_entry1 = tk.Entry(self, textvariable = passw_var, font=('Times',20,'normal'))
         name_entry1.pack(pady=10,padx=10)
@@ -187,6 +185,11 @@ class Create(tk.Frame):
         button = tk.Button(self, text="Submit", 
             font=('Times', '20'), command=lambda: submitRaket(name_var, passw_var, name_entry, name_entry1, confirmation_label))
         button.pack(pady=20,padx=20)
+
+        #Menu Button
+        button1 = tk.Button(self, text="Menu", 
+            font=('Times', '12'), command=lambda: quitRefresh())
+        button1.pack(pady=5,padx=5)
 
         ## ADD CODE HERE TO DESIGN THIS PAGE
 
@@ -241,6 +244,8 @@ class ShowOrders(tk.Frame):
         orderStr = ""
         for i in orderJSON:
             orderStr = orderStr+"("+i["order_id"]+") "+i["client_name"]+"\n\n"
+
+        #ADD SCROLLBAR
 
         label1 = tk.Label(self, text=orderStr, font=('Times', '15'))
         label1.pack(pady=10,padx=10)
