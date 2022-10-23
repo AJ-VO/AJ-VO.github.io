@@ -31,16 +31,16 @@ def checkOrder(client, price):#Check the parameters of the order
     #If name not given?
     if str(client) == "":
         messagebox.showinfo('Erreur', "Missing Client Name")
-        return
+        return False
     #If price is negative or not a number?
     try:
         float(price)
     except:
         messagebox.showinfo('Erreur', "Price is NaN")
-        return
+        return False
     if float(price) < 0:
         messagebox.showinfo('Erreur', "Price is < 0$")
-        return
+        return False
 
 def createOrder(client, price):#Create order dict, returns json
     #Get order.json

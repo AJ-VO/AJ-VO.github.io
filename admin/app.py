@@ -141,7 +141,11 @@ class Create(tk.Frame):
                 button.pack_forget()
                 parent.show_frame(parent.HomePage)
 
-            U.checkOrder(clientName.get(), price.get())
+            myStatus = U.checkOrder(clientName.get(), price.get())
+
+            if myStatus == False:
+                #Don't keep going
+                return
 
             orderJSON, order_id= U.createOrder(clientName.get(), price.get())
 
