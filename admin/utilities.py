@@ -56,7 +56,7 @@ def checkOrder(client, price):#Check the parameters of the order
         messagebox.showinfo('Erreur', "Price is < 0$")
         return False
 
-def createOrder(client, price, notes):#Create order dict, returns json
+def createOrder(client, price, notes, myDate):#Create order dict, returns json
     #Get order.json
     orderId = id_generator(6)
     orderJSON = get_orders()
@@ -68,6 +68,7 @@ def createOrder(client, price, notes):#Create order dict, returns json
     orderDict["payment_status"] = False
     orderDict["order_notes"] = notes
     orderDict["status"] = "100"
+    orderDict["due_date"] = myDate
     orderJSON.append(orderDict)
 
     info = {}

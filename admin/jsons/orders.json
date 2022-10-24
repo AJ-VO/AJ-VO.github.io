@@ -6,15 +6,17 @@
         "price": "67",
         "payment_status": false,
         "order_notes": "Ta mere en short",
-        "status": "100"
+        "status": "100",
+        "due_date": "2022"
     },
     {
-        "client_name": "Martin Ouimette",
-        "order_id": "046276",
-        "order_date": "2022-10-24 15:57",
-        "price": "42.17",
+        "client_name": "Antoine Barth\u00e9l\u00e9my",
+        "order_id": "843844",
+        "order_date": "2022-10-24 16:21",
+        "price": "44",
         "payment_status": false,
-        "order_notes": "52LBS, RPM",
-        "status": "100"
+        "order_notes": "55lbs",
+        "status": "100",
+        "due_date": "2022-03-05"
     }
 ]
