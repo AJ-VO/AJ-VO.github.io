@@ -20,6 +20,7 @@ def get_date():#YYYY-MM-DD HH:MM
     return moshi
 
 def get_orders():#Returns orders.json
+    #Future change: https://aj-vo.github.io/admin/jsons/orders.json
     with open("jsons/orders.json", "r") as f:
         data = json.load(f)
     f.close()
