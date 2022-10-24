@@ -1,3 +1,9 @@
-# How to Create & Structure a Complex Tkinter Application
+# Comment prendre une commande pour la boutique
 
-Please checkout this blog to read more about this: [How to Create & Structure a Complex Tkinter Application](https://raoofnaushad7.medium.com/how-to-create-structure-a-complex-tkinter-application-2022-26e4a9907a6d)
+1)
+
+2)
+
+3)
+
+4)
