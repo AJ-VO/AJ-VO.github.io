@@ -4,6 +4,12 @@ from datetime import datetime
 import json
 import random
 
+#Prix pose = 21$
+#100: open
+#101: open and payed
+#200: closed
+#201: closed and payed
+
 def about():
     messagebox.showinfo('About', "Alexandre Jasmin\n514-553-6209")
 
@@ -61,6 +67,7 @@ def createOrder(client, price, notes):#Create order dict, returns json
     orderDict["price"] = price
     orderDict["payment_status"] = False
     orderDict["order_notes"] = notes
+    orderDict["status"] = "100"
     orderJSON.append(orderDict)
 
     info = {}
