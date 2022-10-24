@@ -65,16 +65,22 @@ class HomePage(tk.Frame):
         label1 = tk.Label(self, text=U.get_date()[:10], font=(myFont, '12'))
         label1.pack(pady=0,padx=0)
 
+        cordageLabel = tk.Label(self, text='Cordages', font=(myFont, '18'))
+        cordageLabel.pack()
+
         #Home Buttons
-        button = tk.Button(self, width=20, height=3, 
-            text="Créer une commande", font=(myFont, '20'), command=lambda: parent.show_frame(parent.Create), bg=mainButonColor)
+        button = tk.Button(self, width=20, height=2, 
+            text="Créer une commande", font=(myFont, '14'), command=lambda: parent.show_frame(parent.Create), bg=mainButonColor)
         button.pack(pady=10,padx=10)
         button1 = tk.Button(self, width=20, height=3, 
-            text="Voir les commandes", font=(myFont, '20'), command=lambda: parent.show_frame(parent.ShowOrders), bg=mainButonColor)
+            text="Voir les commandes", font=(myFont, '14'), command=lambda: parent.show_frame(parent.ShowOrders), bg=mainButonColor)
         button1.pack(pady=10,padx=10)
         button2 = tk.Button(self, width=20, height=3, 
-            text="Terminer une commande", font=(myFont, '20'), command=lambda: parent.show_frame(parent.Done), bg=mainButonColor)
+            text="Terminer une commande", font=(myFont, '14'), command=lambda: parent.show_frame(parent.Done), bg=mainButonColor)
         button2.pack(pady=10,padx=10)
+
+        #Rajouter créer une facture
+        #Créer un client
 
         ## ADD CODE HERE TO DESIGN THIS PAGE
 
@@ -82,6 +88,20 @@ class HomePage(tk.Frame):
         myLink = Label(self, text=myLinkStr, cursor="hand2", fg="blue", underline=len(myLinkStr)-1)
         myLink.pack()
         myLink.bind("<Button-1>", lambda event: webbrowser.open("https://github.com/AJ-VO/AJ-VO.github.io/tree/main/admin"))
+
+        adminLabel = tk.Label(self, text='Administration', font=(myFont, '18'))
+        adminLabel.pack()
+
+        #Administration Buttons
+        button3 = tk.Button(self, width=20, height=2, 
+            text="Créer une commande", font=(myFont, '14'), command=lambda: parent.show_frame(parent.Create), bg=mainButonColor)
+        button3.pack(pady=10,padx=10)
+        button4 = tk.Button(self, width=20, height=3, 
+            text="Voir les commandes", font=(myFont, '14'), command=lambda: parent.show_frame(parent.ShowOrders), bg=mainButonColor)
+        button4.pack(pady=10,padx=10)
+        button5 = tk.Button(self, width=20, height=3, 
+            text="Terminer une commande", font=(myFont, '14'), command=lambda: parent.show_frame(parent.Done), bg=mainButonColor)
+        button5.pack(pady=10,padx=10)
 
     def create_menubar(self, parent):
         menubar = Menu(parent, bd=3, relief=RAISED, activebackground="#80B9DC")

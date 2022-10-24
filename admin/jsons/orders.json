@@ -14,5 +14,13 @@
         "price": "45",
         "payment_status": false,
         "order_notes": "https://github.com/AJ-VO/AJ-VO.github.io"
+    },
+    {
+        "client_name": "Alexandre",
+        "order_id": "069172",
+        "order_date": "2022-10-24 12:54",
+        "price": "45",
+        "payment_status": false,
+        "order_notes": "Notes"
     }
 ]
