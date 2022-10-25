@@ -28,5 +28,45 @@
         "loserELO": 1500,
         "winnerGain": 100,
         "loserGain": -100
+    },
+    {
+        "winner": "Cornelis van der Zouwen",
+        "loser": "Nicolas Ladouceur",
+        "score": "6-4",
+        "date": "October 24, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1500,
+        "winnerGain": 100,
+        "loserGain": -100
+    },
+    {
+        "winner": "Erika Leclerc",
+        "loser": "Vicky Lachance",
+        "score": "6-0 4-2",
+        "date": "October 24, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1400,
+        "winnerGain": 84,
+        "loserGain": -84
+    },
+    {
+        "winner": "Marilou Marceau",
+        "loser": "Anne-Catherine Forcier",
+        "score": "7-6(4)",
+        "date": "October 24, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1600,
+        "winnerGain": 116,
+        "loserGain": -116
+    },
+    {
+        "winner": "F\u00e9lix Ostiguy",
+        "loser": "Thierry Hotte-B\u00e9langer",
+        "score": "6-3 2-2",
+        "date": "October 24, 2022",
+        "winnerELO": 1600,
+        "loserELO": 1500,
+        "winnerGain": 84,
+        "loserGain": -84
     }
 ]
