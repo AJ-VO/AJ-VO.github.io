@@ -13,6 +13,19 @@
         "streak": 1
     },
     {
+        "name": "F\u00e9lix Ostiguy",
+        "g": "g",
+        "id": 12,
+        "gp": 1,
+        "wins": 1,
+        "losses": 0,
+        "elo": 1600,
+        "t_wins": 0,
+        "t_losses": 0,
+        "img": "img/players/test.png",
+        "streak": 1
+    },
+    {
         "name": "Camille Girard",
         "g": "w",
         "id": 3,
@@ -94,19 +107,6 @@
         "name": "Cornelis van der Zouwen",
         "g": "g",
         "id": 11,
-        "gp": 0,
-        "wins": 0,
-        "losses": 0,
-        "elo": 1500,
-        "t_wins": 0,
-        "t_losses": 0,
-        "img": "img/players/test.png",
-        "streak": 0
-    },
-    {
-        "name": "F\u00e9lix Ostiguy",
-        "g": "g",
-        "id": 12,
         "gp": 0,
         "wins": 0,
         "losses": 0,
@@ -273,19 +273,6 @@
         "streak": 0
     },
     {
-        "name": "Nicolas Leclair",
-        "g": "g",
-        "id": 100,
-        "gp": 0,
-        "wins": 0,
-        "losses": 0,
-        "elo": 1500,
-        "t_wins": 0,
-        "t_losses": 0,
-        "img": "img/players/test.png",
-        "streak": 0
-    },
-    {
         "name": "Eloi Roux",
         "g": "g",
         "id": 101,
@@ -297,6 +284,19 @@
         "t_losses": 0,
         "img": "img/players/test.png",
         "streak": 0
+    },
+    {
+        "name": "Nicolas Leclair",
+        "g": "g",
+        "id": 100,
+        "gp": 1,
+        "wins": 0,
+        "losses": 1,
+        "elo": 1400,
+        "t_wins": 0,
+        "t_losses": 0,
+        "img": "img/players/test.png",
+        "streak": -1
     },
     {
         "name": "Vicky Lachance",
