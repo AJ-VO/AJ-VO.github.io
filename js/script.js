@@ -37,7 +37,7 @@ fetch("https://aj-vo.github.io/jsons/results.json")
     for(let product of products){
         out+= `
             <tr>
-                <td>${product.date}<br><b>${product.winner}</b> (${product.winnerELO}) + ${product.winnerGain} d. <b>${product.loser}</b> (${product.loserELO}) - ${product.winnerGain} <br>[${product.score}]</td>
+                <td>${product.date}<br><b>${product.winner}</b> + ${product.winnerGain} d. <b>${product.loser}</b> - ${product.winnerGain} <br>[${product.score}]</td>
             </tr>
         `;
     }
