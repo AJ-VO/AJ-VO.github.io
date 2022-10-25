@@ -8,5 +8,15 @@
         "loserELO": 1500,
         "winnerGain": 100,
         "loserGain": -100
+    },
+    {
+        "winner": "Anne-Catherine Forcier",
+        "loser": "Vicky Lachance",
+        "score": "6-1 4-2",
+        "date": "October 24, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1500,
+        "winnerGain": 100,
+        "loserGain": -100
     }
 ]

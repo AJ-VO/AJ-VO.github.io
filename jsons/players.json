@@ -3,27 +3,14 @@
         "name": "Anne-Catherine Forcier",
         "g": "w",
         "id": 1,
-        "gp": 0,
-        "wins": 0,
+        "gp": 1,
+        "wins": 1,
         "losses": 0,
-        "elo": 1500,
+        "elo": 1600,
         "t_wins": 0,
         "t_losses": 0,
         "img": "img/players/test.png",
-        "streak": 0
-    },
-    {
-        "name": "Vicky Lachance",
-        "g": "w",
-        "id": 2,
-        "gp": 0,
-        "wins": 0,
-        "losses": 0,
-        "elo": 1500,
-        "t_wins": 0,
-        "t_losses": 0,
-        "img": "img/players/test.png",
-        "streak": 0
+        "streak": 1
     },
     {
         "name": "Camille Girard",
@@ -117,7 +104,7 @@
         "streak": 0
     },
     {
-        "name": "Félix Ostiguy",
+        "name": "F\u00e9lix Ostiguy",
         "g": "g",
         "id": 12,
         "gp": 0,
@@ -195,7 +182,7 @@
         "streak": 0
     },
     {
-        "name": "Thierry Hotte-Bélanger",
+        "name": "Thierry Hotte-B\u00e9langer",
         "g": "g",
         "id": 19,
         "gp": 0,
@@ -234,7 +221,7 @@
         "streak": 0
     },
     {
-        "name": "Antoine Barthélémy",
+        "name": "Antoine Barth\u00e9l\u00e9my",
         "g": "g",
         "id": 22,
         "gp": 0,
@@ -247,7 +234,7 @@
         "streak": 0
     },
     {
-        "name": "Théo Aicardi",
+        "name": "Th\u00e9o Aicardi",
         "g": "g",
         "id": 23,
         "gp": 0,
@@ -310,5 +297,18 @@
         "t_losses": 0,
         "img": "img/players/test.png",
         "streak": 0
+    },
+    {
+        "name": "Vicky Lachance",
+        "g": "w",
+        "id": 2,
+        "gp": 1,
+        "wins": 0,
+        "losses": 1,
+        "elo": 1400,
+        "t_wins": 0,
+        "t_losses": 0,
+        "img": "img/players/test.png",
+        "streak": -1
     }
 ]
