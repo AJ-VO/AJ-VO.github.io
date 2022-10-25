@@ -1,15 +1,5 @@
 [
     {
-        "winner": "Alexandre Jasmin",
-        "loser": "Dominic Longpre",
-        "score": "7-5 3-6 6-1",
-        "date": "September 18, 2022",
-        "winnerELO": 1500,
-        "loserELO": 1500,
-        "winnerGain": 100,
-        "loserGain": -100
-    },
-    {
         "winner": "Anne-Catherine Forcier",
         "loser": "Vicky Lachance",
         "score": "6-1 4-2",
