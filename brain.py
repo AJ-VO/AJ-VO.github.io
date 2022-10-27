@@ -118,6 +118,8 @@ def main():
         with open("jsons/t_results.json", "w", encoding='utf8') as fr:
             json.dump(resultDATA, fr, indent=4)
         main()
+    elif choice == "-1":
+        sys.exit(0)
     else:
         main()
         

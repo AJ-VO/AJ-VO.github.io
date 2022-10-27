@@ -12,6 +12,7 @@ import json
 
 def print_main_menu():
     print("======== V&O Bra1n ========")
+    print("-1) Quit")
     print("0) Show Players Information")
     print("1) Add Result")
     print("2) Add Tournament Result")
