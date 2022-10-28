@@ -5,13 +5,14 @@ def main():
     print_main_menu()
     choice = input("Input: ")
     if choice == "0":
-        print_database_information()
-        main()
+        sys.exit(0)
     elif choice == "1":
         with open("jsons/players.json", "r", encoding='utf8') as f:
             playerDATA = json.load(f)
+        f.close()
         with open("jsons/results.json", "r", encoding='utf8') as fp:
             resultDATA = json.load(fp)
+        fp.close()
 
         print_database_information()
         
@@ -118,9 +119,8 @@ def main():
         with open("jsons/t_results.json", "w", encoding='utf8') as fr:
             json.dump(resultDATA, fr, indent=4)
         main()
-    elif choice == "-1":
-        sys.exit(0)
     else:
+        print("Error, choice is not in menu")
         main()
         
 if __name__ == "__main__":
