@@ -58,5 +58,15 @@
         "loserELO": 1500,
         "winnerGain": 84,
         "loserGain": -84
+    },
+    {
+        "winner": "F\u00e9lix Ostiguy",
+        "loser": "Antoine Barth\u00e9l\u00e9my",
+        "score": "6-1 6-1",
+        "date": "October 31, 2022",
+        "winnerELO": 1684,
+        "loserELO": 1500,
+        "winnerGain": 70,
+        "loserGain": -70
     }
 ]

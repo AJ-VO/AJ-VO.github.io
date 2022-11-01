@@ -3,14 +3,14 @@
         "name": "F\u00e9lix Ostiguy",
         "g": "g",
         "id": 12,
-        "gp": 2,
-        "wins": 2,
+        "gp": 3,
+        "wins": 3,
         "losses": 0,
-        "elo": 1684,
+        "elo": 1754,
         "t_wins": 0,
         "t_losses": 0,
         "img": "img/players/test.png",
-        "streak": 2
+        "streak": 3
     },
     {
         "name": "Marilou Marceau",
@@ -182,19 +182,6 @@
         "streak": 0
     },
     {
-        "name": "Antoine Barth\u00e9l\u00e9my",
-        "g": "g",
-        "id": 22,
-        "gp": 0,
-        "wins": 0,
-        "losses": 0,
-        "elo": 1500,
-        "t_wins": 0,
-        "t_losses": 0,
-        "img": "img/players/test.png",
-        "streak": 0
-    },
-    {
         "name": "Th\u00e9o Aicardi",
         "g": "g",
         "id": 23,
@@ -254,6 +241,19 @@
         "wins": 1,
         "losses": 1,
         "elo": 1484,
+        "t_wins": 0,
+        "t_losses": 0,
+        "img": "img/players/test.png",
+        "streak": -1
+    },
+    {
+        "name": "Antoine Barth\u00e9l\u00e9my",
+        "g": "g",
+        "id": 22,
+        "gp": 1,
+        "wins": 0,
+        "losses": 1,
+        "elo": 1430,
         "t_wins": 0,
         "t_losses": 0,
         "img": "img/players/test.png",
