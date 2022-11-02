@@ -68,5 +68,25 @@
         "loserELO": 1500,
         "winnerGain": 70,
         "loserGain": -70
+    },
+    {
+        "winner": "Antoine Barth\u00e9l\u00e9my",
+        "loser": "Vicky Lachance",
+        "score": "6-1 6-1",
+        "date": "November 02, 2022",
+        "winnerELO": 1430,
+        "loserELO": 1316,
+        "winnerGain": 40.5,
+        "loserGain": -40.5
+    },
+    {
+        "winner": "Antoine Barth\u00e9l\u00e9my",
+        "loser": "Marilou Marceau",
+        "score": "6-3 4-0",
+        "date": "November 02, 2022",
+        "winnerELO": 1470.5,
+        "loserELO": 1616,
+        "winnerGain": 61.5,
+        "loserGain": -61.5
     }
 ]

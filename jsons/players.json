@@ -13,19 +13,6 @@
         "streak": 3
     },
     {
-        "name": "Marilou Marceau",
-        "g": "w",
-        "id": 4,
-        "gp": 1,
-        "wins": 1,
-        "losses": 0,
-        "elo": 1616,
-        "t_wins": 0,
-        "t_losses": 0,
-        "img": "img/players/test.png",
-        "streak": 1
-    },
-    {
         "name": "Cornelis van der Zouwen",
         "g": "g",
         "id": 11,
@@ -50,6 +37,32 @@
         "t_losses": 0,
         "img": "img/players/test.png",
         "streak": 1
+    },
+    {
+        "name": "Marilou Marceau",
+        "g": "w",
+        "id": 4,
+        "gp": 2,
+        "wins": 1,
+        "losses": 1,
+        "elo": 1554.5,
+        "t_wins": 0,
+        "t_losses": 0,
+        "img": "img/players/test.png",
+        "streak": -1
+    },
+    {
+        "name": "Antoine Barth\u00e9l\u00e9my",
+        "g": "g",
+        "id": 22,
+        "gp": 3,
+        "wins": 2,
+        "losses": 1,
+        "elo": 1532.0,
+        "t_wins": 0,
+        "t_losses": 0,
+        "img": "img/players/test.png",
+        "streak": 2
     },
     {
         "name": "Camille Girard",
@@ -247,19 +260,6 @@
         "streak": -1
     },
     {
-        "name": "Antoine Barth\u00e9l\u00e9my",
-        "g": "g",
-        "id": 22,
-        "gp": 1,
-        "wins": 0,
-        "losses": 1,
-        "elo": 1430,
-        "t_wins": 0,
-        "t_losses": 0,
-        "img": "img/players/test.png",
-        "streak": -1
-    },
-    {
         "name": "Thierry Hotte-B\u00e9langer",
         "g": "g",
         "id": 19,
@@ -302,13 +302,13 @@
         "name": "Vicky Lachance",
         "g": "w",
         "id": 2,
-        "gp": 2,
+        "gp": 3,
         "wins": 0,
-        "losses": 2,
-        "elo": 1316,
+        "losses": 3,
+        "elo": 1275.5,
         "t_wins": 0,
         "t_losses": 0,
         "img": "img/players/test.png",
-        "streak": -2
+        "streak": -3
     }
 ]
