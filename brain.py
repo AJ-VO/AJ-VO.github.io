@@ -31,6 +31,7 @@ def main():
 
         eloGain = get_eloGain(matchDelta)
 
+        #Gender
         if information[4] == information[5]:
             information.append(eloGain)#W6
             information.append(eloGain*-1)#L7
@@ -39,12 +40,11 @@ def main():
                 information.append(eloGain*2)#W6
                 information.append(eloGain*-1)#L7
             else:
-                information.append(eloGain*0.5)#W6
-                information.append(eloGain*-0.5)#L7
+                information.append(int(eloGain*0.5))#W6
+                information.append(int(eloGain*-0.5))#L7
 
         information.append(playerDATA[winnerDict]["name"])#8
         information.append(playerDATA[loserDict]["name"])#9
-
         information.append(playerDATA[winnerDict]["streak"])#10
         information.append(playerDATA[loserDict]["streak"])#11
 

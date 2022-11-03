@@ -16,7 +16,7 @@ fetch("https://aj-vo.github.io/jsons/players.json")
             winrate = Math.round(winrate * 10) / 10
             out += `
             <img src="${product.img}" alt="Profile" style="width:100%"><h1>${product.name}</h1><p class="title">${product.elo}</p>
-            <p>${product.wins} Victoires - ${product.losses} Défaites (${winrate}%)</p><p>Séquence : ±${product.streak}</p><br>
+            <p>${product.wins} Victoires - ${product.losses} Défaites (${winrate}%)</p><p>Séquence : ${product.streak}</p><br>
             `;
         }
     }
