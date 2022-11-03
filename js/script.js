@@ -32,14 +32,22 @@ fetch("https://aj-vo.github.io/jsons/results.json")
 })
 
 .then(function(products){
+    let matchShowed = 0
+    console.log(matchShowed)
     let placeholder = document.querySelector("#data-output1");
     let out = "";
     for(let product of products){
-        out+= `
+        if(matchShowed == 6){
+            break;
+        }
+        else{
+            out+= `
             <tr>
                 <td>${product.date}<br><b>${product.winner}</b> + ${product.winnerGain} d. <b>${product.loser}</b> - ${product.winnerGain} <br>[${product.score}]</td>
             </tr>
         `;
+        }
+        matchShowed = matchShowed + 1;
     }
 
     placeholder.innerHTML = out;

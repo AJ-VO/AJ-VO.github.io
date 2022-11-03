@@ -70,9 +70,13 @@ def main():
         playerDATA[loserDict]["losses"] = playerDATA[loserDict]["losses"] + 1
         playerDATA[loserDict]["gp"] = playerDATA[loserDict]["gp"] + 1
         #Dump player information
+
+        #Sort by elo
         playerDATA.sort(reverse=True, key=lambda x: x["elo"])
         with open("jsons/players.json", "w", encoding='utf8') as fr:
             json.dump(playerDATA, fr, indent=4)
+
+        
         #Create Result
         match_data = {}
         match_data["winner"] = information[8]
@@ -83,7 +87,10 @@ def main():
         match_data["loserELO"] = information[3]
         match_data["winnerGain"] = information[6]
         match_data["loserGain"] = information[7]
+        match_data["msDate"] = get_ms_date()
         resultDATA.append(match_data)
+        #Sort results
+        resultDATA.sort(reverse=True, key=lambda x: x["msDate"])
         with open("jsons/results.json", "w", encoding='utf8') as fp:
             json.dump(resultDATA, fp, indent = 4)
         main()

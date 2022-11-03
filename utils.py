@@ -10,6 +10,9 @@ import xlrd
 import statistics
 import json
 
+def get_ms_date():
+    return round(time.time() * 1000)
+
 def print_main_menu():
     print("======== V&O Bra1n ========")
     print("0) Quit")
