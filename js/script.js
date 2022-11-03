@@ -95,7 +95,7 @@ fetch("https://aj-vo.github.io/jsons/results.json")
     let placeholder = document.querySelector("#data-output1");
     let out = "";
     for(let product of products){
-        if(matchShowed == 6){
+        if(matchShowed == 5){
             break;
         }
         else{
