@@ -1,5 +1,16 @@
 [
     {
+        "winner": "Alexis Turcotte",
+        "loser": "Antoine Barth\u00e9l\u00e9my",
+        "score": "6-2",
+        "date": "November 03, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1532.0,
+        "winnerGain": 105,
+        "loserGain": -105,
+        "msDate": 1667502541079
+    },
+    {
         "winner": "Antoine Barth\u00e9l\u00e9my",
         "loser": "Marilou Marceau",
         "score": "6-3 4-0",

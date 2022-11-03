@@ -13,6 +13,19 @@
         "streak": 3
     },
     {
+        "name": "Alexis Turcotte",
+        "g": "g",
+        "id": 13,
+        "gp": 1,
+        "wins": 1,
+        "losses": 0,
+        "elo": 1605,
+        "t_wins": 0,
+        "t_losses": 0,
+        "img": "img/players/test.png",
+        "streak": 1
+    },
+    {
         "name": "Cornelis van der Zouwen",
         "g": "g",
         "id": 11,
@@ -50,19 +63,6 @@
         "t_losses": 0,
         "img": "img/players/test.png",
         "streak": -1
-    },
-    {
-        "name": "Antoine Barth\u00e9l\u00e9my",
-        "g": "g",
-        "id": 22,
-        "gp": 3,
-        "wins": 2,
-        "losses": 1,
-        "elo": 1532.0,
-        "t_wins": 0,
-        "t_losses": 0,
-        "img": "img/players/test.png",
-        "streak": 2
     },
     {
         "name": "Camille Girard",
@@ -107,19 +107,6 @@
         "name": "Alexandre Laplante",
         "g": "g",
         "id": 10,
-        "gp": 0,
-        "wins": 0,
-        "losses": 0,
-        "elo": 1500,
-        "t_wins": 0,
-        "t_losses": 0,
-        "img": "img/players/test.png",
-        "streak": 0
-    },
-    {
-        "name": "Alexis Turcotte",
-        "g": "g",
-        "id": 13,
         "gp": 0,
         "wins": 0,
         "losses": 0,
@@ -254,6 +241,19 @@
         "wins": 1,
         "losses": 1,
         "elo": 1484,
+        "t_wins": 0,
+        "t_losses": 0,
+        "img": "img/players/test.png",
+        "streak": -1
+    },
+    {
+        "name": "Antoine Barth\u00e9l\u00e9my",
+        "g": "g",
+        "id": 22,
+        "gp": 4,
+        "wins": 2,
+        "losses": 2,
+        "elo": 1427.0,
         "t_wins": 0,
         "t_losses": 0,
         "img": "img/players/test.png",

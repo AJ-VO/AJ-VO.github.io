@@ -4,12 +4,17 @@ fetch("https://aj-vo.github.io/jsons/players.json")
     return response.json();
 })
 
+//Standings
 .then(function(products){
     let placeholder = document.querySelector("#data-output");
     let out = "";
     var position = 1;
     for(let product of products){
-        out+= `
+        if (product.wins == 0 && product.losses == 0){
+          console.log(product.name)
+        }
+        else{
+          out+= `
             <tr>
                 <td>${position}</td>
                 <td><a href="player.html?=${product.id}">${product.name}</a></td>
@@ -19,10 +24,63 @@ fetch("https://aj-vo.github.io/jsons/players.json")
             </tr>
         `;
         position = position + 1
+        }
     }
-
     placeholder.innerHTML = out;
 
+})
+
+//Top Players
+.then(function(products){
+    let out = "";
+    console.log(products)
+    out+=`<table border=1 align="center">
+    <thead>
+      <tr>
+        <th colspan="3">#1</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="3">#1 Name</td>
+      </tr>
+      <tr>
+        <td colspan="3"></td>
+      </tr>
+      <tr>
+        <td colspan="3"></td>
+      </tr>
+      <tr>
+        <td colspan="3"></td>
+      </tr>
+      <tr>
+        <td>#2</td>
+        <td></td>
+        <td>#3</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+    </table>`;
+    document.getElementById("topPlayersOFFLINE").innerHTML = out
 })
 
 fetch("https://aj-vo.github.io/jsons/results.json")
@@ -33,7 +91,7 @@ fetch("https://aj-vo.github.io/jsons/results.json")
 
 .then(function(products){
     let matchShowed = 0
-    console.log(matchShowed)
+    //console.log()
     let placeholder = document.querySelector("#data-output1");
     let out = "";
     for(let product of products){
