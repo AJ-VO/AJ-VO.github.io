@@ -60,6 +60,25 @@ a{
   background-color: #04AA6D;
   color: white;
 }
+/* Top Table */
+#winners {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+#winners td, #winners th {
+  padding: 5px;
+}
+
+#winners th {
+  font-size: 25px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  text-align: center;
+  background-color: #04AA6D;
+  color: white;
+}
 </style>
 </head>
 <body bgcolor="white">
@@ -71,18 +90,17 @@ a{
   <a class="active" href="ligue.html">Ligue Maison</a>
 </div>
 
-<center>
-<img src="img/logo.png" alt="Logo" width="128" height="128"> 
-<div style="padding-left:16px">
-  <h2>Ligue Maison</h2>
-</div>
+<br>
 
-</center>
-
-<div id="topPlayers">
-
+<table align="center" id="winners">
+  <tr valign="top">
+    <td>
+      <div id="topPlayers">
   
-</div>
+      </div>
+    </td>
+  </tr>
+</table>
 
 <table align="center">
     <tr valign="top">
@@ -122,17 +140,18 @@ a{
 <h3>Rajouter un match :</h3>
 <form action="https://formsubmit.co/de20af6355d17d549798e2b645d4620e" method="POST">
   <label for="winner">Gagnant :</label><br>
-  <input type="text" id="winner" name="winner" value="W"><br>
+  <input type="text" id="winner" name="winner" value="W"><br><br>
   <label for="loser">Perdant :</label><br>
-  <input type="text" id="loser" name="loser" value="L"><br>
+  <input type="text" id="loser" name="loser" value="L"><br><br>
   <label for="score">Score :</label><br>
-  <input type="text" id="score" name="score" value="S"><br>
+  <input type="text" id="score" name="score" value="S"><br><br>
   <br>
   <input type="submit" value="Bleed Green" name="submit">
 </form> 
 </center>
 
 <script src="js/script.js"></script>
+<script src="js/top.js"></script>
 
 </body>
 </html>

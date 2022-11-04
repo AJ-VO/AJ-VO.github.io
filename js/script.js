@@ -9,14 +9,16 @@ fetch("https://aj-vo.github.io/jsons/players.json")
     let placeholder = document.querySelector("#data-output");
     let out = "";
     var position = 1;
+    var real_position = 1;
     for(let product of products){
-        if (product.wins == 0 && product.losses == 0){
+        if (product.wins == 0 && product.losses == 0 || real_position < 4){
           console.log(product.name)
+          real_position = real_position + 1
         }
         else{
           out+= `
             <tr>
-                <td>${position}</td>
+                <td>${position+3}</td>
                 <td><a href="player.html?=${product.id}">${product.name}</a></td>
                 <td>${product.elo}</td>
                 <td>${product.wins}</td>
@@ -28,59 +30,6 @@ fetch("https://aj-vo.github.io/jsons/players.json")
     }
     placeholder.innerHTML = out;
 
-})
-
-//Top Players
-.then(function(products){
-    let out = "";
-    console.log(products)
-    out+=`<table border=1 align="center">
-    <thead>
-      <tr>
-        <th colspan="3">#1</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td colspan="3">#1 Name</td>
-      </tr>
-      <tr>
-        <td colspan="3"></td>
-      </tr>
-      <tr>
-        <td colspan="3"></td>
-      </tr>
-      <tr>
-        <td colspan="3"></td>
-      </tr>
-      <tr>
-        <td>#2</td>
-        <td></td>
-        <td>#3</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </tbody>
-    </table>`;
-    document.getElementById("topPlayersOFFLINE").innerHTML = out
 })
 
 fetch("https://aj-vo.github.io/jsons/results.json")
@@ -101,7 +50,7 @@ fetch("https://aj-vo.github.io/jsons/results.json")
         else{
             out+= `
             <tr>
-                <td>${product.date}<br><b>${product.winner}</b> + ${product.winnerGain} d. <b>${product.loser}</b> - ${product.winnerGain} <br>[${product.score}]</td>
+                <td>${product.date}<br><b>${product.winner}</b> +${product.winnerGain} d. <b>${product.loser}</b> -${product.winnerGain} <br>[${product.score}]</td>
             </tr>
         `;
         }

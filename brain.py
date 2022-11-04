@@ -132,6 +132,8 @@ def main():
         with open("jsons/results.json", "w", encoding='utf8') as fp:
             json.dump(resultDATA, fp, indent = 4)
 
+        #Create Top Players
+
         #Loop back to main
         main()
     else:#Error
