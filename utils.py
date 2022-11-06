@@ -21,9 +21,11 @@ def get_ms_date():#Returns MS timestamp (int)
 
 def print_main_menu():#Print Main Menu
     print("======== V&O Bra1n ========")
+    print("-1) Database Information")
     print("0) Quit")
     print("1) Add Result")
-    print("2) Add Tournament Result")
+    print("2) Add Doubles Result")
+    print("===========================")
 
 def load_players():#Returns players from database (json)
     with open('jsons/players.json', 'r', encoding='utf8') as f:
@@ -96,3 +98,40 @@ def playerStreak(currentStreak, ending):#Streak Calculator Algorithm
             return -1
         else:
             return currentStreak-1
+
+def show_database_information(playerInformation, resultInformation):#Shows current database information
+    
+    #Printing information
+    print("============================================")
+    print("========== Database Information ============")
+    print("============================================")
+    print("Matches Played: "+str(len(resultInformation)))
+    print("Players: "+str(len(playerInformation)))
+
+    myPlayers = 0
+    for i in playerInformation:
+        if i["gp"] > 0:#Player has played more than 0 matches
+            myPlayers = myPlayers+1
+        else:
+            continue
+    rate = myPlayers/len(playerInformation)*100#Rate
+    print("Players that played at least one match: "+str(myPlayers)+" ("+str(rate)+"%)")
+
+    allElos = []
+    for i in playerInformation:
+        if i["elo"] == 0 or i["elo"] == 1500:
+            continue
+        else:
+            allElos.append(i["elo"])
+    meanElo = sum(allElos)/len(allElos)
+    print("Mean Elo: "+str(meanElo))
+    top = 0
+    bottom = 0
+    for i in allElos:
+        if i >= meanElo:
+            top = top + 1
+        else:
+            bottom = bottom + 1
+    print("Players in top 50%: "+str(top))
+    print("Players in bottom 50%: "+str(bottom))
+    print("============================================")

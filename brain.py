@@ -1,3 +1,6 @@
+#Result
+#A-C Forcier - V Lachance d. C Girard - M Marceau 8-3
+
 from utils import *
 
 def main():
@@ -6,26 +9,32 @@ def main():
     print_main_menu()
 
     #Answers Possibles
-    options = ["0", "1"]
+    options = ["-1", "0", "1", "2"]
     #Answer
     choice = input("Input: ")
     #Check
 
     #Menu
     if choice == "0":#Quit
+
         #Exits Script
         sys.exit(0)
+
+    elif choice == "-1":#Database Information
+
+        #Load Database Data
+        playerDATA = load_players()
+        resultDATA = load_results()
+
+        #Print Main Menu
+        #Shows keys for data entry
+        show_database_information(playerDATA, resultDATA)
+
     elif choice == "1":#Add Game Result
         
         #Load Database Data
         playerDATA = load_players()
-        print("Current Players: ")
         resultDATA = load_results()
-        print("Matches Played: ")
-
-        #Print Main Menu
-        #Shows keys for data entry
-        print_database_information()
 
         #Get and Check Answers
         answers = []
@@ -44,7 +53,8 @@ def main():
         #5 Calculate Elo Gains
         #6 Get Names
         #7 Get Streak
-        #8 
+        #8 Adjust Elo
+        #9 Dump
 
         #[winnerId(0), loserId(1), winnerELO(2), loserELO(3), winnerG(4), loserG(5), winnerGain(6), loserGain(7), winnerName(8), loserName(9)]
         #List of values needed for changes
@@ -136,6 +146,36 @@ def main():
 
         #Loop back to main
         main()
+
+    elif choice =="2":#Add Doubles Result
+
+        #Load Database Data
+        playerDATA = load_players()
+        resultDATA = load_results()
+        show_database_information(playerDATA, resultDATA)
+
+        #4 players, 2 winners, 2 losers
+
+        #Protocol
+        #1 Get Players Ids
+        #2 Get Current Elos
+        #3 Get Current Genders
+        #4 Calculate Match Delta
+        #5 Calculate Elo Gains
+        #6 Get Names
+        #7 Get Streak
+        #8 Adjust Elo
+        #9 Dump
+
+        #1
+        myPlayers = 0
+        while myPlayers < 4:
+            myPlayers = input("Player ("+str(myPlayers)+")")
+            #If not in database
+            myPlayers = myPlayers+1
+
+        information = []
+
     else:#Error
         print("Error, choice is not in menu")
         #Loop back to main

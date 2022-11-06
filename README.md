@@ -25,6 +25,19 @@ Points gagnés par le garçon = y/2
 Points perdus par la fille = y/-2
 ```
 
+Système en double : 
+Pour le moment, le système de double ne prends pas en considération le sexe des joueurs.
+y = Points gagnés ou perdus
+x = Points moyens des gagnants - points moyens des perdants
+```
+```
+y = {
+    = (180)/3 si x < -500
+    = (-4/25x + 100)/3 si -500 <= x <= 500
+    = (20)/3 si x > 500
+}
+```
+
 # Analyse ATP_ALL
 [ATP_ALL](ATP_ALL.xls) est un fichier contenant de l'information sur des matchs de tennis professionnel joués entre 2008 et 2017. 
 
