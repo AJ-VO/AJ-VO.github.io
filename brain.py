@@ -36,10 +36,14 @@ def main():
         playerDATA = load_players()
         resultDATA = load_results()
 
+        #Print Players
+        print_database_information()
+
         #Get and Check Answers
         answers = []
         while len(answers) != 2:#Stop when 2 answers
             myAnswer = input("("+str(len(answers))+")Key: ")
+            #If not in database
             answers.append(int(myAnswer))
         #Attribute keys
         winnerDict = answers[0]
@@ -169,8 +173,9 @@ def main():
 
         #1
         myPlayers = 0
+        myPlayer = []
         while myPlayers < 4:
-            myPlayers = input("Player ("+str(myPlayers)+")")
+            myPlayer.append(input("Player ("+str(myPlayers)+")"))
             #If not in database
             myPlayers = myPlayers+1
 

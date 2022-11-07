@@ -39,6 +39,19 @@
         "streak": 1
     },
     {
+        "name": "Alexy Le Menn",
+        "g": "g",
+        "id": 18,
+        "gp": 1,
+        "wins": 1,
+        "losses": 0,
+        "elo": 1588,
+        "t_wins": 0,
+        "t_losses": 0,
+        "img": "img/players/test.png",
+        "streak": 1
+    },
+    {
         "name": "Erika Leclerc",
         "g": "w",
         "id": 6,
@@ -63,6 +76,19 @@
         "t_losses": 0,
         "img": "img/players/test.png",
         "streak": -1
+    },
+    {
+        "name": "Nicolas Ladouceur",
+        "g": "g",
+        "id": 16,
+        "gp": 2,
+        "wins": 1,
+        "losses": 1,
+        "elo": 1516,
+        "t_wins": 0,
+        "t_losses": 0,
+        "img": "img/players/test.png",
+        "streak": 1
     },
     {
         "name": "Camille Girard",
@@ -143,35 +169,9 @@
         "streak": 0
     },
     {
-        "name": "Alexy Le Menn",
-        "g": "g",
-        "id": 18,
-        "gp": 0,
-        "wins": 0,
-        "losses": 0,
-        "elo": 1500,
-        "t_wins": 0,
-        "t_losses": 0,
-        "img": "img/players/test.png",
-        "streak": 0
-    },
-    {
         "name": "Justin Gautrais",
         "g": "g",
         "id": 20,
-        "gp": 0,
-        "wins": 0,
-        "losses": 0,
-        "elo": 1500,
-        "t_wins": 0,
-        "t_losses": 0,
-        "img": "img/players/test.png",
-        "streak": 0
-    },
-    {
-        "name": "Mathieu Lefebvre",
-        "g": "g",
-        "id": 21,
         "gp": 0,
         "wins": 0,
         "losses": 0,
@@ -247,19 +247,6 @@
         "streak": -1
     },
     {
-        "name": "Antoine Barth\u00e9l\u00e9my",
-        "g": "g",
-        "id": 22,
-        "gp": 4,
-        "wins": 2,
-        "losses": 2,
-        "elo": 1427.0,
-        "t_wins": 0,
-        "t_losses": 0,
-        "img": "img/players/test.png",
-        "streak": -1
-    },
-    {
         "name": "Thierry Hotte-B\u00e9langer",
         "g": "g",
         "id": 19,
@@ -267,19 +254,6 @@
         "wins": 0,
         "losses": 1,
         "elo": 1416,
-        "t_wins": 0,
-        "t_losses": 0,
-        "img": "img/players/test.png",
-        "streak": -1
-    },
-    {
-        "name": "Nicolas Ladouceur",
-        "g": "g",
-        "id": 16,
-        "gp": 1,
-        "wins": 0,
-        "losses": 1,
-        "elo": 1400,
         "t_wins": 0,
         "t_losses": 0,
         "img": "img/players/test.png",
@@ -297,6 +271,32 @@
         "t_losses": 0,
         "img": "img/players/test.png",
         "streak": -1
+    },
+    {
+        "name": "Mathieu Lefebvre",
+        "g": "g",
+        "id": 21,
+        "gp": 1,
+        "wins": 0,
+        "losses": 1,
+        "elo": 1384,
+        "t_wins": 0,
+        "t_losses": 0,
+        "img": "img/players/test.png",
+        "streak": -1
+    },
+    {
+        "name": "Antoine Barth\u00e9l\u00e9my",
+        "g": "g",
+        "id": 22,
+        "gp": 5,
+        "wins": 2,
+        "losses": 3,
+        "elo": 1339.0,
+        "t_wins": 0,
+        "t_losses": 0,
+        "img": "img/players/test.png",
+        "streak": -2
     },
     {
         "name": "Vicky Lachance",

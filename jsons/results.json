@@ -1,5 +1,27 @@
 [
     {
+        "winner": "Nicolas Ladouceur",
+        "loser": "Mathieu Lefebvre",
+        "score": "7-6",
+        "date": "November 07, 2022",
+        "winnerELO": 1400,
+        "loserELO": 1500,
+        "winnerGain": 116,
+        "loserGain": -116,
+        "msDate": 1667841406416
+    },
+    {
+        "winner": "Alexy Le Menn",
+        "loser": "Antoine Barth\u00e9l\u00e9my",
+        "score": "6-4 6-3",
+        "date": "November 07, 2022",
+        "winnerELO": 1500,
+        "loserELO": 1427.0,
+        "winnerGain": 88,
+        "loserGain": -88,
+        "msDate": 1667841356239
+    },
+    {
         "winner": "Alexis Turcotte",
         "loser": "Antoine Barth\u00e9l\u00e9my",
         "score": "6-2",
