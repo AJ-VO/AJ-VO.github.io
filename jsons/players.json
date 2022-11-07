@@ -65,13 +65,13 @@
         "streak": 1
     },
     {
-        "name": "Marilou Marceau",
+        "name": "Anne-Catherine Forcier",
         "g": "w",
-        "id": 4,
-        "gp": 2,
-        "wins": 1,
+        "id": 1,
+        "gp": 3,
+        "wins": 2,
         "losses": 1,
-        "elo": 1554,
+        "elo": 1525,
         "t_wins": 0,
         "t_losses": 0,
         "img": "img/players/test.png",
@@ -91,17 +91,17 @@
         "streak": 1
     },
     {
-        "name": "Camille Girard",
+        "name": "Marilou Marceau",
         "g": "w",
-        "id": 3,
-        "gp": 0,
-        "wins": 0,
-        "losses": 0,
-        "elo": 1500,
+        "id": 4,
+        "gp": 3,
+        "wins": 1,
+        "losses": 2,
+        "elo": 1513,
         "t_wins": 0,
         "t_losses": 0,
         "img": "img/players/test.png",
-        "streak": 0
+        "streak": -1
     },
     {
         "name": "Christina Ciurlej",
@@ -234,17 +234,17 @@
         "streak": 0
     },
     {
-        "name": "Anne-Catherine Forcier",
+        "name": "Camille Girard",
         "g": "w",
-        "id": 1,
-        "gp": 2,
-        "wins": 1,
+        "id": 3,
+        "gp": 1,
+        "wins": 0,
         "losses": 1,
-        "elo": 1484,
+        "elo": 1459,
         "t_wins": 0,
         "t_losses": 0,
         "img": "img/players/test.png",
-        "streak": -1
+        "streak": 0
     },
     {
         "name": "Thierry Hotte-B\u00e9langer",
@@ -302,10 +302,10 @@
         "name": "Vicky Lachance",
         "g": "w",
         "id": 2,
-        "gp": 3,
-        "wins": 0,
+        "gp": 4,
+        "wins": 1,
         "losses": 3,
-        "elo": 1275,
+        "elo": 1316,
         "t_wins": 0,
         "t_losses": 0,
         "img": "img/players/test.png",

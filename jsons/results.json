@@ -1,5 +1,16 @@
 [
     {
+        "winner": "Anne-Catherine Forcier/Vicky Lachance",
+        "loser": "Camille Girard/Marilou Marceau",
+        "score": "8-3",
+        "date": "November 07, 2022",
+        "winnerELO": 1379,
+        "loserELO": 1527,
+        "winnerGain": 41,
+        "loserGain": -41,
+        "msDate": 1667848374066
+    },
+    {
         "winner": "Nicolas Ladouceur",
         "loser": "Mathieu Lefebvre",
         "score": "7-6",

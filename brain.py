@@ -46,11 +46,6 @@ def main():
                 continue
             answers.append(int(myAnswer))
 
-        ##############################################################
-        # NEW PROTOCOL
-        ##############################################################
-        #Edit the database ASAP
-
         #Create Result Array
         match_data = {}
         match_data["winner"] = playerDATA[answers[0]]["name"]
@@ -61,13 +56,13 @@ def main():
         match_data["loserELO"] = playerDATA[answers[1]]["elo"]
 
         #Add GP + 1 for both players
-        playerDATA[answers[0]]["gp"] = playerDATA[answers[0]]["gp"] + 1
-        playerDATA[answers[1]]["gp"] = playerDATA[answers[1]]["gp"] + 1
+        for i in range(0, 2):
+            playerDATA[answers[i]]["gp"] = playerDATA[answers[i]]["gp"] + 1
         #Add W and L for both players
         playerDATA[answers[0]]["wins"] = playerDATA[answers[0]]["wins"] + 1
         playerDATA[answers[1]]["losses"] = playerDATA[answers[1]]["losses"] + 1
         #Calculate Match Delta
-        matchDelta = playerDATA[answers[0]]["elo"]-playerDATA[answers[1]]["elo"]
+        matchDelta = match_data["winnerELO"]-match_data["loserELO"]
 
         #Check Gender and Elo Gains
         if playerDATA[answers[0]]["g"] == "w" and playerDATA[answers[1]]["g"] == "g":#If winner is girl and loser is guy
@@ -76,10 +71,10 @@ def main():
             playerDATA[answers[1]]["elo"] = playerDATA[answers[1]]["elo"]-get_eloGain(matchDelta)
             match_data["loserGain"] = -get_eloGain(matchDelta)
         elif playerDATA[answers[0]]["g"] == "g" and playerDATA[answers[1]]["g"] == "w":#If winner is guy and loser is girl
-            playerDATA[answers[0]]["elo"] = playerDATA[answers[0]]["elo"]+(get_eloGain(matchDelta)/2)
-            match_data["winnerGain"] = get_eloGain(matchDelta)/2
-            playerDATA[answers[1]]["elo"] = playerDATA[answers[1]]["elo"]-(get_eloGain(matchDelta)/2)
-            match_data["loserGain"] = -(get_eloGain(matchDelta)/2)
+            playerDATA[answers[0]]["elo"] = playerDATA[answers[0]]["elo"]+(int(get_eloGain(matchDelta)/2))
+            match_data["winnerGain"] = int(get_eloGain(matchDelta)/2)
+            playerDATA[answers[1]]["elo"] = playerDATA[answers[1]]["elo"]-(int(get_eloGain(matchDelta)/2))
+            match_data["loserGain"] = int(-(get_eloGain(matchDelta)/2))
         else:#Same Gender
             playerDATA[answers[0]]["elo"] = playerDATA[answers[0]]["elo"]+get_eloGain(matchDelta)
             match_data["winnerGain"] = get_eloGain(matchDelta)
@@ -116,28 +111,77 @@ def main():
         #Loop back to main
         main()
 
-        ##############################################################
-
     elif choice =="2":#Add Doubles Result
 
         #Load Database Data
         playerDATA = load_players()
         resultDATA = load_results()
-        show_database_information(playerDATA, resultDATA)
 
-        #4 players, 2 winners, 2 losers
+        #Print Players for entry
+        playersPossible = print_database_information()
 
-        #1
-        myPlayers = 0
-        myPlayer = []
-        while myPlayers < 4:
-            myPlayer.append(input("Player ("+str(myPlayers)+")"))
+        #Get and Check Entry
+        answers = []
+        while len(answers) != 4:#Stop when 4 answers
+            myAnswer = input("("+str(len(answers))+")Key: ")
             #If not in database
-            myPlayers = myPlayers+1
+            if int(myAnswer) < 0 or int(myAnswer) > playersPossible-1:
+                print("Wrong Input")
+                continue
+            answers.append(int(myAnswer))
 
-        information = []
+        #Create Result Array
+        match_data = {}
+        match_data["winner"] = playerDATA[answers[0]]["name"]+"/"+playerDATA[answers[1]]["name"]
+        match_data["loser"] = playerDATA[answers[2]]["name"]+"/"+playerDATA[answers[3]]["name"]
+        match_data["score"] = input("Score: ")
+        match_data["date"] = get_date()
+        match_data["winnerELO"] = int((playerDATA[answers[0]]["elo"]+playerDATA[answers[1]]["elo"])/2)
+        match_data["loserELO"] = int((playerDATA[answers[2]]["elo"]+playerDATA[answers[3]]["elo"])/2)
+
+        #Add GP + 1 for players
+        for i in range(0, 4):
+            playerDATA[answers[i]]["gp"] = playerDATA[answers[i]]["gp"] + 1
+
+        #Add W and L for both players
+        playerDATA[answers[0]]["wins"] = playerDATA[answers[0]]["wins"] + 1
+        playerDATA[answers[1]]["wins"] = playerDATA[answers[1]]["wins"] + 1
+        playerDATA[answers[2]]["losses"] = playerDATA[answers[2]]["losses"] + 1
+        playerDATA[answers[3]]["losses"] = playerDATA[answers[3]]["losses"] + 1
+        #Calculate Match Delta
+        matchDelta = match_data["winnerELO"]-match_data["loserELO"]
+
+        #Elo Gains
+        playerDATA[answers[0]]["elo"] = playerDATA[answers[0]]["elo"] + int(get_eloGain(matchDelta)/3)
+        playerDATA[answers[1]]["elo"] = playerDATA[answers[1]]["elo"] + int(get_eloGain(matchDelta)/3)
+        playerDATA[answers[2]]["elo"] = playerDATA[answers[2]]["elo"] - int(get_eloGain(matchDelta)/3)
+        playerDATA[answers[3]]["elo"] = playerDATA[answers[3]]["elo"] - int(get_eloGain(matchDelta)/3)
+        match_data["winnerGain"] = int(get_eloGain(matchDelta)/3)
+        match_data["loserGain"] = -int(get_eloGain(matchDelta)/3)
+        
+        #Streaks
+
+        #Append to current results.json
+        match_data["msDate"] = get_ms_date()
+        resultDATA.append(match_data)
+
+        #Dump Players
+        #Sort by elo
+        playerDATA.sort(reverse=True, key=lambda x: x["elo"])
+        with open("jsons/players.json", "w", encoding='utf8') as fr:
+            json.dump(playerDATA, fr, indent=4)
+
+        #Dump Result
+        #Sort results
+        resultDATA.sort(reverse=True, key=lambda x: x["msDate"])
+        with open("jsons/results.json", "w", encoding='utf8') as fp:
+            json.dump(resultDATA, fp, indent = 4)
+
+        #Loop back to main
+        main()
 
     else:#Error
+
         print("Error, choice is not in menu")
         #Loop back to main
         main()
