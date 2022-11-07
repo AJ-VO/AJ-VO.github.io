@@ -51,6 +51,7 @@ def print_database_information():#Print Players Database for Data Entry
     for i in players:
         print(str(j)+"| ("+i["g"]+")"+i["name"])
         j = j+1
+    return j
 
 def print_tournament_information():#Print Tournaments Database for Data Entry
     players = load_tournament()
@@ -86,18 +87,6 @@ def updateImages():#Update Images (End of November)
 
     with open("jsons/players.json", "w", encoding='utf8') as f:
         json.dump(data, f, indent=4)
-
-def playerStreak(currentStreak, ending):#Streak Calculator Algorithm
-    if ending == True:
-        if currentStreak >= 0:
-            return currentStreak+1
-        else:
-            return 1
-    else:
-        if currentStreak >= 0:
-            return -1
-        else:
-            return currentStreak-1
 
 def show_database_information(playerInformation, resultInformation):#Shows current database information
     

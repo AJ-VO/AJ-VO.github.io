@@ -8,11 +8,8 @@ def main():
     #Database Entry Script
     print_main_menu()
 
-    #Answers Possibles
-    options = ["-1", "0", "1", "2"]
     #Answer
     choice = input("Input: ")
-    #Check
 
     #Menu
     if choice == "0":#Quit
@@ -36,120 +33,90 @@ def main():
         playerDATA = load_players()
         resultDATA = load_results()
 
-        #Print Players
-        print_database_information()
+        #Print Players for entry
+        playersPossible = print_database_information()
 
-        #Get and Check Answers
+        #Get and Check Entry
         answers = []
         while len(answers) != 2:#Stop when 2 answers
             myAnswer = input("("+str(len(answers))+")Key: ")
             #If not in database
+            if int(myAnswer) < 0 or int(myAnswer) > playersPossible-1:
+                print("Wrong Input")
+                continue
             answers.append(int(myAnswer))
-        #Attribute keys
-        winnerDict = answers[0]
-        loserDict = answers[1]
 
-        #Protocol
-        #1 Get Players Ids
-        #2 Get Current Elos
-        #3 Get Current Genders
-        #4 Calculate Match Delta
-        #5 Calculate Elo Gains
-        #6 Get Names
-        #7 Get Streak
-        #8 Adjust Elo
-        #9 Dump
+        ##############################################################
+        # NEW PROTOCOL
+        ##############################################################
+        #Edit the database ASAP
 
-        #[winnerId(0), loserId(1), winnerELO(2), loserELO(3), winnerG(4), loserG(5), winnerGain(6), loserGain(7), winnerName(8), loserName(9)]
-        #List of values needed for changes
-        information = []
-        information.append(playerDATA[winnerDict]["id"])#0
-        information.append(playerDATA[loserDict]["id"])#1
-        information.append(playerDATA[winnerDict]["elo"])#2
-        information.append(playerDATA[loserDict]["elo"])#3
-        information.append(playerDATA[winnerDict]["g"])#4
-        information.append(playerDATA[loserDict]["g"])#5
+        #Create Result Array
+        match_data = {}
+        match_data["winner"] = playerDATA[answers[0]]["name"]
+        match_data["loser"] = playerDATA[answers[1]]["name"]
+        match_data["score"] = input("Score: ")
+        match_data["date"] = get_date()
+        match_data["winnerELO"] = playerDATA[answers[0]]["elo"]
+        match_data["loserELO"] = playerDATA[answers[1]]["elo"]
 
-        #Points System
+        #Add GP + 1 for both players
+        playerDATA[answers[0]]["gp"] = playerDATA[answers[0]]["gp"] + 1
+        playerDATA[answers[1]]["gp"] = playerDATA[answers[1]]["gp"] + 1
+        #Add W and L for both players
+        playerDATA[answers[0]]["wins"] = playerDATA[answers[0]]["wins"] + 1
+        playerDATA[answers[1]]["losses"] = playerDATA[answers[1]]["losses"] + 1
         #Calculate Match Delta
-        matchDelta = information[2]-information[3]
-        #Attribute Elo Gains
-        eloGain = get_eloGain(matchDelta)
+        matchDelta = playerDATA[answers[0]]["elo"]-playerDATA[answers[1]]["elo"]
 
-        #Check Gender
-        if information[4] == information[5]:#If Same
-            #Normal attribution
-            information.append(eloGain)#W6
-            information.append(eloGain*-1)#L7
-        else:#If Different
-            if information[4] == "w":#If winner is a girl
-                #Double Girl Gain
-                information.append(eloGain*2)#W6
-                information.append(eloGain*-1)#L7
-            else:#If winner is a guy
-                #Half Girl Loss
-                information.append(int(eloGain*0.5))#W6
-                #Half Guy Gain
-                information.append(int(eloGain*-0.5))#L7
+        #Check Gender and Elo Gains
+        if playerDATA[answers[0]]["g"] == "w" and playerDATA[answers[1]]["g"] == "g":#If winner is girl and loser is guy
+            playerDATA[answers[0]]["elo"] = playerDATA[answers[0]]["elo"]+(get_eloGain(matchDelta)*2)
+            match_data["winnerGain"] = get_eloGain(matchDelta)*2
+            playerDATA[answers[1]]["elo"] = playerDATA[answers[1]]["elo"]-get_eloGain(matchDelta)
+            match_data["loserGain"] = -get_eloGain(matchDelta)
+        elif playerDATA[answers[0]]["g"] == "g" and playerDATA[answers[1]]["g"] == "w":#If winner is guy and loser is girl
+            playerDATA[answers[0]]["elo"] = playerDATA[answers[0]]["elo"]+(get_eloGain(matchDelta)/2)
+            match_data["winnerGain"] = get_eloGain(matchDelta)/2
+            playerDATA[answers[1]]["elo"] = playerDATA[answers[1]]["elo"]-(get_eloGain(matchDelta)/2)
+            match_data["loserGain"] = -(get_eloGain(matchDelta)/2)
+        else:#Same Gender
+            playerDATA[answers[0]]["elo"] = playerDATA[answers[0]]["elo"]+get_eloGain(matchDelta)
+            match_data["winnerGain"] = get_eloGain(matchDelta)
+            playerDATA[answers[1]]["elo"] = playerDATA[answers[1]]["elo"]-get_eloGain(matchDelta)
+            match_data["loserGain"] = -(get_eloGain(matchDelta))
 
-        #Append more values
-        information.append(playerDATA[winnerDict]["name"])#8
-        information.append(playerDATA[loserDict]["name"])#9
-        information.append(playerDATA[winnerDict]["streak"])#10
-        information.append(playerDATA[loserDict]["streak"])#11
+        #Streak Winner
+        if playerDATA[answers[0]]["streak"] <= 0:
+            playerDATA[answers[0]]["streak"] = 1
+        else:
+            playerDATA[answers[0]]["streak"] = playerDATA[answers[0]]["streak"]+1
+        #Streak Loser
+        if playerDATA[answers[1]]["streak"] <= 0:
+            playerDATA[answers[1]]["streak"] = playerDATA[answers[1]]["streak"]-1
+        else:
+            playerDATA[answers[1]]["streak"] = -1
 
-        #Create Streak
-        streaks = []
-        for i in range(10, 12):#10-11
-            if i == 10:
-                ending = True
-            else:
-                ending = False
-            currentStreak = information[i]
-            newStreak = playerStreak(currentStreak, ending)
-            streaks.append(newStreak)
-        playerDATA[winnerDict]["streak"] = streaks[0]
-        playerDATA[loserDict]["streak"] = streaks[1]
-        
-        #Attribute Elo Gains in Database
-        playerDATA[winnerDict]["elo"] = playerDATA[winnerDict]["elo"]+information[6]
-        playerDATA[loserDict]["elo"] = playerDATA[loserDict]["elo"]+information[7]
-        #Add Win, Loss, and Game Played in Database
-        playerDATA[winnerDict]["wins"] = playerDATA[winnerDict]["wins"] + 1
-        playerDATA[winnerDict]["gp"] = playerDATA[winnerDict]["gp"] + 1
-        playerDATA[loserDict]["losses"] = playerDATA[loserDict]["losses"] + 1
-        playerDATA[loserDict]["gp"] = playerDATA[loserDict]["gp"] + 1
-        
-        #Dump player information
+        #Append to current results.json
+        match_data["msDate"] = get_ms_date()
+        resultDATA.append(match_data) 
+
+        #Dump Players
         #Sort by elo
         playerDATA.sort(reverse=True, key=lambda x: x["elo"])
         with open("jsons/players.json", "w", encoding='utf8') as fr:
             json.dump(playerDATA, fr, indent=4)
 
-        #Create Result Array
-        match_data = {}
-        match_data["winner"] = information[8]
-        match_data["loser"] = information[9]
-        match_data["score"] = input("Score: ")
-        match_data["date"] = get_date()
-        match_data["winnerELO"] = information[2]
-        match_data["loserELO"] = information[3]
-        match_data["winnerGain"] = information[6]
-        match_data["loserGain"] = information[7]
-        match_data["msDate"] = get_ms_date()
-        #Append to current results.json
-        resultDATA.append(match_data)
-
-        #Dump results
+        #Dump Result
         #Sort results
         resultDATA.sort(reverse=True, key=lambda x: x["msDate"])
         with open("jsons/results.json", "w", encoding='utf8') as fp:
             json.dump(resultDATA, fp, indent = 4)
 
-        #Create Top Players
-
         #Loop back to main
         main()
+
+        ##############################################################
 
     elif choice =="2":#Add Doubles Result
 
@@ -159,17 +126,6 @@ def main():
         show_database_information(playerDATA, resultDATA)
 
         #4 players, 2 winners, 2 losers
-
-        #Protocol
-        #1 Get Players Ids
-        #2 Get Current Elos
-        #3 Get Current Genders
-        #4 Calculate Match Delta
-        #5 Calculate Elo Gains
-        #6 Get Names
-        #7 Get Streak
-        #8 Adjust Elo
-        #9 Dump
 
         #1
         myPlayers = 0
