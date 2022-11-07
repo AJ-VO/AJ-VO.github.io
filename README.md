@@ -27,6 +27,7 @@ Points perdus par la fille = y/-2
 
 Système en double : 
 Pour le moment, le système de double ne prends pas en considération le sexe des joueurs.
+```
 y = Points gagnés ou perdus
 x = Points moyens des gagnants - points moyens des perdants
 ```
