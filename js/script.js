@@ -50,7 +50,7 @@ fetch("https://aj-vo.github.io/jsons/results.json")
         else{
             out+= `
             <tr>
-                <td>${product.date}<br><b>${product.winner}</b> +${product.winnerGain} d. <b>${product.loser}</b> -${product.winnerGain} <br>[${product.score}]</td>
+                <td>${product.date}<br><b>${product.winner}</b> +${product.winnerGain} d. <br><b>${product.loser}</b> -${product.winnerGain} <br>[${product.score}]</td>
             </tr>
         `;
         }

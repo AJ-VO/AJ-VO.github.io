@@ -1,5 +1,4 @@
 #Result
-#A-C Forcier - V Lachance d. C Girard - M Marceau 8-3
 
 from utils import *
 
@@ -180,44 +179,61 @@ def main():
         #Loop back to main
         main()
 
+    elif choice == "3":#Add Tournament Result
+        
+        #Create Result Array
+        match_data = {}
+
+        #Load Tourament Data
+        tournamentPlayersData = load_tournament()
+        tournamentResultsData = load_tournament_matches()
+        myTeams = load_teams()
+        
+        #Ask Team
+        #jsons/teams.json
+        teamsPossible = show_teams()
+
+        #Get and Check Entry
+        j = 0
+        while j == 0:
+            myAnswer = input("Team Key: ")
+            #If not in database
+            if int(myAnswer) < 0 or int(myAnswer) > teamsPossible-1:
+                print("Wrong Input")
+                continue
+            else:
+                teamVS = (int(myAnswer))#Team's Key
+                j=j+1
+
+        #Ask Location
+        #Home/Away
+        j = 0
+        while j == 0:#Stop when 1 answers
+            myAnswer = input("Home/Away?: ")
+            if myAnswer.lower() != "home" and myAnswer.lower() != "away":
+                print("Wrong Input")
+                continue
+            else:
+                myLocation = myAnswer.upper()#Location
+                j=j+1
+
+        #Create Tournament
+        match_data["tourny"] = myTeams[teamVS]["team_tag"]+"#"+myLocation
+        #YYYY-MM-DD
+        match_data["date"] = "YYYY-MM-DD"
+        
+        #Get Matches Played
+
+        #Create Entry Loop
+
+        #Loop back to main
+        main()
+
     else:#Error
 
         print("Error, choice is not in menu")
         #Loop back to main
         main()
-    
-    """ elif choice == "2":#Add Tournament Result (OFFLINE)
-        print_tournament_information()
-        with open("jsons/t_players.json", "r", encoding='utf8') as f:
-            playerDATA = json.load(f)
-        with open("jsons/t_results.json", "r", encoding='utf8') as fp:
-            resultDATA = json.load(fp)
-        winnerDict = int(input("Winner Key: "))
-        loserDict = int(input("Loser Key: "))
-        score = input("Score: ")
-        tournament = input("Tournament (TEAM#AWAY/HOME)")
-        information = []#winnerid, loserid,
-
-        #Player Data
-        #Winner
-        playerDATA[winnerDict]["gp"] = playerDATA[winnerDict]["gp"] + 1
-        playerDATA[winnerDict]["wins"] = playerDATA[winnerDict]["wins"] + 1
-        #Loser
-        playerDATA[loserDict]["gp"] = playerDATA[loserDict]["gp"] + 1
-        playerDATA[loserDict]["losses"] = playerDATA[loserDict]["losses"] + 1
-        with open("jsons/t_players.json", "w", encoding='utf8') as fr:
-            json.dump(playerDATA, fr, indent=4)
-        #Match Data
-        match_data = {}
-        match_data["winner"] = playerDATA[winnerDict]["name"]
-        match_data["loser"] = playerDATA[loserDict]["name"]
-        match_data["score"] = score
-        match_data["date"] = get_date()
-        match_data["tourny"] = tournament
-        resultDATA.append(match_data)
-        with open("jsons/t_results.json", "w", encoding='utf8') as fr:
-            json.dump(resultDATA, fr, indent=4)
-        main() """
         
 if __name__ == "__main__":
     main()

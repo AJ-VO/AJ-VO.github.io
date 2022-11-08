@@ -12,9 +12,18 @@ from datetime import date
 from random import choice
 
 def my_test():#Test Function
-    l = []
-    l.append(1)
-    print(len(l))
+    with open("jsons/teams.json", "r", encoding='utf8') as f:
+        data = json.load(f)
+    f.close()
+    j = 100
+    for i in data:
+        i["id"] = j
+        i["gp"] = 0
+        i["wins"] = 0
+        i["losses"] = 0
+        j=j+1
+    with open("jsons/teams.json", "w", encoding='utf8') as f:
+        json.dump(data, f, indent=4)
 
 def get_ms_date():#Returns MS timestamp (int)
     return round(time.time() * 1000)
@@ -25,6 +34,7 @@ def print_main_menu():#Print Main Menu
     print("0) Quit")
     print("1) Add Result")
     print("2) Add Doubles Result")
+    print("3) Add Tournament Result")
     print("===========================")
 
 def load_players():#Returns players from database (json)
@@ -34,6 +44,16 @@ def load_players():#Returns players from database (json)
 
 def load_tournament():#Returns players on tournament from database (json)
     with open('jsons/t_players.json', 'r', encoding='utf8') as f:
+        data = json.load(f)
+    return data
+
+def load_tournament_matches():#Returns results of tournament from database (json)
+    with open('jsons/t_results.json', 'r', encoding='utf8') as f:
+        data = json.load(f)
+    return data
+
+def load_teams():#Returns teams from database (json)
+    with open('jsons/teams.json', 'r', encoding='utf8') as f:
         data = json.load(f)
     return data
 
@@ -53,20 +73,12 @@ def print_database_information():#Print Players Database for Data Entry
         j = j+1
     return j
 
-def print_tournament_information():#Print Tournaments Database for Data Entry
-    players = load_tournament()
-    j = 0
-    print("NUMBER SHOWN IS KEY")
-    for i in players:
-        print(str(j)+"| ("+i["g"]+")"+i["name"])
-        j = j+1
-
 def get_date():#Returns Date for Database results.json (str)
     today = date.today()
     d2 = today.strftime("%B %d, %Y")
     return d2
 
-def get_eloGain(matchDelta):#Points lost and gained algorithm
+def get_eloGain(matchDelta):#Points lost and gained algorithm (int)
     if matchDelta > 500:
         eloGain = 20
     elif matchDelta < -500:
@@ -124,3 +136,15 @@ def show_database_information(playerInformation, resultInformation):#Shows curre
     print("Players in top 50%: "+str(top))
     print("Players in bottom 50%: "+str(bottom))
     print("============================================")
+
+def show_teams():#Show teams for data entry
+    with open("jsons/teams.json", 'r') as outfile:
+        data = json.load(outfile)
+    outfile.close()
+    j = 0
+    for i in data:
+        print("("+str(j)+") "+i["team_name"]+" ["+i["team_tag"]+"]")
+        j = j + 1
+    return j
+
+my_test()
