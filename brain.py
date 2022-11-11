@@ -16,6 +16,31 @@ def main():
         #Exits Script
         sys.exit(0)
 
+    elif choice == "-2":#Add Player
+
+        #load
+        playerData = load_players()
+
+        playerDict = {}
+        #Name
+        playerDict["name"] = input("Name: ")
+        #Gender
+        playerDict["g"] = input("Gender (W/G): ")
+        #New Id
+        playerDict["id"] = 0
+        #Elo
+        playerDict["elo"] = 1500
+        #Other
+        playerDict["gp"] = input("Name: ")
+        playerDict["wins"] = input("Name: ")
+        playerDict["losses"] = input("Name: ")
+        playerDict["name"] = input("Name: ")
+
+        #dump
+
+        #loop back to main
+        main()
+
     elif choice == "-1":#Database Information
 
         #Load Database Data

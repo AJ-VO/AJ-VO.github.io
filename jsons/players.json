@@ -13,13 +13,13 @@
         "streak": 3
     },
     {
-        "name": "Alexis Turcotte",
+        "name": "Alexandre Laplante",
         "g": "g",
-        "id": 13,
+        "id": 10,
         "gp": 1,
         "wins": 1,
         "losses": 0,
-        "elo": 1605,
+        "elo": 1616,
         "t_wins": 0,
         "t_losses": 0,
         "img": "img/players/test.png",
@@ -130,19 +130,6 @@
         "streak": 0
     },
     {
-        "name": "Alexandre Laplante",
-        "g": "g",
-        "id": 10,
-        "gp": 0,
-        "wins": 0,
-        "losses": 0,
-        "elo": 1500,
-        "t_wins": 0,
-        "t_losses": 0,
-        "img": "img/players/test.png",
-        "streak": 0
-    },
-    {
         "name": "Mathis Roux",
         "g": "g",
         "id": 14,
@@ -232,6 +219,19 @@
         "t_losses": 0,
         "img": "img/players/test.png",
         "streak": 0
+    },
+    {
+        "name": "Alexis Turcotte",
+        "g": "g",
+        "id": 13,
+        "gp": 2,
+        "wins": 1,
+        "losses": 1,
+        "elo": 1489,
+        "t_wins": 0,
+        "t_losses": 0,
+        "img": "img/players/test.png",
+        "streak": -1
     },
     {
         "name": "Camille Girard",
