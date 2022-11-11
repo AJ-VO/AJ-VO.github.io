@@ -10,6 +10,8 @@ import json
 import pandas as pd
 from datetime import date
 from random import choice
+import numpy as np
+import matplotlib.pyplot as plt
 
 def my_test():#Test Function
     with open("jsons/teams.json", "r", encoding='utf8') as f:
@@ -30,6 +32,7 @@ def get_ms_date():#Returns MS timestamp (int)
 
 def print_main_menu():#Print Main Menu
     print("======== V&O Bra1n ========")
+    print("-2) Add Player")
     print("-1) Database Information")
     print("0) Quit")
     print("1) Add Result")
@@ -147,4 +150,33 @@ def show_teams():#Show teams for data entry
         j = j + 1
     return j
 
-my_test()
+def standings_bell_curve():#Show bell curve of current standings
+
+    def pdf(x):
+        mean = np.mean(x)
+        std = np.std(x)
+        y_out = 1/(std * np.sqrt(2 * np.pi)) * np.exp( - (x - mean)**2 / (2 * std**2))
+        return y_out
+        
+    x = []#<class 'numpy.ndarray'>
+    with open("jsons\players.json", "r") as f:
+        data = json.load(f)
+    for i in data:
+        x.append(i["elo"])
+
+    y = pdf(x)
+
+    plt.style.use('seaborn')
+    plt.figure(figsize = (6, 6))
+    plt.plot(x, y, color = 'black',
+            linestyle = 'dashed')
+
+    plt.scatter( x, y, marker = 'o', s = 25, color = 'red')
+    plt.show()
+
+def dump_json_file(file, myData):#Dump to specific file
+
+    with open("jsons/"+file+".json", "r", encoding="utf8") as f:
+        json.dump(myData, f, indent=4)
+    f.close()
+    print("("+file+".json) - dumped")

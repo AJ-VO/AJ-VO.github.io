@@ -26,18 +26,25 @@ def main():
         playerDict["name"] = input("Name: ")
         #Gender
         playerDict["g"] = input("Gender (W/G): ")
+        #check
         #New Id
         playerDict["id"] = 0
+        #Other
+        playerDict["gp"] = 0
+        playerDict["wins"] = 0
+        playerDict["losses"] = 0
         #Elo
         playerDict["elo"] = 1500
-        #Other
-        playerDict["gp"] = input("Name: ")
-        playerDict["wins"] = input("Name: ")
-        playerDict["losses"] = input("Name: ")
-        playerDict["name"] = input("Name: ")
+        #Tournament
+        playerDict["t_wins"] = 0
+        playerDict["t_losses"] = 0
+        playerDict["img"] = "img/players/test.png"
+        playerDict["streak"] = 0
 
+        #append and sort
+        playerData.append(playerDict).sort(reverse=True, key=lambda x: x["elo"])
         #dump
-
+        dump_json_file("players", playerData)
         #loop back to main
         main()
 
@@ -123,14 +130,12 @@ def main():
         #Dump Players
         #Sort by elo
         playerDATA.sort(reverse=True, key=lambda x: x["elo"])
-        with open("jsons/players.json", "w", encoding='utf8') as fr:
-            json.dump(playerDATA, fr, indent=4)
+        dump_json_file("players", playerDATA)
 
         #Dump Result
         #Sort results
         resultDATA.sort(reverse=True, key=lambda x: x["msDate"])
-        with open("jsons/results.json", "w", encoding='utf8') as fp:
-            json.dump(resultDATA, fp, indent = 4)
+        dump_json_file("results", resultDATA)
 
         #Loop back to main
         main()
@@ -192,14 +197,12 @@ def main():
         #Dump Players
         #Sort by elo
         playerDATA.sort(reverse=True, key=lambda x: x["elo"])
-        with open("jsons/players.json", "w", encoding='utf8') as fr:
-            json.dump(playerDATA, fr, indent=4)
+        dump_json_file("players", playerDATA)
 
         #Dump Result
         #Sort results
         resultDATA.sort(reverse=True, key=lambda x: x["msDate"])
-        with open("jsons/results.json", "w", encoding='utf8') as fp:
-            json.dump(resultDATA, fp, indent = 4)
+        dump_json_file("results", resultDATA)
 
         #Loop back to main
         main()
