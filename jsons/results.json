@@ -1,5 +1,16 @@
 [
     {
+        "winner": "Anne-Catherine Forcier/Vicky Lachance",
+        "loser": "Camille Girard/Paulina Desmarais",
+        "score": "8-4",
+        "date": "November 11, 2022",
+        "winnerELO": 1420,
+        "loserELO": 1479,
+        "winnerGain": 36,
+        "loserGain": -36,
+        "msDate": 1668182035475
+    },
+    {
         "winner": "Alexandre Laplante",
         "loser": "Alexis Turcotte",
         "score": "6-1 3-4",

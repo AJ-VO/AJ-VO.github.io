@@ -1,6 +1,5 @@
-#Result
-
 from utils import *
+
 
 def main():
 
@@ -16,7 +15,7 @@ def main():
         #Exits Script
         sys.exit(0)
 
-    elif choice == "-2":#Add Player
+    elif choice == "-2":#Add Player (WIP)
 
         #load
         playerData = load_players()
@@ -25,17 +24,23 @@ def main():
         #Name
         playerDict["name"] = input("Name: ")
         #Gender
-        playerDict["g"] = input("Gender (W/G): ")
-        #check
+        genderResolved = False
+        while genderResolved == False:
+            answer = input("Gender (W/G): ")
+            if (answer.lower() == "w") or (answer.lower() == "g"):
+                playerDict["g"] = answer.lower()
+                genderResolved = True
+            else:
+                print("Bad Gender Input")
         #New Id
+        #id system
+        genderDict = {"w": 0, "g": 100}
         playerDict["id"] = 0
-        #Other
+        
         playerDict["gp"] = 0
         playerDict["wins"] = 0
         playerDict["losses"] = 0
-        #Elo
         playerDict["elo"] = 1500
-        #Tournament
         playerDict["t_wins"] = 0
         playerDict["t_losses"] = 0
         playerDict["img"] = "img/players/test.png"

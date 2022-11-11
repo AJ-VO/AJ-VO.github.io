@@ -14,18 +14,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def my_test():#Test Function
-    with open("jsons/teams.json", "r", encoding='utf8') as f:
-        data = json.load(f)
-    f.close()
-    j = 100
-    for i in data:
-        i["id"] = j
-        i["gp"] = 0
-        i["wins"] = 0
-        i["losses"] = 0
-        j=j+1
-    with open("jsons/teams.json", "w", encoding='utf8') as f:
-        json.dump(data, f, indent=4)
+    answer = "W"
+    if (answer.lower() == "w") or (answer.lower() == "g"):
+        print("Good")
+    else:
+        print("Bad")
 
 def get_ms_date():#Returns MS timestamp (int)
     return round(time.time() * 1000)
@@ -176,7 +169,7 @@ def standings_bell_curve():#Show bell curve of current standings
 
 def dump_json_file(file, myData):#Dump to specific file
 
-    with open("jsons/"+file+".json", "r", encoding="utf8") as f:
+    with open("jsons/"+file+".json", "w", encoding="utf8") as f:
         json.dump(myData, f, indent=4)
     f.close()
     print("("+file+".json) - dumped")
