@@ -1,5 +1,16 @@
 [
     {
+        "winner": "F\u00e9lix Ostiguy",
+        "loser": "Alexandre Laplante",
+        "score": "4-3(10-8)",
+        "date": "November 12, 2022",
+        "winnerELO": 1754,
+        "loserELO": 1616,
+        "winnerGain": 77,
+        "loserGain": -77,
+        "msDate": 1668283130393
+    },
+    {
         "winner": "Anne-Catherine Forcier/Vicky Lachance",
         "loser": "Camille Girard/Paulina Desmarais",
         "score": "8-4",
