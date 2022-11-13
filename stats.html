@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>
+        Stats - Tournoi
+    </title>
+
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+
+        td, th{
+            padding: 5px;
+        }
+        h3 {
+            color: red;
+        }
+        h5{
+            color: white;
+        }
+        button {
+            color: rgb(238, 184, 83);
+            background-color: #4CAF50;
+            font-size: 24px;
+        }
+
+    </style>
+
+</head>
+
+<body onload="insertText();">
+
+    <h4 align="center">Screenshot And Send @ <br>(514) 553-6209 - alexandre.jasmin@protonmail.com</h4>
+
+    <table align="center">
+      <thead>
+        <tr>
+          <td>
+
+            <table border="1" align="center">
+              <thead>
+                <tr>
+                  <th colspan="2">Légende</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1er</td>
+                  <td>Premier Service</td>
+                </tr>
+                <tr>
+                  <td>2e</td>
+                  <td>Deuxième Service</td>
+                </tr>
+                <tr>
+                  <td>DF</td>
+                  <td>Double Faute</td>
+                </tr>
+                <tr>
+                  <td>UE</td>
+                  <td>Erreur Non Forcée</td>
+                </tr>
+                <tr>  
+                  <td>FE</td>
+                  <td>Erreur Forcée</td>
+                </tr>
+                <tr>
+                  <td>W</td>
+                  <td>Coup Gagnant</td>
+                </tr>
+              </tbody>
+              </table>
+
+          </td>
+          <td>
+
+            <table align="center" border="1">
+              <thead>
+                <tr>
+                  <th colspan="3">Service</th>
+                </tr>
+              </thead>
+              <tbody align="center">
+                <tr>
+                  <td><button type="button" onclick="myFunction('1e')">1er</button></td>
+                  <td><button type="button" onclick="myFunction('2e')">2e</button></td>
+                  <td><button type="button" onclick="myFunction('df')">DF</button></td>
+                </tr>
+                <tr>
+                  <td id="1e"></td>
+                  <td id="2e"></td>
+                  <td id="df"></td>
+                </tr>
+                <tr>
+                  <th colspan="3">Points</th>
+                </tr>
+                <tr>
+                  <td><button type="button" onclick="myFunction('ue')">UE</button></td>
+                  <td><button type="button" onclick="myFunction('fe')">FE</button></td>
+                  <td><button type="button" onclick="myFunction('w')">W</button></td>
+                </tr>
+                <tr>
+                  <td id="ue"></td>
+                  <td id="fe"></td>
+                  <td id="w"></td>
+                </tr>
+                <tr>
+                  <td colspan="3"><button type="button" onclick="cancelEvent()">Cancel</button></td>
+                </tr>
+              </tbody>
+          </table>
+
+          </td>
+        </tr>
+      </thead>
+    </table>
+    
+    <h5><div id="lastEvent">Hello</div></h5>
+
+    <h3 align="center"><div id="errorLog"></div></h3>
+
+    <script src="js/stats.js"></script>
+
+</body>
+
+</html>

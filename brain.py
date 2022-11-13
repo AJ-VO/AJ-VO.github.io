@@ -1,6 +1,5 @@
 from utils import *
 
-
 def main():
 
     #Database Entry Script
@@ -36,6 +35,10 @@ def main():
         #id system
         genderDict = {"w": 0, "g": 100}
         playerDict["id"] = 0
+        #get list of ids
+        myIds = []
+        for i in playerData:
+            myIds.append(i["id"])
         
         playerDict["gp"] = 0
         playerDict["wins"] = 0
