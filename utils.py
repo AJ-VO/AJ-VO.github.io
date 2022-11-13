@@ -1,4 +1,4 @@
-#Libraries
+#Modules
 import json
 import math
 import random
@@ -16,20 +16,18 @@ import xlrd
 
 
 def my_test():#Test Function
-    # Data to be encoded
-    data = 'https://aj-vo.github.io/stats.html'
-    
-    # Encoding data using make() function
-    img = qrcode.make(data)
-    
-    # Saving as an image file
-    img.save('MyQRCode1.png')
+    with open("jsons/teams.json", "r") as f:
+        data = json.load(f)
+    f.close()
+    data[0]["players"].append("Alex Jasmin")
+    print(data)
 
 def get_ms_date():#Returns MS timestamp (int)
     return round(time.time() * 1000)
 
 def print_main_menu():#Print Main Menu
     print("======== V&O Bra1n ========")
+    print("-3) Add Team Player")
     print("-2) Add Player")
     print("-1) Database Information")
     print("0) Quit")
@@ -179,4 +177,11 @@ def dump_json_file(file, myData):#Dump to specific file
     f.close()
     print("("+file+".json) - dumped")
 
-my_test()
+def create_qr_code():#Create QR Code from data
+    # Data to be encoded
+    data = input("QR Code Data: ")
+    title = input("IMG Title: ")
+    # Encoding data using make() function
+    img = qrcode.make(data)
+    # Saving as an image file
+    img.save('img/qr/'+title+'.png')

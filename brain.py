@@ -14,6 +14,31 @@ def main():
         #Exits Script
         sys.exit(0)
 
+    elif choice =="-3":#Add Team Player
+
+        #team data
+        teamData = load_teams()
+
+        #returned # of teams
+        tp = show_teams()
+
+        teamIndex = int(input("Team Index: "))
+
+        addingStatus = False
+        while addingStatus == False:
+            player = input("Adding: ")
+            if player == "0":
+                addingStatus = True
+            else:
+                teamData[teamIndex]["players"].append(player)
+                print("Added "+player+" to ["+teamData[teamIndex]["team_tag"]+"]")
+
+        #dump
+        dump_json_file("teams", teamData)
+
+        #loop back to main
+        main()
+
     elif choice == "-2":#Add Player (WIP)
 
         #load
@@ -215,52 +240,14 @@ def main():
         #Loop back to main
         main()
 
-    elif choice == "3":#Add Tournament Result
+    elif choice == "3":#Add Tournament Result (WIP)
         
         #Create Result Array
         match_data = {}
 
-        #Load Tourament Data
-        tournamentPlayersData = load_tournament()
-        tournamentResultsData = load_tournament_matches()
-        myTeams = load_teams()
-        
-        #Ask Team
-        #jsons/teams.json
-        teamsPossible = show_teams()
-
-        #Get and Check Entry
-        j = 0
-        while j == 0:
-            myAnswer = input("Team Key: ")
-            #If not in database
-            if int(myAnswer) < 0 or int(myAnswer) > teamsPossible-1:
-                print("Wrong Input")
-                continue
-            else:
-                teamVS = (int(myAnswer))#Team's Key
-                j=j+1
-
-        #Ask Location
-        #Home/Away
-        j = 0
-        while j == 0:#Stop when 1 answers
-            myAnswer = input("Home/Away?: ")
-            if myAnswer.lower() != "home" and myAnswer.lower() != "away":
-                print("Wrong Input")
-                continue
-            else:
-                myLocation = myAnswer.upper()#Location
-                j=j+1
-
-        #Create Tournament
-        match_data["tourny"] = myTeams[teamVS]["team_tag"]+"#"+myLocation
-        #YYYY-MM-DD
-        match_data["date"] = "YYYY-MM-DD"
-        
-        #Get Matches Played
-
-        #Create Entry Loop
+        #Load
+        #Player Data
+        playerDATA = load_players()
 
         #Loop back to main
         main()
