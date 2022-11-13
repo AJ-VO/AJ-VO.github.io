@@ -1,24 +1,29 @@
 #Libraries
+import json
 import math
-import json
-import sys
 import random
-import time
-import xlrd
 import statistics
-import json
-import pandas as pd
+import sys
+import time
 from datetime import date
 from random import choice
-import numpy as np
+
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import qrcode
+import xlrd
+
 
 def my_test():#Test Function
-    answer = "W"
-    if (answer.lower() == "w") or (answer.lower() == "g"):
-        print("Good")
-    else:
-        print("Bad")
+    # Data to be encoded
+    data = 'https://aj-vo.github.io/stats.html'
+    
+    # Encoding data using make() function
+    img = qrcode.make(data)
+    
+    # Saving as an image file
+    img.save('MyQRCode1.png')
 
 def get_ms_date():#Returns MS timestamp (int)
     return round(time.time() * 1000)
@@ -173,3 +178,5 @@ def dump_json_file(file, myData):#Dump to specific file
         json.dump(myData, f, indent=4)
     f.close()
     print("("+file+".json) - dumped")
+
+my_test()
