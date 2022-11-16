@@ -60,7 +60,9 @@ function myDisplayer(data){
         result_string = result_string + 
         `
         <tr>
-        <td>`+(resultsData[j]["msDate"])+`</td>
+        <td>`+resultsData[j]["date"]+`
+        <br>`+(resultsData[j]["winner"])+` d. `+(resultsData[j]["loser"])+` 
+        <br>[`+(resultsData[j]["score"])+`]</td>
         </tr>
         `;
     }
