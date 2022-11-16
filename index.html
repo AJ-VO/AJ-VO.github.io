@@ -14,7 +14,7 @@
 
         <meta charset="UTF-8">
 
-        <!-- local style -->
+        <!-- local style (EDIT HERE)-->
         <style>
 
             a {
@@ -23,6 +23,14 @@
                 font-size: 24px;
             }
             .menu_bar {
+                border: 3px solid black;
+                border-collapse: collapse;
+                border-spacing: 0 50px;
+            }
+            .banner_img {
+                border: 5px solid rgb(219, 206, 30);
+            }
+            .player_home {
                 border: 3px solid black;
                 border-collapse: collapse;
                 border-spacing: 0 50px;
@@ -37,9 +45,8 @@
         <!-- Banner -->
         <!-- Title -->
         <center>
-            <img src="https://aj-vo.github.io/img/banner.png">
+            <img src="https://aj-vo.github.io/img/banner.png" class="banner_img">
             <h1 id="main_title">Site Officiel du Vert & Or Tennis</h1>
-            <h1>Menu</h1>
         </center>
 
         <!-- Menu Bar -->
@@ -56,13 +63,38 @@
         </table>
 
         <!-- Main Content -->
+
+        <h2 align="center">Ligue Intra-Équipe</h2>
+
+        <table align="center" border="1" class="player_home" style="width:70%">
+            <thead>
+              <tr>
+                <th style="width:50%"><p style="font-size: 24px;">Meneur</p></th>
+                <th style="width:50%"><p style="font-size: 24px;">Aléatoire</p></th>
+              </tr>
+              <tr>
+                <th style="width:50%">&nbsp;<div id="meneur_name"></div>&nbsp;</th>
+                <th style="width:50%">&nbsp;<div id="random_name"></div>&nbsp;</th>
+              </tr>
+            </thead>
+            <tbody align="center">
+              <tr>
+                <td>&nbsp;<div id="meneur_elo"></div>&nbsp;</td>
+                <td>&nbsp;<div id="random_elo"></div>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>&nbsp;<div id="meneur_text"></div>&nbsp;</td>
+                <td>&nbsp;<div id="random_text"></div>&nbsp;</td>
+              </tr>
+            </tbody>
+        </table>
         
 
         <!-- Copyright Footer -->
         <center>
             <footer>
 
-                <p><a href="https://github.com/AJ-VO/AJ-VO.github.io">jaZZ</a></p>
+                <p><a href="https://github.com/AJ-VO/AJ-VO.github.io">jaZZ</a> &copy;</p>
 
             </footer>
         </center>
