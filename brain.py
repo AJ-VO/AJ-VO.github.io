@@ -245,6 +245,11 @@ def main():
         #Create Result Array
         match_data = {}
 
+        #protocol
+        #choose team
+        
+        #loop till done
+
         #Load
         #Player Data
         playerDATA = load_players()
