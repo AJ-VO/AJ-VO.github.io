@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////
 //async functions to request data
 ///////////////////////////////////////////////////////////////////////////////////////////////
-//fetch players json (string)
+//fetch jsons (string)
 async function getData() {
     var file = "https://aj-vo.github.io/jsons/players.json";
     let x = await fetch(file);
@@ -30,16 +30,14 @@ getData().then(
 function pageInitializing() {
     console.log("Page Successfully Initialized");   
     console.log("Provided by jaZZ");
-
 }
-
 //log fecth error
 function catchingFetchError(data){
     console.log("failed to fetch json")
     console.log(data)
 }
 
-//players.json displayer for index.html
+//players.json and results.json displayer for index.html
 function myDisplayer(data){
     //parse to json
     const playerData = JSON.parse(data[0]),

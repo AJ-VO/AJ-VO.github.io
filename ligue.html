@@ -1,10 +1,10 @@
-<!-- INDEX.HTML -->
+<!-- LIGUE.HTML -->
 <!DOCTYPE html>
 <html>
 
     <head>
         
-        <title>Vert & Or</title>
+        <title>Ligue Intra-Équipe</title>
 
         <!-- edit href when live -->
         <link rel="icon" type="image/x-icon" href="https://aj-vo.github.io/img/favicon.png">
@@ -30,11 +30,6 @@
             .banner_img {
                 border: 5px solid rgb(219, 206, 30);
             }
-            .player_home {
-                border: 3px solid black;
-                border-collapse: collapse;
-                border-spacing: 0 50px;
-            }
 
         </style>
 
@@ -55,36 +50,27 @@
               <tr>
                 <td>
 
-                    <p style="font-size: 24px;">&nbsp;<a href="">Accueuil</a> - <a href="">Joueurs</a> - <a href="">Résultats</a> - <a href="ligue.html">Ligue</a>&nbsp;</p>
+                    <p style="font-size: 24px;">&nbsp;<a href="">Accueuil</a> - <a href="">Joueurs</a> - <a href="">Résultats</a> - <a href="">Ligue</a>&nbsp;</p>
 
                 </td>
               </tr>
             </thead>
         </table>
 
-        <!-- Main Content -->
-
-        <h2 align="center">Ligue Intra-Équipe</h2>
-
-        <table align="center" border="1" class="player_home" style="width:70%">
+        <!-- Main Content (EDIT HERE) -->
+        <table>
             <thead>
               <tr>
-                <th style="width:50%"><p style="font-size: 24px;">Meneur</p></th>
-                <th style="width:50%"><p style="font-size: 24px;">Aléatoire</p></th>
-              </tr>
-              <tr>
-                <th style="width:50%">&nbsp;<div id="meneur_name"></div>&nbsp;</th>
-                <th style="width:50%">&nbsp;<div id="random_name"></div>&nbsp;</th>
+                <!-- Top Layer -->
+                <th colspan="2"><div id="top_layer"></div></th>
               </tr>
             </thead>
-            <tbody align="center">
+            <tbody>
               <tr>
-                <td>&nbsp;<div id="meneur_elo"></div>&nbsp;</td>
-                <td>&nbsp;<div id="random_elo"></div>&nbsp;</td>
-              </tr>
-              <tr>
-                <td>&nbsp;<div id="meneur_text"></div>&nbsp;</td>
-                <td>&nbsp;<div id="random_text"></div>&nbsp;</td>
+                <!-- Left Layer -->
+                <td><div id="left_layer"></div></td>
+                <!-- Right Layer -->
+                <td><div id="right_layer"></div></td>
               </tr>
             </tbody>
         </table>
@@ -100,7 +86,7 @@
         </center>
 
 
-        <script src="https://aj-vo.github.io/js/index_script.js"></script>
+        <script src="https://aj-vo.github.io/js/ligue_script.js"></script>
 
     </body>
 
