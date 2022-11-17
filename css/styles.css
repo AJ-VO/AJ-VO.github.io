@@ -4,3 +4,6 @@ body {
 #main_title {
     color: rgb(12, 13, 13);
 }
+#standings th, td{
+    padding: 5px;
+}
