@@ -50,7 +50,7 @@ function myDisplayer(data){
     <h1>Meneur</h1>
     <h2>`+playerData[0]["name"]+`</h2>
     <img src="https://aj-vo.github.io/img/players/test.png">
-    <p>`+playerData[0]["elo"]+`PTS `+playerData[0]["wins"]+`W-`+playerData[0]["losses"]+`L (`+meneur_winrate+`%)</p>
+    <p>`+playerData[0]["elo"]+` PTS `+playerData[0]["wins"]+`W-`+playerData[0]["losses"]+`L (`+meneur_winrate+`%)</p>
     `
     ;
 
