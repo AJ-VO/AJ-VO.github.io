@@ -16,11 +16,14 @@ import xlrd
 
 
 def my_test():#Test Function
-    with open("jsons/teams.json", "r") as f:
+    with open("jsons/players.json", "r", encoding='utf8') as f:
         data = json.load(f)
     f.close()
-    data[0]["players"].append("Alex Jasmin")
-    print(data)
+    for i in data:
+        if i["id"] > 10:
+            i["id"] = i["id"]+100
+        else:
+            continue
 
 def get_ms_date():#Returns MS timestamp (int)
     return round(time.time() * 1000)

@@ -39,7 +39,7 @@ def main():
         #loop back to main
         main()
 
-    elif choice == "-2":#Add Player (WIP)
+    elif choice == "-2":#Add Player
 
         #load
         playerData = load_players()
@@ -56,14 +56,19 @@ def main():
                 genderResolved = True
             else:
                 print("Bad Gender Input")
-        #New Id
-        #id system
-        genderDict = {"w": 0, "g": 100}
-        playerDict["id"] = 0
-        #get list of ids
-        myIds = []
+            
+        #append all ids in matrix
+        myIds = [[], []]#[fille, gars]
         for i in playerData:
-            myIds.append(i["id"])
+            if i["id"] < 100:#fille
+                myIds[0].append(i["id"])
+            else:#gars
+                myIds[1].append(i["id"])
+
+        if playerDict["g"] == "w":
+            playerDict["id"] = max(myIds[0])+1
+        else:
+            playerDict["id"] = max(myIds[1])+1
         
         playerDict["gp"] = 0
         playerDict["wins"] = 0
@@ -75,7 +80,9 @@ def main():
         playerDict["streak"] = 0
 
         #append and sort
-        playerData.append(playerDict).sort(reverse=True, key=lambda x: x["elo"])
+        playerData.append(playerDict)
+        playerData.sort(reverse=True, key=lambda x: x["elo"])
+        print("Added "+playerDict["name"]+" id("+str(playerDict["id"])+") to databse")
         #dump
         dump_json_file("players", playerData)
         #loop back to main
