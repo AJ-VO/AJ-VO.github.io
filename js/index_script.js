@@ -3,6 +3,18 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////
 //fetch jsons (string)
 async function getData() {
+
+    //New Protocol
+    /* var files = ["players.json", "results.json"];
+    var responses = [];
+    for (let i=0;i<files.length;i++){
+        let x = await fetch("https://aj-vo.github.io/jsons/"+files[i]);
+        let y = await x.text();
+        responses.push(y)
+    }
+
+    return responses */
+
     var file = "https://aj-vo.github.io/jsons/players.json";
     let x = await fetch(file);
     let y = await x.text();
