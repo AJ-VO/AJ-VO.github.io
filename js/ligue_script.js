@@ -50,7 +50,7 @@ function myDisplayer(data){
     <h1>Meneur</h1>
     <h2>`+playerData[0]["name"]+`</h2>
     <img src="https://aj-vo.github.io/img/players/test.png">
-    <p>`+playerData[0]["elo"]+`PTS `+playerData[0]["wins"]+`W-`+playerData[0]["losses"]+`L (`+meneur_winrate+`%)</p>
+    <p style="font-size: 26px;">`+playerData[0]["elo"]+` PTS `+playerData[0]["wins"]+`W-`+playerData[0]["losses"]+`L (`+meneur_winrate+`%)</p>
     `
     ;
 
@@ -62,7 +62,7 @@ function myDisplayer(data){
         <tr>
         <td><u>`+resultsData[j]["date"]+`</u>
         <br>`+(resultsData[j]["winner"])+` d. `+(resultsData[j]["loser"])+` 
-        <br><b>[`+(resultsData[j]["score"])+`]</b><br></td>
+        <br><b>[`+(resultsData[j]["score"])+`]</b><br><br></td>
         </tr>
         `;
     }
@@ -90,25 +90,25 @@ function myDisplayer(data){
         standing_string = standing_string + 
         `
         <tr>
-        <td align="center">`+(place)+`</td>
-        <td>`+(playerData[i]["name"])+`</td>
-        <td>`+(playerData[i]["elo"])+`</td>
-        <td>`+(playerData[i]["wins"])+`</td>
-        <td>`+(playerData[i]["losses"])+`</td>
+        <td align="center">&nbsp;`+(place)+`&nbsp;</td>
+        <td><a href="" style="color:rgb(223, 223, 68); font-size: 14px;">`+(playerData[i]["name"])+`</a></td>
+        <td>&nbsp;`+(playerData[i]["elo"])+`&nbsp;</td>
+        <td align="center">`+(playerData[i]["wins"])+`</td>
+        <td align="center">`+(playerData[i]["losses"])+`</td>
         </tr>
         `;
     }
     document.getElementById("left_layer").innerHTML = 
     `
     <h1>Classement</h1>
-    <table>
+    <table border="1" class="standings">
     <thead>
     <tr>
         <th>#</th>
         <th>Nom</th>
         <th>Pts</th>
-        <th>V</th>
-        <th>D</th>
+        <th>&nbsp;Victoires&nbsp;</th>
+        <th>&nbsp;Défaites&nbsp;</th>
     </tr>
     </thead>
     <tbody>
