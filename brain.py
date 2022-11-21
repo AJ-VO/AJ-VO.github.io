@@ -16,8 +16,8 @@ def main():
 
     elif choice =="-3":#Add Team Player
 
-        #team data
-        teamData = load_teams()
+        #json
+        teamData = load_data('teams')
 
         #returned # of teams
         tp = show_teams()
@@ -41,8 +41,8 @@ def main():
 
     elif choice == "-2":#Add Player
 
-        #load
-        playerData = load_players()
+        #json
+        playerData = load_data('players')
 
         playerDict = {}
         #Name
@@ -90,9 +90,9 @@ def main():
 
     elif choice == "-1":#Database Information
 
-        #Load Database Data
-        playerDATA = load_players()
-        resultDATA = load_results()
+        #json
+        playerDATA = load_data('players')
+        resultDATA = load_data('results')
 
         #Print Main Menu
         #Shows keys for data entry
@@ -101,8 +101,8 @@ def main():
     elif choice == "1":#Add Game Result
         
         #Load Database Data
-        playerDATA = load_players()
-        resultDATA = load_results()
+        playerDATA = load_data('players')
+        resultDATA = load_data('results')
 
         #Print Players for entry
         playersPossible = print_database_information()
@@ -183,8 +183,8 @@ def main():
     elif choice =="2":#Add Doubles Result
 
         #Load Database Data
-        playerDATA = load_players()
-        resultDATA = load_results()
+        playerDATA = load_data('players')
+        resultDATA = load_data('results')
 
         #Print Players for entry
         playersPossible = print_database_information()
@@ -254,12 +254,15 @@ def main():
 
         #protocol
         #choose team
+        #choose player
         
         #loop till done
 
         #Load
         #Player Data
-        playerDATA = load_players()
+        playerDATA = load_data('players')
+
+        print(playerDATA)
 
         #Loop back to main
         main()

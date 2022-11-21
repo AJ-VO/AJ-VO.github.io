@@ -40,6 +40,6 @@ y = {
 ```
 
 # Analyse ATP_ALL
-[ATP_ALL](ATP_ALL.xls) est un fichier contenant de l'information sur des matchs de tennis professionnel joués entre 2008 et 2017. 
+[ATP_ALL](ATP_ALL.xls) est un fichier contenant de l'information sur des matchs de tennis professionnels joués entre 2008 et 2017. 
 
 *n = 27148*

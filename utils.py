@@ -14,16 +14,9 @@ import pandas as pd
 import qrcode
 import xlrd
 
-
 def my_test():#Test Function
-    with open("jsons/players.json", "r", encoding='utf8') as f:
-        data = json.load(f)
-    f.close()
-    for i in data:
-        if i["id"] > 10:
-            i["id"] = i["id"]+100
-        else:
-            continue
+    events = ["a", "b", "c"]
+    print(events.choice())
 
 def get_ms_date():#Returns MS timestamp (int)
     return round(time.time() * 1000)
@@ -39,34 +32,14 @@ def print_main_menu():#Print Main Menu
     print("3) Add Tournament Result")
     print("===========================")
 
-def load_players():#Returns players from database (json)
-    with open('jsons/players.json', 'r', encoding='utf8') as f:
+def load_data(file):#Returns data from database
+    with open('jsons/'+file+'.json', 'r', encoding='utf8') as f:
         data = json.load(f)
-    return data
-
-def load_tournament():#Returns players on tournament from database (json)
-    with open('jsons/t_players.json', 'r', encoding='utf8') as f:
-        data = json.load(f)
-    return data
-
-def load_tournament_matches():#Returns results of tournament from database (json)
-    with open('jsons/t_results.json', 'r', encoding='utf8') as f:
-        data = json.load(f)
-    return data
-
-def load_teams():#Returns teams from database (json)
-    with open('jsons/teams.json', 'r', encoding='utf8') as f:
-        data = json.load(f)
-    return data
-
-def load_results():#Returns results from database (json)
-    with open("jsons/results.json", "r", encoding='utf8') as fp:
-        data = json.load(fp)
     return data
 
 def print_database_information():#Print Players Database for Data Entry
     #Load Players
-    players = load_players()
+    players = load_data('players')
     #Print Key
     j = 0
     print("NUMBER SHOWN IS KEY")
@@ -188,3 +161,5 @@ def create_qr_code():#Create QR Code from data
     img = qrcode.make(data)
     # Saving as an image file
     img.save('img/qr/'+title+'.png')
+
+my_test()
