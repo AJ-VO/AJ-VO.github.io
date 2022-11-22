@@ -16,8 +16,8 @@ def main():
 
     elif choice =="-3":#Add Team Player
 
-        #json
-        teamData = load_data('teams')
+        #team data
+        teamData = load_teams()
 
         #returned # of teams
         tp = show_teams()
@@ -39,10 +39,10 @@ def main():
         #loop back to main
         main()
 
-    elif choice == "-2":#Add Player
+    elif choice == "-2":#Add Player (WIP)
 
-        #json
-        playerData = load_data('players')
+        #load
+        playerData = load_players()
 
         playerDict = {}
         #Name
@@ -56,19 +56,14 @@ def main():
                 genderResolved = True
             else:
                 print("Bad Gender Input")
-            
-        #append all ids in matrix
-        myIds = [[], []]#[fille, gars]
+        #New Id
+        #id system
+        genderDict = {"w": 0, "g": 100}
+        playerDict["id"] = 0
+        #get list of ids
+        myIds = []
         for i in playerData:
-            if i["id"] < 100:#fille
-                myIds[0].append(i["id"])
-            else:#gars
-                myIds[1].append(i["id"])
-
-        if playerDict["g"] == "w":
-            playerDict["id"] = max(myIds[0])+1
-        else:
-            playerDict["id"] = max(myIds[1])+1
+            myIds.append(i["id"])
         
         playerDict["gp"] = 0
         playerDict["wins"] = 0
@@ -80,9 +75,7 @@ def main():
         playerDict["streak"] = 0
 
         #append and sort
-        playerData.append(playerDict)
-        playerData.sort(reverse=True, key=lambda x: x["elo"])
-        print("Added "+playerDict["name"]+" id("+str(playerDict["id"])+") to databse")
+        playerData.append(playerDict).sort(reverse=True, key=lambda x: x["elo"])
         #dump
         dump_json_file("players", playerData)
         #loop back to main
@@ -90,9 +83,9 @@ def main():
 
     elif choice == "-1":#Database Information
 
-        #json
-        playerDATA = load_data('players')
-        resultDATA = load_data('results')
+        #Load Database Data
+        playerDATA = load_players()
+        resultDATA = load_results()
 
         #Print Main Menu
         #Shows keys for data entry
@@ -101,8 +94,8 @@ def main():
     elif choice == "1":#Add Game Result
         
         #Load Database Data
-        playerDATA = load_data('players')
-        resultDATA = load_data('results')
+        playerDATA = load_players()
+        resultDATA = load_results()
 
         #Print Players for entry
         playersPossible = print_database_information()
@@ -183,8 +176,8 @@ def main():
     elif choice =="2":#Add Doubles Result
 
         #Load Database Data
-        playerDATA = load_data('players')
-        resultDATA = load_data('results')
+        playerDATA = load_players()
+        resultDATA = load_results()
 
         #Print Players for entry
         playersPossible = print_database_information()
@@ -254,15 +247,12 @@ def main():
 
         #protocol
         #choose team
-        #choose player
         
         #loop till done
 
         #Load
         #Player Data
-        playerDATA = load_data('players')
-
-        print(playerDATA)
+        playerDATA = load_players()
 
         #Loop back to main
         main()
