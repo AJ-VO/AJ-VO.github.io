@@ -10,14 +10,12 @@ import random
 def load_file(file):
     with open('jsons/'+file+'.json', 'r') as f:
         data = json.load(f)
-    f.close()
     return data
 
 #dump content in file
 def dump_file(file, content):
     with open('jsons/'+file+'.json', 'w') as f:
         json.dump(content, f, indent=4)
-    f.close()
 
 #tennis score system conversion
 def print_score(currentScore):
@@ -40,8 +38,10 @@ def opposite(player):
 #Main Functions
 
 def main():
+
     print("Tennis - jaZZ")
     print("starting match...")
+
     #name of players
     players = ["Alex", "Pascal"]
     #start time
@@ -56,12 +56,26 @@ def my_match(players):
 
         print("tiebreak")
         tiebreakDone = False
+        tiebreakPoints = []
         while tiebreakDone == False:
             winner = event_tracker(serverKey, trackerJSON)
+            tiebreakPoints.append(winner)
+            #change serve every odd point
+            if len(tiebreakPoints)%2 == 1:
+                serverKey = opposite(serverKey)
+
+            #stop when someone has at least 7 points and 2 difference
+            for i in range(2):
+                if tiebreakPoints.count(i) >= 7:
+                    if tiebreakPoints.count(i)-tiebreakPoints.count(opposite(i)) > 1:
+                        tiebreakDone = True
+                        winner = i
+
+        return winner
+
 
         #needs to return a 0,1
         return random.randint(0, 1)
-
 
     #initialize score values
     total_score = []#all the sets
@@ -75,64 +89,62 @@ def my_match(players):
     #while the match is still playing
     while matchIsOver == False:
 
-        game_score = [0, 0]#game values
+        #start set
+        game_score = [0, 0]#game values (set score)
         setIsOver = False
-        while setIsOver == False:#set is over
-            score = [0, 0]#when you win a point, score[i] = score[i]  + 1
+        while setIsOver == False:
 
-            #attribute server
+            #points won
+            score = [0, 0]
+            #attribute player serving
             serverKey = 0
 
-            while (score[0] < 4) and (score[1] < 4):#while the game is playing
-                #attribute winner
-                winner = event_tracker(serverKey, trackerJSON)#returns 0,1
+            while (score[0] < 4) and (score[1] < 4):#win 4 points to win the game
+                #attribute winner (0,1)
+                winner = event_tracker(serverKey, trackerJSON)
                 score[winner] = score[winner] + 1
                 #print_score(score)
                 
-            #change serving player
-            if serverKey == 0:
-                serverKey = 1
-            else:
-                serverKey = 0
+            #change serving player when game is done
+            serverKey = opposite(serverKey)
 
-            for i in range(len(score)):#print game winner and gameWinnerKey
+            #who won the game (0,1)
+            for i in range(len(score)):
                 if score[i] == 4:
                     #print(players[i]+" won the game")
                     gameWinnerKey = i
+                    gameLoserKey = opposite(gameWinnerKey)
                     break
             
-            #attribute game
+            #add game to score
             game_score[gameWinnerKey] = game_score[gameWinnerKey] + 1
 
-            #attribute keys
-            if gameWinnerKey == 0:
-                gameLoserKey = 1
-            else:
-                gameLoserKey = 0
-
-            #check if 6-6
+            #check if tiebreak needed
             if (game_score[0] == game_score[1]) and sum(game_score) == 12:#6 - 6
+                #run tiebreak function
                 tiebreakWinner = tiebreak(serverKey)
+                #add game to score
                 game_score[tiebreakWinner] = game_score[tiebreakWinner] + 1
                 setIsOver = True
-            else:#not tiebreak
-                if (game_score[gameWinnerKey] == 6) and (game_score[gameLoserKey] < 5):#6 - something
+            else:#check if match over
+                if (game_score[gameWinnerKey] == 6) and (game_score[gameLoserKey] < 5):#6 - <5
                     setIsOver = True
                 elif (game_score[gameWinnerKey] == 7) and (game_score[gameLoserKey] < 6):#7 - 5
                     setIsOver = True
-                else:#playing
+                else:#match not over
                     #print(str(game_score[0])+"-"+str(game_score[1]))
                     continue
         
-        print(players[gameWinnerKey]+" won the set")
-        total_score.append(game_score)#add set to score
+        #set is over
+        #print(players[gameWinnerKey]+" won the set")
+        total_score.append(game_score)#add set to total score
         #check and attribute set value
         if game_score[0] > game_score[1]:
             total_sets[0] = total_sets[0] + 1
         else:
-            total_sets[1] =total_sets[1] + 1
+            total_sets[1] = total_sets[1] + 1
 
-        #MATCH IS OVER
+        #check if match is over
         if (total_sets[0] != total_sets[1]) and (sum(total_sets) == 2):#2-0 0-2
             matchIsOver = True
         elif sum(total_sets) == 3:#2-1 1-2
@@ -149,6 +161,10 @@ def my_match(players):
 
 def event_tracker(serverKey, trackerJSON):
 
+    #tracker
+    returnKey = opposite(serverKey)
+
+    #event vocabulary
     eventDict = {
         "a": "Ace",
         "re": "Return Error",
@@ -160,7 +176,14 @@ def event_tracker(serverKey, trackerJSON):
         "ue": "Unforced Error",
         "fe": "Forced Error"
     }
+    #event scenes on serve
+    eventScenes = {
+        "1st": ["a", "f", "re", "rw", "ip"],
+        "2nd": ["a", "df", "re", "rw", "ip"]
+    }
 
+
+    #ball is in play function
     def in_play(serve):
         #six events
         events = [str(serverKey)+"wi", str(serverKey)+"ue", str(serverKey)+"fe", str(returnKey)+"wi", str(returnKey)+"ue", str(returnKey)+"fe"]
@@ -172,6 +195,7 @@ def event_tracker(serverKey, trackerJSON):
             edit_tracker(str(returnKey)+"-"+serve+"-"+event+"-r")
             return 1
 
+    #edit trackerJSON after point
     def edit_tracker(eventString):
         #string to parse
         #(winning player-serve-event-(on what))
@@ -184,18 +208,41 @@ def event_tracker(serverKey, trackerJSON):
         serveStatus = event[3]
         print(event)
 
-    #First Event
+    #check how point started
+    def check_point_start(myCurrentServe):
+        #play ends before the rally starts (ace, return error, return winner)
+        if (event == "a") or (event == "re") or (event == "rw"):
+            #if server won the point
+            if (event == "a") or (event == "re"):
+                edit_tracker(str(serverKey)+"-1-"+event+"-s")
+                return serverKey
+            #if receiver won the point
+            else:
+                edit_tracker(str(returnKey)+"-1-"+event+"-r")
+                return returnKey
+        else:
+            return False
+
+    #new protocol
+
+    #enter first serve
+    currentMenu = eventScenes["1st"]
+    event = random.choice(currentMenu)
+    startOfPoint = check_point_start("1st")
+
+
+
+    #start of point
     events = ["a", "f", "re", "rw", "ip"]
     event = random.choice(events)
 
-    returnKey = opposite(serverKey)
-    
-    #POINT
     #play ends before the rally starts (ace, return error, return winner)
     if (event == "a") or (event == "re") or (event == "rw"):
+        #if server won the point
         if (event == "a") or (event == "re"):
             edit_tracker(str(serverKey)+"-1-"+event+"-s")
             return serverKey
+        #if receiver won the point
         else:
             edit_tracker(str(returnKey)+"-1-"+event+"-r")
             return returnKey
@@ -203,9 +250,11 @@ def event_tracker(serverKey, trackerJSON):
     else:
         #rally starts
         if event == "ip":
+            #in play function will return winner
             return in_play("1")
-        #second serve
+        #fault, second serve
         else:
+            #same events as first server but "df"
             events = ["a", "df", "re", "rw", "ip"]
             event = random.choice(events)
             #play ends before rally

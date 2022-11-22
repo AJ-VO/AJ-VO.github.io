@@ -15,8 +15,7 @@ import qrcode
 import xlrd
 
 def my_test():#Test Function
-    events = ["a", "b", "c"]
-    print(events.choice())
+    print(40%2)
 
 def get_ms_date():#Returns MS timestamp (int)
     return round(time.time() * 1000)
@@ -150,7 +149,6 @@ def dump_json_file(file, myData):#Dump to specific file
 
     with open("jsons/"+file+".json", "w", encoding="utf8") as f:
         json.dump(myData, f, indent=4)
-    f.close()
     print("("+file+".json) - dumped")
 
 def create_qr_code():#Create QR Code from data
