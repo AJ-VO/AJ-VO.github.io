@@ -39,7 +39,7 @@
                     "10-20": 0,
                     ">20": 0
                 },
-                "player_name": "Alex"
+                "player_name": ""
             },
             {
                 "service": {
@@ -79,23 +79,10 @@
                     "10-20": 0,
                     ">20": 0
                 },
-                "player_name": "Pascal"
+                "player_name": ""
             }
         ],
-        "final_score": [
-            [
-                6,
-                1
-            ],
-            [
-                6,
-                7
-            ],
-            [
-                6,
-                2
-            ]
-        ],
+        "final_score": [],
         "match_time": 0
     }
 }

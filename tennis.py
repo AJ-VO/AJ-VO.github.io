@@ -179,7 +179,8 @@ def event_tracker(serverKey, trackerJSON):
     #event scenes on serve
     eventScenes = {
         "1st": ["a", "f", "re", "rw", "ip"],
-        "2nd": ["a", "df", "re", "rw", "ip"]
+        "2nd": ["a", "df", "re", "rw", "ip"],
+        "IP": []
     }
 
 
@@ -228,7 +229,7 @@ def event_tracker(serverKey, trackerJSON):
     #enter first serve
     currentMenu = eventScenes["1st"]
     event = random.choice(currentMenu)
-    startOfPoint = check_point_start("1st")
+    startOfPoint = check_point_start("1")
 
 
 
