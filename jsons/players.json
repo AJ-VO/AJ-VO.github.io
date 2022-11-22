@@ -2,7 +2,7 @@
     {
         "name": "F\u00e9lix Ostiguy",
         "g": "g",
-        "id": 112,
+        "id": 12,
         "gp": 4,
         "wins": 4,
         "losses": 0,
@@ -15,7 +15,7 @@
     {
         "name": "Cornelis van der Zouwen",
         "g": "g",
-        "id": 111,
+        "id": 11,
         "gp": 1,
         "wins": 1,
         "losses": 0,
@@ -28,7 +28,7 @@
     {
         "name": "Alexy Le Menn",
         "g": "g",
-        "id": 118,
+        "id": 18,
         "gp": 1,
         "wins": 1,
         "losses": 0,
@@ -67,7 +67,7 @@
     {
         "name": "Alexandre Laplante",
         "g": "g",
-        "id": 110,
+        "id": 10,
         "gp": 2,
         "wins": 1,
         "losses": 1,
@@ -80,7 +80,7 @@
     {
         "name": "Nicolas Ladouceur",
         "g": "g",
-        "id": 116,
+        "id": 16,
         "gp": 2,
         "wins": 1,
         "losses": 1,
@@ -119,7 +119,7 @@
     {
         "name": "Mathis Roux",
         "g": "g",
-        "id": 114,
+        "id": 14,
         "gp": 0,
         "wins": 0,
         "losses": 0,
@@ -132,7 +132,7 @@
     {
         "name": "Nathan Richard",
         "g": "g",
-        "id": 117,
+        "id": 17,
         "gp": 0,
         "wins": 0,
         "losses": 0,
@@ -145,7 +145,7 @@
     {
         "name": "Justin Gautrais",
         "g": "g",
-        "id": 120,
+        "id": 20,
         "gp": 0,
         "wins": 0,
         "losses": 0,
@@ -158,7 +158,7 @@
     {
         "name": "Th\u00e9o Aicardi",
         "g": "g",
-        "id": 123,
+        "id": 23,
         "gp": 0,
         "wins": 0,
         "losses": 0,
@@ -171,7 +171,7 @@
     {
         "name": "Samuel Douville",
         "g": "g",
-        "id": 124,
+        "id": 24,
         "gp": 0,
         "wins": 0,
         "losses": 0,
@@ -184,7 +184,7 @@
     {
         "name": "Charles Normandin",
         "g": "g",
-        "id": 125,
+        "id": 25,
         "gp": 0,
         "wins": 0,
         "losses": 0,
@@ -197,33 +197,7 @@
     {
         "name": "Eloi Roux",
         "g": "g",
-        "id": 126,
-        "gp": 0,
-        "wins": 0,
-        "losses": 0,
-        "elo": 1500,
-        "t_wins": 0,
-        "t_losses": 0,
-        "img": "img/players/test.png",
-        "streak": 0
-    },
-    {
-        "name": "Alexandre Jasmin",
-        "g": "g",
-        "id": 115,
-        "gp": 0,
-        "wins": 0,
-        "losses": 0,
-        "elo": 1500,
-        "t_wins": 0,
-        "t_losses": 0,
-        "img": "img/players/test.png",
-        "streak": 0
-    },
-    {
-        "name": "Myriam Dubois",
-        "g": "w",
-        "id": 8,
+        "id": 101,
         "gp": 0,
         "wins": 0,
         "losses": 0,
@@ -236,7 +210,7 @@
     {
         "name": "Alexis Turcotte",
         "g": "g",
-        "id": 113,
+        "id": 13,
         "gp": 2,
         "wins": 1,
         "losses": 1,
@@ -275,7 +249,7 @@
     {
         "name": "Thierry Hotte-B\u00e9langer",
         "g": "g",
-        "id": 119,
+        "id": 19,
         "gp": 1,
         "wins": 0,
         "losses": 1,
@@ -288,7 +262,7 @@
     {
         "name": "Nicolas Leclair",
         "g": "g",
-        "id": 127,
+        "id": 100,
         "gp": 1,
         "wins": 0,
         "losses": 1,
@@ -301,7 +275,7 @@
     {
         "name": "Mathieu Lefebvre",
         "g": "g",
-        "id": 121,
+        "id": 21,
         "gp": 1,
         "wins": 0,
         "losses": 1,
@@ -327,7 +301,7 @@
     {
         "name": "Antoine Barth\u00e9l\u00e9my",
         "g": "g",
-        "id": 122,
+        "id": 22,
         "gp": 5,
         "wins": 2,
         "losses": 3,
