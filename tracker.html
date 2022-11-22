@@ -1,0 +1,153 @@
+<!-- TEMPLATE -->
+<!DOCTYPE html>
+<html>
+
+    <head>
+        
+        <title>Tracker</title>
+
+        <!-- edit href when live -->
+        <link rel="icon" type="image/x-icon" href="https://aj-vo.github.io/img/favicon.png">
+        <link rel="stylesheet" href="https://aj-vo.github.io/css/styles.css">
+        <!-- external -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <meta charset="UTF-8">
+
+        <!-- local style (EDIT HERE)-->
+        <style>
+
+            a {
+                color: black;
+                font-family: Verdana;
+                font-size: 24px;
+            }
+            .menu_bar {
+                border: 3px solid black;
+                border-collapse: collapse;
+                border-spacing: 0 50px;
+            }
+            .banner_img {
+                border: 5px solid rgb(219, 206, 30);
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <!-- Banner -->
+        <!-- Title -->
+        <center>
+            <a href="https://aj-vo.github.io"><img src="https://aj-vo.github.io/img/banner.png" class="banner_img"></a>
+            <h1 id="main_title">Site Officiel du Vert & Or Tennis</h1>
+        </center>
+
+        <!-- Menu Bar -->
+        <table align="center", border="1" class="menu_bar">
+            <thead>
+              <tr>
+                <td>
+
+                    <p style="font-size: 24px;">&nbsp;<a href="">Accueuil</a> - <a href="">Joueurs</a> - <a href="">Résultats</a> - <a href="ligue.html">Ligue</a>&nbsp;</p>
+
+                </td>
+              </tr>
+            </thead>
+        </table>
+
+        <!-- Main Content (EDIT HERE)-->
+        <br>
+        
+        <center>
+
+            <div id="askForServe"></div>
+
+        </center>
+
+        <!-- Copyright Footer -->
+        <center>
+            <footer>
+
+                <p><a href="https://github.com/AJ-VO/AJ-VO.github.io">jaZZ</a> &copy;</p>
+
+            </footer>
+        </center>
+
+
+        <script>
+
+            function attributeServeStart(server){
+                //remove buttons
+                document.getElementById("askForServe").innerHTML = "";
+                
+                //create tracker table
+                
+                //start match
+                my_match(server, players);
+            }
+
+            function opposite(id){
+                if (id == 0){
+                    return 1
+                }
+                else {
+                    return 0
+                }
+            }
+
+            function my_match(server, players){
+
+                //attribute serves
+                var serverKey = opposite(server);
+                var returnKey = server;
+
+                //initialize variables
+                var total_score = [];//all the sets
+                var total_sets = [0, 0];//set values
+
+                //load tracker
+                var trackerJSON = "";
+
+                //start match
+                var matchIsOver = false;
+                //while match is not over
+                while (matchIsOver == false){
+                    //start set
+                    var game_score = [0, 0];//game values (set score)
+                    setIsOver = false;
+                    //while set is not over
+                    while (setIsOver == false){
+                        var score = [0, 0];
+                        //while game is not over
+                        while (score[0] < 4 || score[1] < 4){
+                            var winner = 0;//0,1
+                            score[winner] = score[winner] + 1;
+                        }
+                    }
+
+                }
+
+            }
+
+            //decompose URL
+            var matchup = decodeURIComponent(window.location.search);
+            matchup = matchup.substring(2);
+            const players = matchup.split("-");
+            console.log(players);
+
+            //ask for server
+            //load buttons
+            document.getElementById("askForServe").innerHTML = 
+            `
+            <button id="playerServe" onclick="attributeServeStart(1)">`+players[0]+` au service</button>
+            <button id="playerServe" onclick="attributeServeStart(0)">`+players[1]+` au service</button>
+            `
+            ;
+
+        </script>
+
+    </body>
+
+</html>
