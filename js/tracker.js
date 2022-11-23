@@ -166,8 +166,12 @@ function logEvent(winner, playerEvent, event, pointStatus, serve){
         //add to total points
         trackerJSON["match"]["data"][winner]["points"]["total_points_won"]=trackerJSON["match"]["data"][winner]["points"]["total_points_won"]+1;
 
+        //won the point on what serve?
+        
+
         //reset currentServe
         currentServe = 1;
+
     }
     else{
         //point is not over
