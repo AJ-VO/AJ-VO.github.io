@@ -1,5 +1,12 @@
 //bugs:
 
+//new features:
+//highlight stats that could mean youre losing
+//rally time
+
+//next:
+//add points won on 1,2 serve
+
 //Library
 
 function opposite(id){
