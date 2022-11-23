@@ -166,13 +166,17 @@ function logEvent(winner, playerEvent, event, pointStatus, serve){
 
         //add to total points
         trackerJSON["match"]["data"][winner]["points"]["total_points_won"]=trackerJSON["match"]["data"][winner]["points"]["total_points_won"]+1;
+
+        //reset currentServe
+        currentServe = 1;
     }
     else{
         //point is not over
         //nothing to log
         //fault
         if (event == "fault"){
-            console.log("fault")
+            console.log("fault");
+            currentServe = 2;
         }
         //in play
         else{
@@ -417,18 +421,18 @@ function buttonLayout(layout){
         <table>
             <thead>
                 <tr>
-                    <th><button class="layoutButton" onclick=eventManager(0,"winner",0,1,true,0)>Winner</button></th>
-                    <th><button class="layoutButton" onclick=eventManager(0,"winner",1,1,true,1)>Winner</button></th>
+                    <th><button class="layoutButton" onclick=eventManager(0,"winner",0,`+currentServe+`,true,0)>Winner</button></th>
+                    <th><button class="layoutButton" onclick=eventManager(0,"winner",1,`+currentServe+`,true,1)>Winner</button></th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td><button class="layoutButton" onclick=eventManager(0,"ue",1,1,true,0)>Unforced</button></td>
-                    <td><button class="layoutButton" onclick=eventManager(0,"ue",0,1,true,1)>Unforced</button></td>
+                    <td><button class="layoutButton" onclick=eventManager(0,"ue",1,`+currentServe+`,true,0)>Unforced</button></td>
+                    <td><button class="layoutButton" onclick=eventManager(0,"ue",0,`+currentServe+`,true,1)>Unforced</button></td>
                 </tr>
                 <tr>
-                    <td><button class="layoutButton" onclick=eventManager(0,"fe",0,1,true,0)>Forced</button></td>
-                    <td><button class="layoutButton" onclick=eventManager(0,"fe",1,1,true,1)>Forced</button></td>
+                    <td><button class="layoutButton" onclick=eventManager(0,"fe",0,`+currentServe+`,true,0)>Forced</button></td>
+                    <td><button class="layoutButton" onclick=eventManager(0,"fe",1,`+currentServe+`,true,1)>Forced</button></td>
                 </tr>
             </tbody>
         </table>
