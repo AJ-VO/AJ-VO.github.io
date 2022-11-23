@@ -14,54 +14,71 @@ function showGoodScore(playerScore){
 }
 
 function matchOver(){
-    console.log("match is over");
+    console.log("match is over...");
     //generate link
     //https://aj-vo.github.io/match?=trackerJSON
     //change layout
     buttonLayout(3);
+    document.getElementById("mainTracker").innerHTML = "Final Stats";
 }
 
 function theSetIsOver(winner){
+    //set is over
+    //change set
     currentSet = currentSet+1;
+    //add set to winner
     total_sets[winner] = total_sets[winner] + 1;
+    //reset game score
     game_score[0] = 0;
     game_score[1] = 0;
     //is the match over?
     if (total_sets[winner] == 2){
         matchOver();
     }
+    else{
+        console.log("set over... keep playing");
+    }
 
 }
 
 function checkIfEndOfGame(winner){
+    //check if the last point ended the game (from eventManager)
 
+    //for every player
     for (let i=0;i<2;i++){
-       if (score[i] > 3){
-        //game has ended
-        console.log("end of game");
-        //log win
-        game_score[winner] = game_score[winner]+1;
-        total_score[currentSet][winner] = total_score[currentSet][winner]+1;
-        //change keys
-        serverKey = opposite(serverKey);
-        returnKey = opposite(returnKey);
-        //reset game score for both players
-        for (let j=0;j<2;j++){
-            score[j] = 0;
-        }
+        //does the player have more than three points? 40->G
+        //is the game over?
+        if (score[i] > 3){
+            //game has ended
+            console.log("end of game");
+            //log score win
+            //game win
+            game_score[winner] = game_score[winner]+1;
+            //edit current total_score
+            total_score[currentSet][winner] = total_score[currentSet][winner]+1;
+            //change serving keys
+            serverKey = opposite(serverKey);
+            returnKey = opposite(returnKey);
+            //reset game score for both players
+            for (let j=0;j<2;j++){
+                score[j] = 0;
+            }
 
-        //check if set ended
+        //game has ended, is the set over?
 
         //does a winner of the last game have 6 games in the bank?
         if (game_score[winner] == 6){
-            //do we need a tiebreak
+            
+            //does the other player has less than 5 games? over
             if (game_score[opposite(winner)] < 5){
                 theSetIsOver(winner);
             }
-            //do we keep going?
+            
+            //6-5
             else if (game_score[opposite(winner)] == 5){
                 console.log("set is not over");
             }
+            //6-6
             else{
                 tiebreakStatus = true;
                 theTiebreak[0] = 0;
@@ -71,8 +88,10 @@ function checkIfEndOfGame(winner){
         }
         //does the winner have 7 games in the bank
         else if (game_score[winner] == 7){
+            //over
             theSetIsOver(winner);
         }
+        //set is not over
         else {
             console.log("set is not over");
         }
@@ -84,10 +103,23 @@ function checkIfEndOfGame(winner){
 
 function logEvent(winner, playerEvent, event, pointStatus){
 
-    //logging protocol
-    //
-
     console.log("log event");
+    //logging protocol
+
+    //keep last event for undo?
+
+    //ACE (aces+1, total_points_won+1, winner+1, 1st service point won+1, receiving points own-1)
+    //FAULT (no log?)
+    //DOUBLE FAULT (double faults+1, ue+1, )
+
+    //return winner
+    //return error
+
+    //in play
+    //winner
+    //unforced error
+    //forced error
+
     //is the point over?
     if (pointStatus == true){
         //["points"]total_points_won
@@ -119,13 +151,15 @@ function updateTrackerLive(){
 }
 
 function showScore(){
-    //score table
+    //update score table
+    //can we make both if statements in one?
     var tableString = 
     `
     <table border="1" align="center">
         <tbody>
             <tr>
     `;
+    //who serves?
     if (serverKey == 0){
         tableString = tableString + "<td>*</td>";
     }
@@ -143,6 +177,7 @@ function showScore(){
             </tr>
             <tr>
     `;
+    //who serves
     if (serverKey == 0){
         tableString = tableString + "<td></td>";
     }
@@ -170,22 +205,24 @@ function eventManager(newLayout, event, winner, serve, pointStatus, playerEvent)
     //is the point over? (pointStatus)
     if (pointStatus == true){
         //point is over
-
         //are we in a tiebreak?
         if (tiebreakStatus == true){
             //yes
             theTiebreak[winner] = theTiebreak[winner]+1;
             totalTiebreakPoints = totalTiebreakPoints+1;
 
+            //change server if needed
             if (totalTiebreakPoints%2 == 1){
                 serverKey = opposite(serverKey);
                 returnKey = opposite(returnKey);
             }
 
             //is the tiebreak over?
-            //it nevers edits the 6-6 score
+            //at least 7 points and more than 1 point difference
             if (theTiebreak[winner] >= 7 && theTiebreak[winner]-theTiebreak[opposite(winner)] > 1){
+                //set win
                 total_score[currentSet][winner] = total_score[currentSet][winner]+1;
+                //reset tiebreak status and scores
                 tiebreakStatus = false;
                 theTiebreak[0] = "";
                 theTiebreak[1] = "";
@@ -193,30 +230,23 @@ function eventManager(newLayout, event, winner, serve, pointStatus, playerEvent)
             }
         }
         else {
+            //if not in tiebreak, add point to game
             score[winner] = score[winner] + 1;
         }
+        //check if point ended the game
         checkIfEndOfGame(winner);
+        //update score
         showScore();
     }
     //point is not over (false)
     else{
-        console.log("else");
+        console.log("points still ongoing...");
         //log event in tracker
     }
 
-    //if yes ,
-    //need to know
-    //1) who won the point? (0, 1) (winner)
-    //2) how did he win the point? (event)
-    //3) which serve started the rally (1,2) (serve)
-
-    //if not
-    //1) what event happend?
-    //2) who did the event
-
+    //after looking if the point was over
     //log event and edit tracker
     logEvent(winner, playerEvent, event, pointStatus);
-
     //switch layout buttonLayout(newLayout);
     buttonLayout(newLayout);
     
@@ -301,15 +331,20 @@ function buttonLayout(layout){
 }
 
 function attributeServeStart(server){
-    //attribute
+    
+    console.log("starting match...");
+    //first function event
+    //attribute server status to player
     serverKey = server;
     returnKey = opposite(server);
-    document.getElementById("askForServe").innerHTML = "Match Started";
+    //log start time
+    document.getElementById("askForServe").innerHTML = "Match Started<br>"+start_time;
+
     //load firts button layout
     buttonLayout(0);
+
     //load first score
     showScore();
-    console.log("starting match...");
 }
 
 ////////////////
@@ -460,6 +495,11 @@ const tracker =
 var trackerJSON = JSON.parse(tracker);//tracker variable
 trackerJSON["match"]["data"][0]["player_name"] = players[0];
 trackerJSON["match"]["data"][1]["player_name"] = players[1];
+
+//start time
+var start_time = new Date();
+start_time = start_time.toLocaleTimeString();
+
 ////////////////
 //script end////
 ////////////////
