@@ -1,3 +1,5 @@
+//bugs:
+
 //Library
 
 function opposite(id){
@@ -107,16 +109,6 @@ function logEvent(winner, playerEvent, event, pointStatus, serve){
     //logging protocol
     //keep last event for undo?
 
-    //ACE (aces+1, total_points_won+1, winner+1, 1st service point won+1, receiving points own-1)
-    //FAULT (no log?)
-    //DOUBLE FAULT (double faults+1, ue+1, )
-    //return winner
-    //return error
-    //in play
-    //winner
-    //unforced error
-    //forced error
-
     //is the point over?
     if (pointStatus == true){
         //point is over
@@ -145,11 +137,11 @@ function logEvent(winner, playerEvent, event, pointStatus, serve){
             if (event == "re"){
                 trackerJSON["match"]["data"][serverKey]["return"]["unreturned_"+serve]=trackerJSON["match"]["data"][serverKey]["return"]["unreturned_"+serve]+1;
                 if (serve == "1"){
-                    //fe
-                    trackerJSON["match"]["data"][returnKey]["points"]["fe"]=trackerJSON["match"]["data"][returnKey]["points"]["fe"]+1;
+                    //fe on first serve
+                    trackerJSON["match"]["data"][serverKey]["points"]["fe"]=trackerJSON["match"]["data"][serverKey]["points"]["fe"]+1;
                 }
                 else{
-                    //ue
+                    //ue on second serve
                     trackerJSON["match"]["data"][returnKey]["points"]["ue"]=trackerJSON["match"]["data"][returnKey]["points"]["ue"]+1;
                 }
             }
@@ -174,14 +166,7 @@ function logEvent(winner, playerEvent, event, pointStatus, serve){
         //point is not over
         //nothing to log
         //fault
-        if (event == "fault"){
-            console.log("fault");
-            currentServe = 2;
-        }
-        //in play
-        else{
-            console.log("in play");
-        }
+        console.log("in play...")
     }
     //update live tracker information
     updateTrackerLive();
@@ -351,6 +336,7 @@ function eventManager(newLayout, event, winner, serve, pointStatus, playerEvent)
             score[winner] = score[winner] + 1;
         }
         //check if point ended the game
+        logEvent(winner, playerEvent, event, pointStatus, serve);
         checkIfEndOfGame(winner);
         //update score
         showScore();
@@ -358,15 +344,16 @@ function eventManager(newLayout, event, winner, serve, pointStatus, playerEvent)
     //point is not over (false)
     else{
         console.log("points still ongoing...");
+        if (event == "fault"){
+            currentServe = 2;
+        }
         //log event in tracker
     }
 
     //after looking if the point was over
     //log event and edit tracker
-    logEvent(winner, playerEvent, event, pointStatus, serve);
     //switch layout buttonLayout(newLayout);
     buttonLayout(newLayout);
-    
 
 }
 
