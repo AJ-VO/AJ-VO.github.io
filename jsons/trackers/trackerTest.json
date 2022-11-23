@@ -5,22 +5,22 @@
                 "service": {
                     "total_services": 0,
                     "first_serve_p": 0,
-                    "aces": 0,
-                    "double_faults": 0,
-                    "first_services": 0,
-                    "second_services": 0
+                    "ace": 0,
+                    "df": 0,
+                    "1": 0,
+                    "2": 0
                 },
                 "return": {
-                    "return_errors": 0,
-                    "return_winners": 0,
-                    "unreturned_first_services": 0,
-                    "unreturned_second_services": 0
+                    "re": 0,
+                    "rw": 0,
+                    "unreturned_1": 0,
+                    "unreturned_2": 0
                 },
                 "points": {
                     "total_points_won": 0,
-                    "winners": 0,
-                    "unforced_errors": 0,
-                    "forced_errors": 0,
+                    "winner": 0,
+                    "ue": 0,
+                    "fe": 0,
                     "aggresive_margin": 0
                 },
                 "conversion": {
@@ -45,22 +45,22 @@
                 "service": {
                     "total_services": 0,
                     "first_serve_p": 0,
-                    "aces": 0,
-                    "double_faults": 0,
-                    "first_services": 0,
-                    "second_services": 0
+                    "ace": 0,
+                    "df": 0,
+                    "1": 0,
+                    "2": 0
                 },
                 "return": {
-                    "return_errors": 0,
-                    "return_winners": 0,
+                    "re": 0,
+                    "rw": 0,
                     "unreturned_first_services": 0,
                     "unreturned_second_services": 0
                 },
                 "points": {
                     "total_points_won": 0,
-                    "winners": 0,
-                    "unforced_errors": 0,
-                    "forced_errors": 0,
+                    "winner": 0,
+                    "ue": 0,
+                    "fe": 0,
                     "aggresive_margin": 0
                 },
                 "conversion": {

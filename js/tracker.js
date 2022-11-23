@@ -101,20 +101,17 @@ function checkIfEndOfGame(winner){
     
 }
 
-function logEvent(winner, playerEvent, event, pointStatus){
+function logEvent(winner, playerEvent, event, pointStatus, serve){
 
     console.log("log event");
     //logging protocol
-
     //keep last event for undo?
 
     //ACE (aces+1, total_points_won+1, winner+1, 1st service point won+1, receiving points own-1)
     //FAULT (no log?)
     //DOUBLE FAULT (double faults+1, ue+1, )
-
     //return winner
     //return error
-
     //in play
     //winner
     //unforced error
@@ -122,22 +119,65 @@ function logEvent(winner, playerEvent, event, pointStatus){
 
     //is the point over?
     if (pointStatus == true){
-        //["points"]total_points_won
-        trackerJSON["match"]["data"][winner]["points"]["total_points_won"] = trackerJSON["match"]["data"][winner]["points"]["total_points_won"]+1;
-    }
-    else{
-        //serve event
-        console.log(event);
-    }
+        //point is over
+
+        //Service
+        //1) Add to ["service"]["total_services"]
+        trackerJSON["match"]["data"][serverKey]["service"]["total_services"]=trackerJSON["match"]["data"][serverKey]["service"]["total_services"]+1;
+        //2)If ace of double fault
+        if (event == "ace" || event == "df"){
+            trackerJSON["match"]["data"][serverKey]["service"][event]=trackerJSON["match"]["data"][serverKey]["service"][event]+1;
+            trackerJSON["match"]["data"][serverKey]["points"][serveEventDict[event]]=trackerJSON["match"]["data"][serverKey]["points"][serveEventDict[event]]+1;
+        }
+        //3)Enter serve in play
+        trackerJSON["match"]["data"][serverKey]["service"][serve]=trackerJSON["match"]["data"][serverKey]["service"][serve]+1;
+        //4)Calculate first serve % (1st services / total services[will never be 0])
+        var firstServeP = trackerJSON["match"]["data"][serverKey]["service"]["1"]/trackerJSON["match"]["data"][serverKey]["service"]["total_services"];
+        trackerJSON["match"]["data"][serverKey]["service"]["first_serve_p"] = firstServeP;
 
 
-    //log end point event
-    if (event == "winner" || event == "fe" || event == "ue"){
-        //["points"]event[i]
-        trackerJSON["match"]["data"][playerEvent]["points"][event] = trackerJSON["match"]["data"][playerEvent]["points"][event] + 1;
+        //Return
+        //Add winner, fe, ue
+        //5)Does the return end the point?
+        if (event == "re" || event == "rw"){
+            trackerJSON["match"]["data"][returnKey]["return"][event]=trackerJSON["match"]["data"][returnKey]["return"][event]+1;
+            //5.1)Unreturned serve?
+            if (event == "re"){
+                trackerJSON["match"]["data"][serverKey]["return"]["unreturned_"+serve]=trackerJSON["match"]["data"][serverKey]["return"]["unreturned_"+serve]+1;
+                if (serve == "1"){
+                    //fe
+                    trackerJSON["match"]["data"][returnKey]["points"]["fe"]=trackerJSON["match"]["data"][returnKey]["points"]["fe"]+1;
+                }
+                else{
+                    //ue
+                    trackerJSON["match"]["data"][returnKey]["points"]["ue"]=trackerJSON["match"]["data"][returnKey]["points"]["ue"]+1;
+                }
+            }
+            //rw
+            else{
+                trackerJSON["match"]["data"][returnKey]["points"]["winner"]=trackerJSON["match"]["data"][returnKey]["points"]["winner"]+1;
+            }
+        }
+        //6) If ball is in play (can end with winner, fe, ue)
+        if (event == "winner" || event == "fe" || event == "ue"){
+            //["points"]event[i]
+            trackerJSON["match"]["data"][playerEvent]["points"][event] = trackerJSON["match"]["data"][playerEvent]["points"][event] + 1;
+        }
+
+        //add to total points
+        trackerJSON["match"]["data"][winner]["points"]["total_points_won"]=trackerJSON["match"]["data"][winner]["points"]["total_points_won"]+1;
     }
     else{
-        console.log(event);
+        //point is not over
+        //nothing to log
+        //fault
+        if (event == "fault"){
+            console.log("fault")
+        }
+        //in play
+        else{
+            console.log("in play");
+        }
     }
     //update live tracker information
     updateTrackerLive();
@@ -147,7 +187,80 @@ function logEvent(winner, playerEvent, event, pointStatus){
 
 function updateTrackerLive(){
     //mainTracker html element
-    document.getElementById("mainTracker").innerHTML = trackerJSON["match"]["data"][0]["points"]["winner"];
+    newElement = JSON.stringify(trackerJSON)
+    document.getElementById("mainTracker").innerHTML =
+    `
+    <br>
+    <p>`+players[0]+` vs. `+players[1]+`</p>
+    <table align="center" border=1>
+        <tbody>
+        <tr align="center">
+            <td colspan="3"><u><b>Service</b></u></td>
+        </tr>
+        <tr align="center">
+            <td>`+(Math.round((trackerJSON["match"]["data"][0]["service"]["first_serve_p"]) * 100))+`%</td>
+            <td>1st %</td>
+            <td>`+(Math.round((trackerJSON["match"]["data"][1]["service"]["first_serve_p"]) * 100))+`%</td>
+        </tr>
+        <tr align="center">
+            <td>`+trackerJSON["match"]["data"][0]["service"]["df"]+`</td>
+            <td>DF</td>
+            <td>`+trackerJSON["match"]["data"][1]["service"]["df"]+`</td>
+        </tr>
+        <tr align="center">
+            <td>`+trackerJSON["match"]["data"][0]["service"]["total_services"]+`</td>
+            <td>Services</td>
+            <td>`+trackerJSON["match"]["data"][1]["service"]["total_services"]+`</td>
+        </tr>
+        <tr align="center">
+            <td>`+(trackerJSON["match"]["data"][0]["return"]["unreturned_1"]+trackerJSON["match"]["data"][0]["return"]["unreturned_2"])+`</td>
+            <td>Unreturned</td>
+            <td>`+(trackerJSON["match"]["data"][1]["return"]["unreturned_1"]+trackerJSON["match"]["data"][1]["return"]["unreturned_2"])+`</td>
+        </tr>
+        <tr align="center">
+            <td colspan="3"><u><b>Retour</b></u></td>
+        </tr>
+        <tr align="center">
+            <td>`+trackerJSON["match"]["data"][0]["return"]["re"]+`</td>
+            <td>Erreur</td>
+            <td>`+trackerJSON["match"]["data"][1]["return"]["re"]+`</td>
+        </tr>
+        <tr align="center">
+            <td>`+trackerJSON["match"]["data"][0]["return"]["rw"]+`</td>
+            <td>Winner</td>
+            <td>`+trackerJSON["match"]["data"][1]["return"]["rw"]+`</td>
+        </tr>
+        <tr align="center">
+            <td colspan="3"><u><b>Points</b></u></td>
+        </tr>
+        <tr align="center">
+            <td>`+trackerJSON["match"]["data"][0]["points"]["total_points_won"]+`</td>
+            <td>Points Gagnés</td>
+            <td>`+trackerJSON["match"]["data"][1]["points"]["total_points_won"]+`</td>
+        </tr>
+        <tr align="center">
+            <td>`+trackerJSON["match"]["data"][0]["points"]["winner"]+`</td>
+            <td>Winners</td>
+            <td>`+trackerJSON["match"]["data"][1]["points"]["winner"]+`</td>
+        </tr>
+        <tr align="center">
+            <td>`+trackerJSON["match"]["data"][0]["points"]["ue"]+`</td>
+            <td>Unforced</td>
+            <td>`+trackerJSON["match"]["data"][1]["points"]["ue"]+`</td>
+        </tr>
+        <tr align="center">
+            <td>`+trackerJSON["match"]["data"][0]["points"]["fe"]+`</td>
+            <td>Forced</td>
+            <td>`+trackerJSON["match"]["data"][1]["points"]["fe"]+`</td>
+        </tr>
+        <tr align="center">
+            <td>`+(trackerJSON["match"]["data"][0]["points"]["winner"]+trackerJSON["match"]["data"][0]["points"]["fe"]-trackerJSON["match"]["data"][0]["points"]["ue"])+`</td>
+            <td>Marge</td>
+            <td>`+(trackerJSON["match"]["data"][1]["points"]["winner"]+trackerJSON["match"]["data"][1]["points"]["fe"]-trackerJSON["match"]["data"][1]["points"]["ue"])+`</td>
+        </tr>
+        </tbody>
+    </table>
+    `;
 }
 
 function showScore(){
@@ -246,7 +359,7 @@ function eventManager(newLayout, event, winner, serve, pointStatus, playerEvent)
 
     //after looking if the point was over
     //log event and edit tracker
-    logEvent(winner, playerEvent, event, pointStatus);
+    logEvent(winner, playerEvent, event, pointStatus, serve);
     //switch layout buttonLayout(newLayout);
     buttonLayout(newLayout);
     
@@ -255,22 +368,22 @@ function eventManager(newLayout, event, winner, serve, pointStatus, playerEvent)
 
 function buttonLayout(layout){
     //change layout
-    //<!-- (newLayout, event, winner, serve, pointStatus, playerEvent) -->
+    //<!-- (newLayout, event, winner, serve, pointStatus, playerEvent, otherEvent) -->
     if (layout == 0){//First Layout
         document.getElementById("buttonContainer").innerHTML = 
         `
         <table>
             <tbody align="center">
                 <tr>
-                    <td><button class="layoutButton" onclick=eventManager(0,"ace",`+serverKey+`,1,true,`+serverKey+`)>Ace</button></td>
-                    <td><button class="layoutButton" onclick=eventManager(0,"rw",`+returnKey+`,1,true,`+returnKey+`)>Return Winner</button></td>
+                    <td><button class="layoutButton" onclick=eventManager(0,"ace",`+serverKey+`,"1",true,`+serverKey+`)>Ace</button></td>
+                    <td><button class="layoutButton" onclick=eventManager(0,"rw",`+returnKey+`,"1",true,`+returnKey+`)>Return Winner</button></td>
                 </tr>
                 <tr>
                     <td><button class="layoutButton" onclick=eventManager(1,"fault",-1,1,false,`+serverKey+`)>Fault</button></td>
-                    <td><button class="layoutButton" onclick=eventManager(0,"re",`+serverKey+`,1,true,`+returnKey+`)>Return Error</button></td>
+                    <td><button class="layoutButton" onclick=eventManager(0,"re",`+serverKey+`,"1",true,`+returnKey+`)>Return Error</button></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><button class="layoutButton" onclick=eventManager(2,"ip",-1,1,false,`+serverKey+`)>In Play</button></td>
+                    <td colspan="2"><button class="layoutButton" onclick=eventManager(2,"ip",-1,"1",false,`+serverKey+`)>In Play</button></td>
                 </tr>
             </tbody>
         </table>
@@ -283,15 +396,15 @@ function buttonLayout(layout){
         <table>
             <tbody align="center">
                 <tr>
-                    <td><button class="layoutButton" onclick=eventManager(0,"ace",`+serverKey+`,2,true,`+serverKey+`)>Ace</button></td>
-                    <td><button class="layoutButton" onclick=eventManager(0,"rw",`+returnKey+`,2,true,`+returnKey+`)>Return Winner</button></td>
+                    <td><button class="layoutButton" onclick=eventManager(0,"ace",`+serverKey+`,"2",true,`+serverKey+`)>Ace</button></td>
+                    <td><button class="layoutButton" onclick=eventManager(0,"rw",`+returnKey+`,"2",true,`+returnKey+`)>Return Winner</button></td>
                 </tr>
                 <tr>
-                    <td><button class="layoutButton" onclick=eventManager(0,"df",`+returnKey+`,2,true,`+serverKey+`)>Double Fault</button></td>
-                    <td><button class="layoutButton" onclick=eventManager(0,"re",`+serverKey+`,2,true,`+returnKey+`)>Return Error</button></td>
+                    <td><button class="layoutButton" onclick=eventManager(0,"df",`+returnKey+`,"2",true,`+serverKey+`)>Double Fault</button></td>
+                    <td><button class="layoutButton" onclick=eventManager(0,"re",`+serverKey+`,"2",true,`+returnKey+`)>Return Error</button></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><button class="layoutButton" onclick=eventManager(2,"ip",-1,2,false,`+serverKey+`)>In Play</button></td>
+                    <td colspan="2"><button class="layoutButton" onclick=eventManager(2,"ip",-1,"2",false,`+serverKey+`)>In Play</button></td>
                 </tr>
             </tbody>
         </table>
@@ -392,11 +505,19 @@ var theTiebreak = ["", ""];
 var totalTiebreakPoints = 0;
 var serverKey;
 var returnKey;
-const pointDict = scoreDict = {
+const pointDict = {
     0: "0",
     1: "15",
     2: "30",
     3: "40",
+};
+const serveEventDict = {
+    "ace": "winner", 
+    "df": "ue"
+};
+const returnEventDict = {
+    "rw": "winner",
+    "re": "ue"
 };
 
 //tracker
@@ -409,16 +530,16 @@ const tracker =
             "service": {
                 "total_services": 0,
                 "first_serve_p": 0,
-                "aces": 0,
-                "double_faults": 0,
-                "first_services": 0,
-                "second_services": 0
+                "ace": 0,
+                "df": 0,
+                "1": 0,
+                "2": 0
             },
             "return": {
-                "return_errors": 0,
-                "return_winners": 0,
-                "unreturned_first_services": 0,
-                "unreturned_second_services": 0
+                "re": 0,
+                "rw": 0,
+                "unreturned_1": 0,
+                "unreturned_2": 0
             },
             "points": {
                 "total_points_won": 0,
@@ -428,8 +549,8 @@ const tracker =
                 "aggresive_margin": 0
             },
             "conversion": {
-                "second_service_points_won": 0,
-                "first_service_points_won": 0,
+                "2_service_points_won": 0,
+                "1_service_points_won": 0,
                 "receiving_points_won": 0,
                 "break_points": 0,
                 "net_points": 0,
@@ -449,16 +570,16 @@ const tracker =
             "service": {
                 "total_services": 0,
                 "first_serve_p": 0,
-                "aces": 0,
-                "double_faults": 0,
-                "first_services": 0,
-                "second_services": 0
+                "ace": 0,
+                "df": 0,
+                "1": 0,
+                "2": 0
             },
             "return": {
-                "return_errors": 0,
-                "return_winners": 0,
-                "unreturned_first_services": 0,
-                "unreturned_second_services": 0
+                "re": 0,
+                "rw": 0,
+                "unreturned_1": 0,
+                "unreturned_2": 0
             },
             "points": {
                 "total_points_won": 0,
@@ -468,8 +589,8 @@ const tracker =
                 "aggresive_margin": 0
             },
             "conversion": {
-                "second_service_points_won": 0,
-                "first_service_points_won": 0,
+                "2_service_points_won": 0,
+                "1_service_points_won": 0,
                 "receiving_points_won": 0,
                 "break_points": 0,
                 "net_points": 0,
@@ -490,8 +611,7 @@ const tracker =
     "match_time": 0
 }
 }
-`
-;
+`;
 var trackerJSON = JSON.parse(tracker);//tracker variable
 trackerJSON["match"]["data"][0]["player_name"] = players[0];
 trackerJSON["match"]["data"][1]["player_name"] = players[1];
