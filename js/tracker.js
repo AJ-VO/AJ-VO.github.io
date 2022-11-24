@@ -9,6 +9,7 @@
 
 //Library
 
+//Return opposite of current player
 function opposite(id){
     if (id == 0){
         return 1
@@ -18,10 +19,12 @@ function opposite(id){
     }
 }
 
+//Adjust points for tennis system
 function showGoodScore(playerScore){
     return pointDict[playerScore]
 }
 
+//Checks if the match is over
 function matchOver(){
     console.log("match is over...");
     //generate link
@@ -31,6 +34,7 @@ function matchOver(){
     document.getElementById("mainTracker").innerHTML = "Final Stats";
 }
 
+//Checks if the set is over
 function theSetIsOver(winner){
     //set is over
     //change set
@@ -50,6 +54,7 @@ function theSetIsOver(winner){
 
 }
 
+//Checks if the game is over
 function checkIfEndOfGame(winner){
     //check if the last point ended the game (from eventManager)
 
@@ -110,6 +115,7 @@ function checkIfEndOfGame(winner){
     
 }
 
+//Logs event in tracker
 function logEvent(winner, playerEvent, event, pointStatus, serve){
 
     console.log("log event");
@@ -181,10 +187,25 @@ function logEvent(winner, playerEvent, event, pointStatus, serve){
     }
     //update live tracker information
     updateTrackerLive();
+    loadData();
+}
+
+//Loads data to submit
+function loadData(){
+    console.log("submit...");
+    var formSubmit = `<form action="https://formsubmit.co/de20af6355d17d549798e2b645d4620e" method="POST">
+    <label for="winner">Data</label><br><br>
+    <input type="text" id="winner" name="winner" value=[`+JSON.stringify(trackerJSON)+`]><br><br>
+    <br>
+    <input type="submit" value="Bleed Green - Submit" name="submit">
+    </form>`;
+    document.getElementById("submit_data").innerHTML = formSubmit;
+
 }
 
 //Main Functions
 
+//Updates stats in real time
 function updateTrackerLive(){
     //mainTracker html element
     newElement = JSON.stringify(trackerJSON)
@@ -263,6 +284,7 @@ function updateTrackerLive(){
     `;
 }
 
+//Updates score in real time
 function showScore(){
     //update score table
     //can we make both if statements in one?
@@ -313,6 +335,7 @@ function showScore(){
     
 }
 
+//Parses event parameters
 function eventManager(newLayout, event, winner, serve, pointStatus, playerEvent){
 
     //is the point over? (pointStatus)
@@ -368,6 +391,7 @@ function eventManager(newLayout, event, winner, serve, pointStatus, playerEvent)
 
 }
 
+//Changes action buttons layout
 function buttonLayout(layout){
     //change layout
     //<!-- (newLayout, event, winner, serve, pointStatus, playerEvent, otherEvent) -->
@@ -445,6 +469,7 @@ function buttonLayout(layout){
     }
 }
 
+//Attribute the starting server
 function attributeServeStart(server){
     
     console.log("starting match...");
@@ -516,11 +541,7 @@ const pointDict = {
 const serveEventDict = {
     "ace": "winner", 
     "df": "ue"
-};
-const returnEventDict = {
-    "rw": "winner",
-    "re": "ue"
-};
+}
 
 //tracker
 const tracker = 
@@ -564,7 +585,7 @@ const tracker =
                 "0-3": 0,
                 "0-10": 0,
                 "10-20": 0,
-                ">20": 0
+                "20": 0
             },
             "player_name": ""
         },
@@ -604,7 +625,7 @@ const tracker =
                 "0-3": 0,
                 "0-10": 0,
                 "10-20": 0,
-                ">20": 0
+                "20": 0
             },
             "player_name": ""
         }
