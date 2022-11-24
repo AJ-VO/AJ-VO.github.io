@@ -6,8 +6,7 @@
 //rally time
 
 //next:
-//add points won on 1,2 serve
-//1_won / all_1 * 100
+//bug
 
 //Library
 
