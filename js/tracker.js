@@ -4,6 +4,7 @@
 //new features:
 //highlight stats that could mean youre losing
 //rally time
+//undo
 
 //next:
 //bug
@@ -28,16 +29,13 @@ function showGoodScore(playerScore){
 //Checks if the match is over
 function matchOver(){
     console.log("match is over...");
-    //generate link
-    //https://aj-vo.github.io/match?=trackerJSON
     //change layout
     buttonLayout(3);
     document.getElementById("mainTracker").innerHTML = "Final Stats";
 }
 
-//Checks if the set is over
+//Set is over
 function theSetIsOver(winner){
-    //set is over
     //change set
     currentSet = currentSet+1;
     //add set to winner
@@ -67,7 +65,6 @@ function checkIfEndOfGame(winner){
             //game has ended
             console.log("end of game");
             //log score win
-            //game win
             game_score[winner] = game_score[winner]+1;
             //edit current total_score
             total_score[currentSet][winner] = total_score[currentSet][winner]+1;
@@ -82,34 +79,34 @@ function checkIfEndOfGame(winner){
         //game has ended, is the set over?
 
         //does a winner of the last game have 6 games in the bank?
-        if (game_score[winner] == 6){
-            
-            //does the other player has less than 5 games? over
-            if (game_score[opposite(winner)] < 5){
+            if (game_score[winner] == 6){
+                
+                //does the other player has less than 5 games? over
+                if (game_score[opposite(winner)] < 5){
+                    theSetIsOver(winner);
+                }
+                
+                //6-5
+                else if (game_score[opposite(winner)] == 5){
+                    console.log("set is not over");
+                }
+                //6-6
+                else{
+                    tiebreakStatus = true;
+                    theTiebreak[0] = 0;
+                    theTiebreak[1] = 0;
+                    console.log("tiebreak");
+                }
+            }
+            //does the winner have 7 games in the bank
+            else if (game_score[winner] == 7){
+                //over
                 theSetIsOver(winner);
             }
-            
-            //6-5
-            else if (game_score[opposite(winner)] == 5){
+            //set is not over
+            else {
                 console.log("set is not over");
             }
-            //6-6
-            else{
-                tiebreakStatus = true;
-                theTiebreak[0] = 0;
-                theTiebreak[1] = 0;
-                console.log("tiebreak");
-            }
-        }
-        //does the winner have 7 games in the bank
-        else if (game_score[winner] == 7){
-            //over
-            theSetIsOver(winner);
-        }
-        //set is not over
-        else {
-            console.log("set is not over");
-        }
 
        }
     }
@@ -200,7 +197,7 @@ function logEvent(winner, playerEvent, event, pointStatus, serve){
     loadData();
 }
 
-//Loads data to submit
+//Loads data to submit in real time
 function loadData(){
     console.log("submit...");
     var formSubmit = `<form action="https://formsubmit.co/de20af6355d17d549798e2b645d4620e" method="POST">
