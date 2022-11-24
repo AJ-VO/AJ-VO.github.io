@@ -1,4 +1,5 @@
 //bugs:
+//ace unreturned serve?
 
 //new features:
 //highlight stats that could mean youre losing
@@ -6,6 +7,7 @@
 
 //next:
 //add points won on 1,2 serve
+//1_won / all_1 * 100
 
 //Library
 
@@ -118,7 +120,6 @@ function checkIfEndOfGame(winner){
 //Logs event in tracker
 function logEvent(winner, playerEvent, event, pointStatus, serve){
 
-    console.log("log event");
     //logging protocol
     //keep last event for undo?
 
@@ -169,11 +170,23 @@ function logEvent(winner, playerEvent, event, pointStatus, serve){
             trackerJSON["match"]["data"][playerEvent]["points"][event] = trackerJSON["match"]["data"][playerEvent]["points"][event] + 1;
         }
 
+        //7) Point won on which serve
+        //won the point on what serve?
+        if (winner == serverKey){
+            trackerJSON["match"]["data"][serverKey]["conversion"][serve+"_service_points_won"] = trackerJSON["match"]["data"][serverKey]["conversion"][serve+"_service_points_won"]+1;
+            
+        }
+        //receiver won point
+        else{
+            trackerJSON["match"]["data"][returnKey]["conversion"]["receiving_points_won"] = trackerJSON["match"]["data"][returnKey]["conversion"]["receiving_points_won"]+1;
+        }
+
         //add to total points
         trackerJSON["match"]["data"][winner]["points"]["total_points_won"]=trackerJSON["match"]["data"][winner]["points"]["total_points_won"]+1;
 
-        //won the point on what serve?
-        
+        //calculate conversion of current serve so we dont have a /0
+        myConversion = (Math.round((trackerJSON["match"]["data"][serverKey]["conversion"][serve+"_service_points_won"]/trackerJSON["match"]["data"][serverKey]["service"][serve]) * 100));
+        trackerJSON["match"]["data"][serverKey]["conversion"][serve+"_serve_conversion"] = myConversion;
 
         //reset currentServe
         currentServe = 1;
@@ -181,8 +194,6 @@ function logEvent(winner, playerEvent, event, pointStatus, serve){
     }
     else{
         //point is not over
-        //nothing to log
-        //fault
         console.log("in play...")
     }
     //update live tracker information
@@ -250,6 +261,11 @@ function updateTrackerLive(){
             <td>`+trackerJSON["match"]["data"][0]["return"]["rw"]+`</td>
             <td>Winner</td>
             <td>`+trackerJSON["match"]["data"][1]["return"]["rw"]+`</td>
+        </tr>
+        <tr align="center">
+            <td>`+trackerJSON["match"]["data"][0]["conversion"]["receiving_points_won"]+`</td>
+            <td>Point Gagnés</td>
+            <td>`+trackerJSON["match"]["data"][1]["conversion"]["receiving_points_won"]+`</td>
         </tr>
         <tr align="center">
             <td colspan="3"><u><b>Points</b></u></td>
@@ -443,18 +459,18 @@ function buttonLayout(layout){
         <table>
             <thead>
                 <tr>
-                    <th><button class="layoutButton" onclick=eventManager(0,"winner",0,`+currentServe+`,true,0)>Winner</button></th>
-                    <th><button class="layoutButton" onclick=eventManager(0,"winner",1,`+currentServe+`,true,1)>Winner</button></th>
+                    <th><button class="layoutButton" onclick=eventManager(0,"winner",0,`+(currentServe)+`,true,0)>Winner</button></th>
+                    <th><button class="layoutButton" onclick=eventManager(0,"winner",1,`+(currentServe)+`,true,1)>Winner</button></th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td><button class="layoutButton" onclick=eventManager(0,"ue",1,`+currentServe+`,true,0)>Unforced</button></td>
-                    <td><button class="layoutButton" onclick=eventManager(0,"ue",0,`+currentServe+`,true,1)>Unforced</button></td>
+                    <td><button class="layoutButton" onclick=eventManager(0,"ue",1,`+(currentServe)+`,true,0)>Unforced</button></td>
+                    <td><button class="layoutButton" onclick=eventManager(0,"ue",0,`+(currentServe)+`,true,1)>Unforced</button></td>
                 </tr>
                 <tr>
-                    <td><button class="layoutButton" onclick=eventManager(0,"fe",0,`+currentServe+`,true,0)>Forced</button></td>
-                    <td><button class="layoutButton" onclick=eventManager(0,"fe",1,`+currentServe+`,true,1)>Forced</button></td>
+                    <td><button class="layoutButton" onclick=eventManager(0,"fe",0,`+(currentServe)+`,true,0)>Forced</button></td>
+                    <td><button class="layoutButton" onclick=eventManager(0,"fe",1,`+(currentServe)+`,true,1)>Forced</button></td>
                 </tr>
             </tbody>
         </table>
@@ -574,6 +590,8 @@ const tracker =
             "conversion": {
                 "2_service_points_won": 0,
                 "1_service_points_won": 0,
+                "1_serve_conversion": 0,
+                "2_serve_conversion": 0,
                 "receiving_points_won": 0,
                 "break_points": 0,
                 "net_points": 0,
@@ -614,6 +632,8 @@ const tracker =
             "conversion": {
                 "2_service_points_won": 0,
                 "1_service_points_won": 0,
+                "1_serve_conversion": 0,
+                "2_serve_conversion": 0,
                 "receiving_points_won": 0,
                 "break_points": 0,
                 "net_points": 0,
