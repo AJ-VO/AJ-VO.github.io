@@ -154,7 +154,7 @@ def dump_json_file(file, myData):#Dump to specific file
 def create_qr_code():#Create QR Code from data
     # Data to be encoded
     data = ""
-    title = ""
+    title = "tutorialQR"
     # Encoding data using make() function
     img = qrcode.make(data)
     # Saving as an image file
