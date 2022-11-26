@@ -387,7 +387,7 @@ function eventManager(newLayout, event, winner, serve, pointStatus, playerEvent)
         //update score
         showScore();
     }
-    //point is not over (false)
+    //point is not over (false) fault, ip
     else{
         console.log("points still ongoing...");
         if (event == "fault"){

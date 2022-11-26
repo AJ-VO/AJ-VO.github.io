@@ -1,75 +1,105 @@
-//Main Function
-function start_match(){
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Async Functions
+//fetch jsons (string)
+async function get_tracker() {
+    var file = "http://127.0.0.1:8000/jsons/trackers/trackerEmpty.json";
+    let x = await fetch(file);
+    let y = await x.text();
 
-    //containers
-    while (matchOver == false){
-        //while the match is not over
-        while (setOver == false){
-            //while the set is not over
-            while (gameOver == false){
-                //while the game is not over
-                while (pointOver == false){
-                    //while the point is not over
-                    //lastPointWinner must be defined every
-                }//point is over
-                //log event in tracker
-                //edit score
-                currentPoints[lastPointWinner] = currentPoints[lastPointWinner]+1;
-                //change layout
-                button_layout(1);
-                //check result for game is over and tiebreaks
-                if (currentPoints[lastPointWinner] == 7){
-                    //w
-                    gameOver = true;
-                }
-                else if () {
-
-                }
-                else{
-                    //check if end of game
-                }
-                //reset pointOver
-                pointOver = false;
-
-            }//game is over
-            //
-        }//set is over
-        //add set win
-        setWon[lastPointWinner] = setWon[lastPointWinner]+1;
-        //append score
-
-        //check if last winner won the match
-        if (setWon[lastPointWinner] == 2){
-            matchOver = true;
-        }
-
-        //reset setOver status
-        setOver = false;
-
-    }//end of match
-
+    return y
 }
+//send y to functions
+get_tracker().then(
+    //returns value
+    function(value) {
+        assign_tracker(value);
+    },
+    //returns error
+    function(error) {
+        catching_fetch_error(error);
+    }
+);
+//log fetch error
+function catching_fetch_error(error){
+    console.log(error);
+}
+//assign tracker data to variable
+function assign_tracker(value){
+    value = JSON.parse(value);
+    tracker = value["match"]["data"];
+    console.log(tracker)
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Other Functions
-//Changes the layout of the buttons on screen
+//changes player on serve
+function change_serve(onServe){
+    server = onServe;
+    returner = opp[server];
+    document.getElementById("title_layer").innerHTML = `<p>Match :<br>`+players[server]+` au service</p>`;
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Main Functions
+//changes the layout of the buttons on screen
 function button_layout(scene){
-    //document.getElementById("button_layer").innerHTML = buttonDict[scene];
+    //switch statement
+    switch (scene){
+        case 0:
+        case 1:
+            document.getElementById("button_layer").innerHTML = 
+            scene;
+            break;
+        case 2:
+            document.getElementById("button_layer").innerHTML = 
+            scene;
+            break;
+        default:
+            console.log("scene does not match any layout");
+    }
 }
 
-//script start
+//updates score
+function update_score(){
+
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script Start
 console.log("tracker.js staring...");
 //get players from urls
 var matchup = decodeURIComponent(window.location.search);
 matchup = matchup.substring(2);
-const players = matchup.split("-");
+matchup = matchup.split("-");
+const players = [matchup[0], matchup[1]];
+var playerOnServe = matchup[2];
 
 //initialize all variables
 var trackerBackup;//store tracker for "undo"
-var matchOver, setOver, gameOver, pointOver, setWon, currentPoints, currentGames, lastPointWinner;
+var matchOver, setOver, gameOver, pointOver, setWon, currentPoints, currentGames, lastPointWinner, tracker, server, returner, events;
 matchOver = setOver = gameOver, pointOver = false;
 setWon, currentPoints = [];
+events = 0;
 //const
-const tracker = 0;
 const opp = {
     0: 1,
     1: 0
@@ -80,19 +110,20 @@ const pointDict = {
     2: "30",
     3: "40",
 };
-//will change during match?
-const buttonDict = {
-    0: "2 buttons [0 au service, 1 au service]",
-    1: "",
-    2: "",
-    3: "",
-    4: ""
-};
 
 //run
 //load starting serve buttons
-button_layout(0);//choosing the server will trigger start_match()
+document.getElementById("title_layer").innerHTML = `<button onclick="change_serve(0)">`+players[0]+` au service
+    </button><p>-</p><button onclick="change_serve(1)">`+players[1]+` au service</button>`;
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+//load first loop
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //variables dictionnary
 //setWon = [] = ammount of sets players have won
+//events = 0 = ammount of events(points)
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
