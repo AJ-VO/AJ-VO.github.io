@@ -13,6 +13,19 @@
         "streak": 4
     },
     {
+        "name": "Anne-Catherine Forcier",
+        "g": "w",
+        "id": 1,
+        "gp": 5,
+        "wins": 4,
+        "losses": 1,
+        "elo": 1627,
+        "t_wins": 0,
+        "t_losses": 0,
+        "img": "img/players/test.png",
+        "streak": 1
+    },
+    {
         "name": "Cornelis van der Zouwen",
         "g": "g",
         "id": 11,
@@ -50,19 +63,6 @@
         "t_losses": 0,
         "img": "img/players/test.png",
         "streak": 1
-    },
-    {
-        "name": "Anne-Catherine Forcier",
-        "g": "w",
-        "id": 1,
-        "gp": 4,
-        "wins": 3,
-        "losses": 1,
-        "elo": 1561,
-        "t_wins": 0,
-        "t_losses": 0,
-        "img": "img/players/test.png",
-        "streak": -1
     },
     {
         "name": "Alexandre Laplante",
@@ -286,19 +286,6 @@
         "streak": -1
     },
     {
-        "name": "Vicky Lachance",
-        "g": "w",
-        "id": 2,
-        "gp": 5,
-        "wins": 2,
-        "losses": 3,
-        "elo": 1352,
-        "t_wins": 0,
-        "t_losses": 0,
-        "img": "img/players/test.png",
-        "streak": -3
-    },
-    {
         "name": "Antoine Barth\u00e9l\u00e9my",
         "g": "g",
         "id": 22,
@@ -310,5 +297,18 @@
         "t_losses": 0,
         "img": "img/players/test.png",
         "streak": -2
+    },
+    {
+        "name": "Vicky Lachance",
+        "g": "w",
+        "id": 2,
+        "gp": 6,
+        "wins": 2,
+        "losses": 4,
+        "elo": 1286,
+        "t_wins": 0,
+        "t_losses": 0,
+        "img": "img/players/test.png",
+        "streak": -4
     }
 ]
