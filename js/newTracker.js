@@ -1,4 +1,4 @@
-//undo, change score, color
+//undo, change score, color, second_serve_p
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -137,8 +137,19 @@ function update_live_stats(event, serve, winner){
 
         //for every point played
         //add to total services
+        tracker["data"][playerOnServe]["service"]["total_services"] += 1;
         //1,2
-
+        tracker["data"][playerOnServe]["service"][serve.toString()] += 1;
+        //calculate service rates
+        tracker["data"][playerOnServe]["service"][serve+"_serve_p"]
+        //total points won
+        tracker["data"][winner]["points"]["total_points_won"] += 1;
+        //receive points won
+        if (winner == opp[playerOnServe]){
+            tracker["data"][winner]["conversion"]["receiving_points_won"] += 1;
+        }
+        //conversion
+        //break point
 
         switch (event) {
             //specific stats
@@ -147,8 +158,9 @@ function update_live_stats(event, serve, winner){
                 //ace
                 break;
             default:
-                console.log("error, switch(event)[update_live_stats]")
+                console.log("error, switch(event)[update_live_stats]");
         }
+        //create backup
     }
     //update ui
 }

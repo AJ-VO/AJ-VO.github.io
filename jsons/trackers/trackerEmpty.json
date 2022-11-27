@@ -4,7 +4,8 @@
             {
                 "service": {
                     "total_services": 0,
-                    "first_serve_p": 0,
+                    "1_serve_p": 0,
+                    "2_serve_p": 0,
                     "ace": 0,
                     "df": 0,
                     "1": 0,
@@ -34,7 +35,8 @@
             {
                 "service": {
                     "total_services": 0,
-                    "first_serve_p": 0,
+                    "1_serve_p": 0,
+                    "2_serve_p": 0,
                     "ace": 0,
                     "df": 0,
                     "1": 0,
