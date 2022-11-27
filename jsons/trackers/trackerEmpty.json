@@ -24,8 +24,8 @@
                     "aggresive_margin": 0
                 },
                 "conversion": {
-                    "second_service_points_won": 0,
-                    "first_service_points_won": 0,
+                    "2_service_points_won": 0,
+                    "1_service_points_won": 0,
                     "receiving_points_won": 0,
                     "break_points": 0
                 },
@@ -54,8 +54,8 @@
                     "aggresive_margin": 0
                 },
                 "conversion": {
-                    "second_service_points_won": 0,
-                    "first_service_points_won": 0,
+                    "2_service_points_won": 0,
+                    "1_service_points_won": 0,
                     "receiving_points_won": 0,
                     "break_points": 0
                 },

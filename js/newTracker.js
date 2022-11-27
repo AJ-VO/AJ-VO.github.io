@@ -142,16 +142,9 @@ function update_live_stats(event, serve, winner){
 
         switch (event) {
             //specific stats
-            case "w":
-            case "ue":
-            case "fe":
-                break;
             case "ace":
-            case "df":
-                tracker["data"][winner]["service"][event] += 1;
-                break;
-            case "re":
-            case "rw":
+                //winner
+                //ace
                 break;
             default:
                 console.log("error, switch(event)[update_live_stats]")
