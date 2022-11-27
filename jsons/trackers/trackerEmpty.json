@@ -18,7 +18,7 @@
                 },
                 "points": {
                     "total_points_won": 0,
-                    "winner": 0,
+                    "w": 0,
                     "ue": 0,
                     "fe": 0,
                     "aggresive_margin": 0
@@ -48,7 +48,7 @@
                 },
                 "points": {
                     "total_points_won": 0,
-                    "winner": 0,
+                    "w": 0,
                     "ue": 0,
                     "fe": 0,
                     "aggresive_margin": 0

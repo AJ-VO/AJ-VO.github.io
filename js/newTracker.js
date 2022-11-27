@@ -133,7 +133,29 @@ function update_live_stats(event, serve, winner){
     else{
         //a winner, so stats needs to change
         //backuptracker
-        //switch 
+        //switch
+
+        //for every point played
+        //add to total services
+        //1,2
+
+
+        switch (event) {
+            //specific stats
+            case "w":
+            case "ue":
+            case "fe":
+                break;
+            case "ace":
+            case "df":
+                tracker["data"][winner]["service"][event] += 1;
+                break;
+            case "re":
+            case "rw":
+                break;
+            default:
+                console.log("error, switch(event)[update_live_stats]")
+        }
     }
     //update ui
 }
@@ -197,28 +219,16 @@ function event_manager(nextLayout, event, winner, serve, pointStatus){
             console.log("match is starting...");
             break;
         case "ace":
-            console.log(event);
-            break;
         case "df":
+        case "re":
+        case "rw":
+        case "w":
+        case "ue":
+        case "fe":
             console.log(event);
             break;
         case "fault":
             currentServe += 1;
-            break;
-        case "re":
-            console.log(event);
-            break;
-        case "rw":
-            console.log(event);
-            break;
-        case "w":
-            console.log(event);
-            break;
-        case "ue":
-            console.log(event);
-            break;
-        case "fe":
-            console.log(event);
             break;
         default:
             //ip
