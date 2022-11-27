@@ -141,7 +141,8 @@ function update_live_stats(event, serve, winner){
         //1,2
         tracker["data"][playerOnServe]["service"][serve.toString()] += 1;
         //calculate service rates
-        tracker["data"][playerOnServe]["service"][serve+"_serve_p"]
+        total = tracker["data"][playerOnServe]["service"]["total_services"];
+        tracker["data"][playerOnServe]["service"][serve+"_serve_p"] = tracker["data"][playerOnServe]["service"][serve.toString()]/total;
         //total points won
         tracker["data"][winner]["points"]["total_points_won"] += 1;
         //receive points won
@@ -156,6 +157,22 @@ function update_live_stats(event, serve, winner){
             case "ace":
                 //winner
                 //ace
+                tracker["data"][playerOnServe]["service"]["ace"] += 1;
+                tracker["data"][playerOnServe]["points"]["w"] += 1;
+                break;
+            case "df":
+                tracker["data"][playerOnServe]["service"]["df"] += 1;
+                tracker["data"][playerOnServe]["points"]["ue"] += 1;
+                break;
+            case "re":
+                tracker["data"][opp[playerOnServe]]["return"]["re"] += 1;
+                tracker["data"][opp[playerOnServe]]["return"]["unreturned_"+serve] += 1;
+                if (serve == 1){
+                    tracker["data"][opp[playerOnServe]]["points"]["fe"] += 1;
+                }
+                else{
+                    tracker["data"][opp[playerOnServe]]["points"]["ue"] += 1;
+                }
                 break;
             default:
                 console.log("error, switch(event)[update_live_stats]");
@@ -163,6 +180,8 @@ function update_live_stats(event, serve, winner){
         //create backup
     }
     //update ui
+    fakeTracker = JSON.stringify(tracker)
+    document.getElementById("stat_layer").innerHTML = fakeTracker;
 }
 //checklist for breaks in the match
 //only if score changes

@@ -65,6 +65,7 @@
             }
         ],
         "final_score": [],
-        "match_time": 0
+        "match_time": 0,
+        "total_points": 0
     }
 }
