@@ -45,8 +45,8 @@
                 "return": {
                     "re": 0,
                     "rw": 0,
-                    "unreturned_first_services": 0,
-                    "unreturned_second_services": 0
+                    "unreturned_1": 0,
+                    "unreturned_2": 0
                 },
                 "points": {
                     "total_points_won": 0,

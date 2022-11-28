@@ -142,7 +142,8 @@ function update_live_stats(event, serve, winner){
         tracker["data"][playerOnServe]["service"][serve.toString()] += 1;
         //calculate service rates
         total = tracker["data"][playerOnServe]["service"]["total_services"];
-        tracker["data"][playerOnServe]["service"][serve+"_serve_p"] = tracker["data"][playerOnServe]["service"][serve.toString()]/total;
+        tracker["data"][playerOnServe]["service"]["1_serve_p"] = tracker["data"][playerOnServe]["service"]["1"]/total;
+        tracker["data"][playerOnServe]["service"]["2_serve_p"] = (tracker["data"][playerOnServe]["service"]["2"]-tracker["data"][playerOnServe]["service"]["df"])/tracker["data"][playerOnServe]["service"]["2"];
         //total points won
         tracker["data"][winner]["points"]["total_points_won"] += 1;
         //receive points won
@@ -163,6 +164,7 @@ function update_live_stats(event, serve, winner){
             case "df":
                 tracker["data"][playerOnServe]["service"]["df"] += 1;
                 tracker["data"][playerOnServe]["points"]["ue"] += 1;
+                tracker["data"][playerOnServe]["service"]["2_serve_p"] = (tracker["data"][playerOnServe]["service"]["2"]-tracker["data"][playerOnServe]["service"]["df"])/tracker["data"][playerOnServe]["service"]["2"];
                 break;
             case "re":
                 tracker["data"][opp[playerOnServe]]["return"]["re"] += 1;
@@ -171,6 +173,7 @@ function update_live_stats(event, serve, winner){
                     tracker["data"][opp[playerOnServe]]["points"]["fe"] += 1;
                 }
                 else{
+                    //serve == 2
                     tracker["data"][opp[playerOnServe]]["points"]["ue"] += 1;
                 }
                 break;
