@@ -1,10 +1,12 @@
 //undo, change score, color, second_serve_p
+//bug: changing serve in score and fks stats after
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Async Functions
 //fetch jsons (string)
 async function get_tracker() {
+    document.getElementById("status_layer").innerHTML = "Requesting Tracker...";
     var file = "https://aj-vo.github.io/jsons/trackers/trackerEmpty.json";
     let x = await fetch(file);
     let y = await x.text();
@@ -30,7 +32,8 @@ function catching_fetch_error(error){
 function assign_tracker(value){
     value = JSON.parse(value);
     tracker = value["match"];
-    console.log("get tracker successfull...");
+    console.log("got tracker successfully...");
+    document.getElementById("status_layer").innerHTML = "Ready";
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -41,6 +44,15 @@ function assign_tracker(value){
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Other Functions
+//check which player is serving (ui) returns string
+function check_serve_status(myBox){
+    if (myBox == playerOnServe){
+        return "*";
+    }
+    else{
+        return "";
+    }
+}
 //returns sum of a list
 function sum_list(myList){
     var sum = myList.reduce(function(a, b){
@@ -67,13 +79,12 @@ function update_live_score(winner){
             //reset at 7
             //change serve?
             if (sum_list(currentPoints)%2 == 1){
-                playerOnServe = opp[playerOnServe];
+                playerOnServe = opp[playerOnServe];//1
             }
             if (currentPoints[winner] >= 7 && (currentPoints[winner]-currentPoints[opp[winner]]) > 1){
                 //game is over
-                playerOnServe = opp[playServeTiebreak];
+                playerOnServe = opp[playServeTiebreak];//2
                 gameIsOver = true;
-                console.log("tiebreak is done");
             }
         }
         else{
@@ -81,8 +92,7 @@ function update_live_score(winner){
             //reset at 4
             if (currentPoints[winner] == 4){
                 //game is over
-                playerOnServe = opp[playerOnServe];
-                console.log("serve change");
+                playerOnServe = opp[playerOnServe];//3
                 gameIsOver = true;
             }
         }
@@ -103,6 +113,7 @@ function update_live_score(winner){
     <table border=1>
         <tbody>
             <tr>
+                <td>`+check_serve_status(0)+`</td>
                 <td>`+players[0]+`</td>
                 <td>`+pointStrings[0]+`</td>
                 <td>`+gamesWonInSet[0]+`</td>
@@ -111,6 +122,7 @@ function update_live_score(winner){
                 <td>`+theSets[2][0]+`</td>
             </tr>
             <tr>
+                <td>`+check_serve_status(1)+`</td>
                 <td>`+players[1]+`</td>
                 <td>`+pointStrings[1]+`</td>
                 <td>`+gamesWonInSet[1]+`</td>
@@ -132,9 +144,9 @@ function update_live_stats(event, serve, winner){
     }
     else{
         //a winner, so stats needs to change
-        //backuptracker
-        //switch
-
+        //before changing tracker, create backup
+        trackerBackup = tracker;
+        momentum.push(winner);
         //for every point played
         //add to total services
         tracker["data"][playerOnServe]["service"]["total_services"] += 1;
@@ -164,7 +176,6 @@ function update_live_stats(event, serve, winner){
             case "df":
                 tracker["data"][playerOnServe]["service"]["df"] += 1;
                 tracker["data"][playerOnServe]["points"]["ue"] += 1;
-                tracker["data"][playerOnServe]["service"]["2_serve_p"] = (tracker["data"][playerOnServe]["service"]["2"]-tracker["data"][playerOnServe]["service"]["df"])/tracker["data"][playerOnServe]["service"]["2"];
                 break;
             case "re":
                 tracker["data"][opp[playerOnServe]]["return"]["re"] += 1;
@@ -177,14 +188,35 @@ function update_live_stats(event, serve, winner){
                     tracker["data"][opp[playerOnServe]]["points"]["ue"] += 1;
                 }
                 break;
+            case "rw":
+                tracker["data"][opp[playerOnServe]]["points"]["w"] += 1;
+                tracker["data"][opp[playerOnServe]]["return"]["rw"] += 1;
+                break;
+            case "w":
+                tracker["data"][opp[playerOnServe]]["points"]["w"] += 1;
+                break;
+            case "ue":
+                tracker["data"][opp[playerOnServe]]["points"]["ue"] += 1;
+                break;
+            case "fe":
+                tracker["data"][opp[playerOnServe]]["points"]["fe"] += 1;
+                break;
             default:
                 console.log("error, switch(event)[update_live_stats]");
         }
-        //create backup
+        //after specific event stats
+        tracker["data"][playerOnServe]["service"]["2_serve_p"] = (tracker["data"][playerOnServe]["service"]["2"]-tracker["data"][playerOnServe]["service"]["df"])/tracker["data"][playerOnServe]["service"]["2"];
+        //aggresive margin
+        for (let i=0;i<2;i++){
+            tracker["data"][i]["points"]["aggresive_margin"] = tracker["data"][i]["points"]["w"]+tracker["data"][i]["points"]["fe"]-tracker["data"][i]["points"]["ue"];
+        }
+        //momentum
+        tracker["data"]["momentumArray"] = momentum;
     }
     //update ui
     fakeTracker = JSON.stringify(tracker)
     document.getElementById("stat_layer").innerHTML = fakeTracker;
+    //update time in title layer
 }
 //checklist for breaks in the match
 //only if score changes
@@ -192,34 +224,35 @@ function checklist(winner){
     if (gameIsOver == true){
         gameIsOver = false;
         gamesWonInSet[winner] += 1;
-        console.log(gamesWonInSet);
         currentPoints = [0,0];
         //check gamesWonInSet
         if (sum_list(gamesWonInSet) == 12 && gamesWonInSet[winner] == gamesWonInSet[opp[winner]]){
             //tiebreak
-            console.log("tiebreak");
+            console.log("entering tiebreak...");
             //get serve
             playServeTiebreak = playerOnServe;
             tiebreakStatus = true;
         }
         else if ((gamesWonInSet[winner] == 7 && gamesWonInSet[opp[winner]] == 6) || (gamesWonInSet[winner] >= 6 && (gamesWonInSet[winner]-gamesWonInSet[opp[winner]] > 1))){
             //done
-            console.log("done");
+            console.log("set done...");
             //add to set score
             theSets[currentSet] = gamesWonInSet;
+            currentSet += 1;
             gamesWonInSet = [0,0];
             setValues[winner] += 1;
-            console.log(setValues);
             tiebreakStatus = false;
             //is match over?
             if (setValues[winner] == 2){
                 //match is over
-                button_layout(3);
+                console.log("match is done...");
+                document.getElementById("button_layer").innerHTML = "<p>THAT'S ALL FOLKS!</p>";
+                matchIsOver = true;
+                //END
             }
         }
         else{
             //not done
-            console.log("not done");
             return;
         }
     }
@@ -238,6 +271,11 @@ function checklist(winner){
 //Main Functions
 //evaluates the parameters of the event
 function event_manager(nextLayout, event, winner, serve, pointStatus){
+
+    if (matchIsOver == true){
+        //nahhhh
+        return;
+    }
 
     //parse parameters
     //start : (0, "start", null, null, true)
@@ -261,15 +299,18 @@ function event_manager(nextLayout, event, winner, serve, pointStatus){
             //ip
             console.log(event+" triggers nothing");
     }
-    console.log(winner);
-    update_live_score(winner);
     update_live_stats(event, serve, winner);
+    update_live_score(winner);
     button_layout(nextLayout);
 
 }
 //changes the layout of the buttons on screen
 function button_layout(scene){
     //switch statement
+    if (matchIsOver == true){
+        //nahhhh
+        return;
+    }
     var buttonString = "";
     var buttonDict = {
         0: '<button onclick=event_manager(1,"fault",null,1,false)>Faute</button>',
@@ -322,7 +363,7 @@ function button_layout(scene){
             document.getElementById("button_layer").innerHTML = buttonString;
             break;
         case 3:
-            console.log("match is done")
+            console.log("match is done");
             break;
         default:
             console.log("scene does not match any layout");
@@ -349,15 +390,16 @@ console.log(players[playerOnServe]+" starting on serve...");
 
 //initialize all variables
 var trackerBackup, setWon, currentPoints, tracker, tiebreakStatus, gameIsOver, currentServe, gamesWonInSet, theSets, currentSet, setValues,
-pointStrings;
+pointStrings, momentum, matchIsOver;
 currentServe = 1;
 currentSet = 0;
-tiebreakStatus, gameIsOver = false;
+tiebreakStatus, gameIsOver, matchIsOver = false;
 setWon = [0,0];
 currentPoints = [0,0];
 gamesWonInSet = [0,0];//[0,0]
 theSets = [[0,0], [0,0], [0,0]];
 setValues = [0,0];
+momentum = [];
 const opp = {
     0: 1,
     1: 0
@@ -369,6 +411,9 @@ const pointDict = {
     3: "40",
 };
 //run script at first
+var start_time = Date.now();
+console.log("start_time: "+start_time)
+document.getElementById("title_layer").innerHTML = players[0]+" vs. "+players[1]+"<br>Durée: zero pis une barre";
 event_manager(0, "start", null, null, true);
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -398,4 +443,6 @@ event_manager(0, "start", null, null, true);
 //theSets = [] = score of all the sets in the match 
 //setValues = [] = number of sets each player has won
 //pointStrings = [] = show or not the points changed
+//momentum = [] = winner of each point
+//matchIsOver = bool = is the match over
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
