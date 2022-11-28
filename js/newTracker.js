@@ -146,7 +146,10 @@ function update_live_stats(event, serve, winner){
         //a winner, so stats needs to change
         //before changing tracker, create backup
         trackerBackup = tracker;
+        //momentum
         momentum.push(winner);
+        tracker["data"]["momentumArray"] = winner;
+        console.log(momentum);
         //for every point played
         //add to total services
         tracker["data"][playerOnServe]["service"]["total_services"] += 1;
@@ -210,8 +213,6 @@ function update_live_stats(event, serve, winner){
         for (let i=0;i<2;i++){
             tracker["data"][i]["points"]["aggresive_margin"] = tracker["data"][i]["points"]["w"]+tracker["data"][i]["points"]["fe"]-tracker["data"][i]["points"]["ue"];
         }
-        //momentum
-        tracker["data"]["momentumArray"] = momentum;
     }
     //update ui
     fakeTracker = JSON.stringify(tracker)
@@ -237,7 +238,7 @@ function checklist(winner){
             //done
             console.log("set done...");
             //add to set score
-            theSets[currentSet] = gamesWonInSet;
+            theSets[currentSet] = (gamesWonInSet);
             currentSet += 1;
             gamesWonInSet = [0,0];
             setValues[winner] += 1;
@@ -397,7 +398,7 @@ tiebreakStatus, gameIsOver, matchIsOver = false;
 setWon = [0,0];
 currentPoints = [0,0];
 gamesWonInSet = [0,0];//[0,0]
-theSets = [[0,0], [0,0], [0,0]];
+theSets = [[0,0],[0,0],[0,0]];
 setValues = [0,0];
 momentum = [];
 const opp = {
