@@ -47,6 +47,47 @@ function assign_tracker(value){
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Other Functions
+//back key information
+function backup_data(){
+    //data
+    try {
+        console.log("backup");
+        trackerBackup = JSON.stringify(tracker);
+    } catch (error) {
+        console.log("couldnt backup");
+    }
+    //score
+    try {
+        console.log("score backup");
+        scoreBackup["currentPoints"] = JSON.stringify(currentPoints);
+        scoreBackup["theSets"] = JSON.stringify(theSets);
+        scoreBackup["currentSet"] = JSON.stringify(gamesWonInSet);
+        scoreBackup["tiebreakStatus"] = JSON.stringify(tiebreakStatus);
+    } catch (error) {
+        console.log("score couldnt backup");
+    }
+}
+//undo protocol
+function undo_event(){
+    //trackerBackup, scoreBackup
+    //reset score to last score
+    //gotta log the score
+    //reset tracker to last tracker
+    //already store a backup before calling function
+
+    //we changed the objets to string, will have to parse them back
+    //can call update_live_score and update_live_stats
+    //but will enter return; (FIX)
+
+    //tracker try?
+    console.log("undo");
+    tracker = JSON.parse(trackerBackup);
+    update_live_stats(null,-1,null);
+
+    //score try?
+    
+
+}
 //check which player is serving (ui) returns string
 function check_serve_status(myBox){
     if (myBox == playerOnServe){
@@ -66,7 +107,6 @@ function sum_list(myList){
 //change score on display
 //checks if the game is over
 function update_live_score(winner){
-    //give winner his point
     if (winner == null){
         //no score to update
         return;
@@ -143,12 +183,10 @@ function update_live_score(winner){
 function update_live_stats(event, serve, winner){
     if (winner == null || event == "fault" || event == "ip"){
         //no stats to update
-        return;
+        console.log("tamere");
     }
     else{
         //a winner, so stats needs to change
-        //before changing tracker, create backup
-        trackerBackup = tracker;
         //momentum
         momentum.push(winner);
         tracker["momentumArray"] = momentum;
@@ -224,9 +262,11 @@ function update_live_stats(event, serve, winner){
         }
     }
     //update ui
+    //parse json
     fakeTracker = JSON.stringify(tracker)
     document.getElementById("stat_layer").innerHTML = fakeTracker;
-    //update time in title layer
+    //backup button
+    document.getElementById("undo_layer").innerHTML = `<button onclick=undo_event()>Précédent/Annulé Dernier Point</button>`;
 }
 //checklist for breaks in the match
 //only if score changes
@@ -309,6 +349,7 @@ function event_manager(nextLayout, event, winner, serve, pointStatus){
             //ip
             console.log(event+" triggers nothing");
     }
+    backup_data();
     update_live_stats(event, serve, winner);
     update_live_score(winner);
     button_layout(nextLayout);
@@ -400,16 +441,19 @@ console.log(players[playerOnServe]+" starting on serve...");
 
 //initialize all variables
 var trackerBackup, setWon, currentPoints, tracker, tiebreakStatus, gameIsOver, currentServe, gamesWonInSet, theSets, currentSet, setValues,
-pointStrings, momentum, matchIsOver;
+pointStrings, momentum, matchIsOver, scoreBackup;
 currentServe = 1;
 currentSet = 0;
-tiebreakStatus, gameIsOver, matchIsOver = false;
+tiebreakStatus = false;
+gameIsOver = false;
+matchIsOver = false;
 setWon = [0,0];
 currentPoints = [0,0];
 gamesWonInSet = [0,0];//[0,0]
 theSets = [[0,0],[0,0],[0,0]];
 setValues = [0,0];
 momentum = [];
+trackerBackup = {};
 const opp = {
     0: 1,
     1: 0
@@ -419,6 +463,12 @@ const pointDict = {
     1: "15",
     2: "30",
     3: "40",
+};
+scoreBackup = {
+    "currentPoints": 0,
+    "currentSet": 0,
+    "theSets": 0,
+    "tiebreakStatus": false
 };
 //run script at first
 var start_time = Date.now();
@@ -455,4 +505,5 @@ event_manager(0, "start", null, null, true);
 //pointStrings = [] = show or not the points changed
 //momentum = [] = winner of each point
 //matchIsOver = bool = is the match over
+//scoreBackup = json = score before changing to next score
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
