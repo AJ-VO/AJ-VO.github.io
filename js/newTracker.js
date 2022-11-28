@@ -1,5 +1,4 @@
-//undo, change score, color, second_serve_p
-//bug: changing serve in score and fks stats after
+//undo, color
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -7,7 +6,7 @@
 //fetch jsons (string)
 async function get_tracker() {
     document.getElementById("status_layer").innerHTML = "Requesting Tracker...";
-    var file = "https://aj-vo.github.io/jsons/trackers/trackerEmpty.json";
+    var file = "http://127.0.0.1:8000/jsons/trackers/trackerEmpty.json";
     let x = await fetch(file);
     let y = await x.text();
 
@@ -32,8 +31,12 @@ function catching_fetch_error(error){
 function assign_tracker(value){
     value = JSON.parse(value);
     tracker = value["match"];
+    //set names?
+    for (let i=0;i<2;i++){
+        tracker["data"][i]["player_name"] = players[i];
+    }
     console.log("got tracker successfully...");
-    document.getElementById("status_layer").innerHTML = "Ready";
+    document.getElementById("status_layer").innerHTML = "Status: Ready";
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -148,9 +151,15 @@ function update_live_stats(event, serve, winner){
         trackerBackup = tracker;
         //momentum
         momentum.push(winner);
-        tracker["data"]["momentumArray"] = winner;
-        console.log(momentum);
+        tracker["momentumArray"] = momentum;
+        //time
+        var current_time = Date.now();
+        var match_time = Math.round((current_time-start_time)/1000/60);
+        tracker["match_time"] = current_time-start_time;
+        document.getElementById("time_layer").innerHTML = "Durée: "+match_time+"m ";
         //for every point played
+        //add to total points
+        tracker["total_points"] += 1;
         //add to total services
         tracker["data"][playerOnServe]["service"]["total_services"] += 1;
         //1,2
@@ -184,7 +193,7 @@ function update_live_stats(event, serve, winner){
                 tracker["data"][opp[playerOnServe]]["return"]["re"] += 1;
                 tracker["data"][opp[playerOnServe]]["return"]["unreturned_"+serve] += 1;
                 if (serve == 1){
-                    tracker["data"][opp[playerOnServe]]["points"]["fe"] += 1;
+                    tracker["data"][playerOnServe]["points"]["fe"] += 1;
                 }
                 else{
                     //serve == 2
@@ -414,7 +423,7 @@ const pointDict = {
 //run script at first
 var start_time = Date.now();
 console.log("start_time: "+start_time)
-document.getElementById("title_layer").innerHTML = players[0]+" vs. "+players[1]+"<br>Durée: zero pis une barre";
+document.getElementById("title_layer").innerHTML = players[0]+" vs. "+players[1];
 event_manager(0, "start", null, null, true);
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
