@@ -7,7 +7,7 @@
 //CURRENT: LOCALHOST:8000
 async function get_tracker() {
     document.getElementById("status_layer").innerHTML = "Requesting Tracker...";
-    var file = "http://localhost:8000/jsons/trackers/trackerEmpty.json";
+    var file = "https://aj-vo.github.io/jsons/trackers/trackerEmpty.json";
     let x = await fetch(file);
     let y = await x.text();
 
