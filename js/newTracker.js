@@ -1,4 +1,4 @@
-//undo, color
+//undo, color, break point
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -183,10 +183,15 @@ function update_live_score(winner){
 function update_live_stats(event, serve, winner){
     if (winner == null || event == "fault" || event == "ip"){
         //no stats to update
-        console.log("tamere");
+        eventsAmount += 1;
     }
     else{
         //a winner, so stats needs to change
+        //break points?
+        if (currentPoints[opp[playerOnServe]] == 3){
+            //deuce counts as a break point!!
+            tracker["data"][opp[playerOnServe]]["conversion"]["break_points"] += 1;
+        }
         //momentum
         momentum.push(winner);
         tracker["momentumArray"] = momentum;
@@ -255,13 +260,13 @@ function update_live_stats(event, serve, winner){
                 tracker["data"][opp[playerOnServe]]["return"]["rw"] += 1;
                 break;
             case "w":
-                tracker["data"][opp[playerOnServe]]["points"]["w"] += 1;
+                tracker["data"][winner]["points"]["w"] += 1;
                 break;
             case "ue":
-                tracker["data"][opp[playerOnServe]]["points"]["ue"] += 1;
+                tracker["data"][opp[winner]]["points"]["ue"] += 1;
                 break;
             case "fe":
-                tracker["data"][opp[playerOnServe]]["points"]["fe"] += 1;
+                tracker["data"][winner]["points"]["fe"] += 1;
                 break;
             default:
                 console.log("error, switch(event)[update_live_stats]");
@@ -342,30 +347,22 @@ function event_manager(nextLayout, event, winner, serve, pointStatus){
 
     //parse parameters
     //start : (0, "start", null, null, true)
+    //i only change currentServe if need to be
     switch (event){
         case "start":
             console.log("match is starting...");
-            break;
-        case "ace":
-        case "df":
-        case "re":
-        case "rw":
-        case "w":
-        case "ue":
-        case "fe":
-            console.log(event);
             break;
         case "fault":
             currentServe += 1;
             break;
         default:
-            //ip
-            console.log(event+" triggers nothing");
+            console.log(event);
     }
-    backup_data();
+    //backup_data();
     update_live_stats(event, serve, winner);
     update_live_score(winner);
     button_layout(nextLayout);
+    //check if something is wrong in stats?
 
 }
 //changes the layout of the buttons on screen
@@ -405,10 +402,15 @@ function button_layout(scene){
             document.getElementById("button_layer").innerHTML = buttonString;
             break;
         case 2:
+            //show name
             buttonString =
             `
             <table border=1>
                 <tbody>
+                    <tr>
+                        <td align="center">`+players[0]+`</td>
+                        <td align="center">`+players[1]+`</td>
+                    </tr>
                     <tr>
                         <td><button onclick=event_manager(0,"w",0,`+currentServe+`,true)>Coup Gagnant</button></td>
                         <td><button onclick=event_manager(0,"w",1,`+currentServe+`,true)>Coup Gagnant</button></td>
@@ -454,7 +456,8 @@ console.log(players[playerOnServe]+" starting on serve...");
 
 //initialize all variables
 var trackerBackup, setWon, currentPoints, tracker, tiebreakStatus, gameIsOver, currentServe, gamesWonInSet, theSets, currentSet, setValues,
-pointStrings, momentum, matchIsOver, scoreBackup;
+pointStrings, momentum, matchIsOver, scoreBackup, eventsAmount;
+eventsAmount = 0;
 currentServe = 1;
 currentSet = 0;
 tiebreakStatus = false;
