@@ -6,7 +6,7 @@
 //fetch jsons (string)
 async function get_tracker() {
     document.getElementById("status_layer").innerHTML = "Requesting Tracker...";
-    var file = "http://127.0.0.1:8000/jsons/trackers/trackerEmpty.json";
+    var file = "http://localhost:8000/jsons/trackers/trackerEmpty.json";
     let x = await fetch(file);
     let y = await x.text();
 
@@ -206,13 +206,25 @@ function update_live_stats(event, serve, winner){
         total = tracker["data"][playerOnServe]["service"]["total_services"];
         tracker["data"][playerOnServe]["service"]["1_serve_p"] = tracker["data"][playerOnServe]["service"]["1"]/total;
         tracker["data"][playerOnServe]["service"]["2_serve_p"] = (tracker["data"][playerOnServe]["service"]["2"]-tracker["data"][playerOnServe]["service"]["df"])/tracker["data"][playerOnServe]["service"]["2"];
+        //%point won on specific serve?
+
         //total points won
         tracker["data"][winner]["points"]["total_points_won"] += 1;
         //receive points won
         if (winner == opp[playerOnServe]){
             tracker["data"][winner]["conversion"]["receiving_points_won"] += 1;
         }
+        //on serve
+        if (winner == playerOnServe){
+            tracker["data"][winner]["conversion"][serve+"_service_points_won"] += 1;
+        }
         //conversion
+        //calculate rate conversion
+        for (let i=1;i<3;i++){
+            var win = 0;
+            win = tracker["data"][playerOnServe]["conversion"][i+"_service_points_won"]/tracker["data"][playerOnServe]["service"][String(i)];
+            tracker["data"][playerOnServe]["service"][i+"_win"] = win;
+        }
         //break point
 
         switch (event) {
@@ -266,7 +278,8 @@ function update_live_stats(event, serve, winner){
     fakeTracker = JSON.stringify(tracker)
     document.getElementById("stat_layer").innerHTML = fakeTracker;
     //backup button
-    document.getElementById("undo_layer").innerHTML = `<button onclick=undo_event()>Précédent/Annulé Dernier Point</button>`;
+    //onclick=undo_event()
+    document.getElementById("undo_layer").innerHTML = `<button>Précédent/Annulé Dernier Point</button>`;
 }
 //checklist for breaks in the match
 //only if score changes
