@@ -5,19 +5,37 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        <div id="status_layer"></div>
-        <br>
-        <div id="title_layer"></div>
-        <br>
-        <div id="time_layer">Commence le match en cliquant sur le premier événement</div>
-        <br>
-        <div id="score_layer"></div>
-        <br>
-        <div id="button_layer"></div><!-- DONE -->
-        <br>
-        <div id="undo_layer"></div>
-        <br>
-        <div id="stat_layer"></div>
-        <script src="tracker_script.js"></script>
+        
+        <div id="error_message"></div>
+
+        <form action="/action_page.php">
+            <label for="fname">Joueur Vert & OR:</label><br>
+            <input type="text" id="fname" name="fname" value=""><br>
+            <label for="lname">Adversaire:</label><br>
+            <input type="text" id="lname" name="lname" value=""><br><br>
+            <label for="sname">Au Service : 0: Vert & Or 1: Adversaire</label><br>
+            <input type="text" id="sname" name="sname" value=""><br>
+            <!-- Add player starting on serve -->
+        </form>
+        <button id="btnSearch" onclick="myFunction()">Commencer le match</button>
     </body>
+    <script>
+
+        function myFunction(){
+            //get names of player
+            var main_player = document.getElementById("fname").value;
+            var opponent = document.getElementById("lname").value;
+            var server = document.getElementById("sname").value;
+            var matchString = main_player+"-"+opponent+"-"+server
+            if (main_player == null || opponent == null || server == null){
+                console.log("Not ready");
+                document.getElementById("error_message").innerHTML = "<br>Missing Player!";
+            }
+            else{
+                console.log("Ready");
+                window.location.href = "tracker.html?=" + matchString;
+            }
+        }
+
+    </script>
 </html>
