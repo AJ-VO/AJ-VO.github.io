@@ -19,7 +19,10 @@
             <input type="text" id="sname" name="sname" value=""><br>
             <!-- Add player starting on serve -->
         </form>
+        <br>
+        <p><a href="">Database</a></p>
         <button id="btnSearch" onclick="myFunction()">Commencer le match</button>
+
     </body>
     <script>
 
@@ -28,8 +31,8 @@
             var main_player = document.getElementById("fname").value;
             var opponent = document.getElementById("lname").value;
             var server = document.getElementById("sname").value;
-            var matchString = main_player+"-"+opponent+"-"+server
-            if (main_player == null || opponent == null || server == null){
+            var matchString = main_player+"-"+opponent+"-"+server;
+            if (main_player == "" || opponent == "" || server == ""){
                 console.log("Not ready");
                 document.getElementById("error_message").innerHTML = "<br>Missing Player!";
             }
