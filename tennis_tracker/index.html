@@ -9,6 +9,7 @@
         <p>v. 0.2</p>
         
         <div id="error_message"></div>
+        <br>
 
         <form action="/action_page.php">
             <label for="fname">Joueur Vert & OR:</label><br>
@@ -19,9 +20,9 @@
             <input type="text" id="sname" name="sname" value=""><br>
             <!-- Add player starting on serve -->
         </form>
+        <button id="btnSearch" onclick="myFunction()">Commencer le match</button>
         <br>
         <p><a href="">Database</a></p>
-        <button id="btnSearch" onclick="myFunction()">Commencer le match</button>
 
     </body>
     <script>
@@ -34,7 +35,7 @@
             var matchString = main_player+"-"+opponent+"-"+server;
             if (main_player == "" || opponent == "" || server == ""){
                 console.log("Not ready");
-                document.getElementById("error_message").innerHTML = "<br>Missing Player!";
+                document.getElementById("error_message").innerHTML = "<br>Missing inputs!";
             }
             else{
                 console.log("Ready");
