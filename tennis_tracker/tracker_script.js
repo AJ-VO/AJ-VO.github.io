@@ -340,6 +340,8 @@ function checklist(winner){
 //evaluates the parameters of the event
 function event_manager(nextLayout, event, winner, serve, pointStatus){
 
+    document.getElementById("status_layer").innerHTML = "Status: In Play";
+
     if (matchIsOver == true){
         //nahhhh
         return;
