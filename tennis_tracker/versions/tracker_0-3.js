@@ -44,7 +44,6 @@ function show_serve_status_ui(id){
     }
 }
 function backup_data(){
-    //edit tracker
     myTracker["backup_information"]["stats"] = JSON.stringify(myTracker);
     myTracker["backup_information"]["playerOnServe"] = playerOnServe;
     //scores
@@ -53,6 +52,7 @@ function backup_data(){
     //momentum
     //tiebreakStatus
     //breakpointStatus
+    //matchTime
 }
 function update_stats(){
 

@@ -32,11 +32,15 @@
             //get names of player
             var main_player = document.getElementById("fname").value;
             var opponent = document.getElementById("lname").value;
-            var server = document.getElementById("sname").value;
+            var server = String(document.getElementById("sname").value);
             var matchString = main_player+"-"+opponent+"-"+server;
-            if (main_player == "" || opponent == "" || server == ""){
+            if ((main_player == "" || opponent == "")){
                 console.log("Not ready");
-                document.getElementById("error_message").innerHTML = "<br>Missing inputs!";
+                document.getElementById("error_message").innerHTML = "<br>Missing inputs! (Players Missing)";
+            }
+            else if (server != "0" && server != "1"){
+                console.log("Not ready");
+                document.getElementById("error_message").innerHTML = "<br>Missing inputs! (Server Missing)";
             }
             else{
                 console.log("Ready");
