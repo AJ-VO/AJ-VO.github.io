@@ -76,13 +76,16 @@
         "backup_information": {
             "stats": "",
             "scores": [],
+            "currentPoints": [],
             "playerOnServe": 0,
             "players": [],
             "currentServe": 0,
             "momentum": [],
             "tiebreakStatus": false,
             "breakpointStatus": false,
-            "matchTime": 0
+            "deuceStatus": false,
+            "matchTime": 0,
+            "currentSet": 0
         }
     }
 }

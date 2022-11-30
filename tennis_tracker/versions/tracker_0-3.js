@@ -43,33 +43,49 @@ function show_serve_status_ui(id){
         return "";
     }
 }
-function backup_data(){
-    myTracker["backup_information"]["stats"] = JSON.stringify(myTracker);
-    myTracker["backup_information"]["playerOnServe"] = playerOnServe;
-    //scores
-    myTracker["backup_information"]["players"] = PLAYERS;
-    myTracker["backup_information"]["currentServe"] = currentServe;
-    //momentum
-    //tiebreakStatus
-    //breakpointStatus
-    //matchTime
+function backup_data(event){
+    if (event == "start"){
+        return;
+    }
+    else {
+        myTracker["backup_information"]["stats"] = JSON.stringify(myTracker);
+        myTracker["backup_information"]["playerOnServe"] = playerOnServe;
+        myTracker["backup_information"]["scores"] = SCORES;
+        myTracker["backup_information"]["currentPoints"] = currentPoints;
+        myTracker["backup_information"]["players"] = PLAYERS;
+        myTracker["backup_information"]["currentServe"] = currentServe;
+        myTracker["backup_information"]["momentum"] = MOMENTUM;
+        myTracker["backup_information"]["tiebreakStatus"] = tiebreakStatus;
+        myTracker["backup_information"]["breakpointStatus"] = breakpointStatus;
+        myTracker["backup_information"]["matchTime"] = matchTime;
+        myTracker["backup_information"]["deuceStatus"] = deuceStatus;
+    }
 }
 function update_stats(){
 
 }
 function update_score(winner){
 
+    currentPoints[winner] += 1;
+    //atrribute game win if needed
+    if (currentPoints[winner] == 4){
+        check_game_state(winner);
+    }
+    //check tiebreakStatus
+    //check breakpointStatus
+    //check deuceStatus
 }
-function check_game_state(){
-
+function check_game_state(winner){
+    //add game win
+    //check
 }
 function button_layout(layout){
-
+    document.getElementById("button_layer").innerHTML = "Button: "+layout;
 }
 function event_manager(nextLayout, event, winner, serve){
 
     //whatever event, backup any data that could be edited
-    backup_data();
+    backup_data(event);
 
     //if event
     if (winner == null && serve == null){
@@ -78,11 +94,12 @@ function event_manager(nextLayout, event, winner, serve){
     else{
         update_stats();
         update_score(winner);
-        check_game_state();
     }
 
     //change layout
     button_layout(nextLayout);
+    //update match time
+    matchTime = Date.now()-startTime;
 }
 
 
@@ -97,7 +114,15 @@ const PLAYERS = [MATCHUP[0], MATCHUP[1]];
 var playerOnServe = MATCHUP[2];
 //variables
 var currentServe = 1;//Current Serve (1,2)
-var start_time = Date.now();//Current time (ms)
+var currentSet = 0;//Current Set (0,1,2)
+const startTime = Date.now();//Current time (ms)
+var tiebreakStatus = false;//Are we in a tiebreak
+var breakpointStatus = false;//Is next point a chance of break
+var deuceStatus = false;//Is next point a deuce
+var matchTime;//Total match time
+var currentPoints = [0,0]//points in game
+var SCORES = [[0,0],[0,0],[0,0]];//all the sets
+var MOMENTUM
 //basic dictionnaries
 const pointDict = {
     0: "0",
