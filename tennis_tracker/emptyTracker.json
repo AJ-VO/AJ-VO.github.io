@@ -81,7 +81,8 @@
             "currentServe": 0,
             "momentum": [],
             "tiebreakStatus": false,
-            "breakpointStatus": false
+            "breakpointStatus": false,
+            "matchTime": 0
         }
     }
 }
