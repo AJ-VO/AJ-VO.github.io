@@ -73,14 +73,15 @@
         "final_score": [],
         "match_time": 0,
         "total_points": 0,
-        "momentumArray": [],
         "backup_information": {
             "stats": "",
             "scores": [],
             "playerOnServe": 0,
             "players": [],
             "currentServe": 0,
-            "momentum": []
+            "momentum": [],
+            "tiebreakStatus": false,
+            "breakpointStatus": false
         }
     }
 }

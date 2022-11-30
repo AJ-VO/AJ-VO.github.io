@@ -14,8 +14,11 @@ get_tracker().then(
         value = JSON.parse(value);
         myTracker = value["match"];
         for (let i=0;i<2;i++){
-            myTracker["data"][i]["player_name"] = players[i];
+            myTracker["data"][i]["player_name"] = PLAYERS[i];
         }
+        //backup initial data
+        myTracker["backup_information"]["players"] = PLAYERS;
+        
         console.log("got tracker successfully...");
         document.getElementById("status_layer").innerHTML = "Status: Ready";
     },
@@ -29,18 +32,42 @@ get_tracker().then(
 function backup_data(){
 
 }
+function update_stats(){
+
+}
+function update_score(){
+
+}
+function check_game_state(){
+
+}
+function button_layout(){
+
+}
+function event_manager(nextLayout, event, winner, serve){
+
+    
+
+    update_stats();
+    update_score();
+    backup_data();
+    button_layout();
+    check_game_state();
+
+}
+
 
 //Variables
 var myTracker;
-//get players from urls
-var matchup = decodeURIComponent(window.location.search);
-matchup = matchup.substring(2);
-matchup = matchup.split("-");
+//get PLAYERS from urls
+var MATCHUP = decodeURIComponent(window.location.search);
+MATCHUP = MATCHUP.substring(2);
+MATCHUP = MATCHUP.split("-");
 //attribute values
-const players = [matchup[0], matchup[1]];
-var playerOnServe = matchup[2];
+const PLAYERS = [MATCHUP[0], MATCHUP[1]];
+var playerOnServe = MATCHUP[2];
 //basic dictionnaries
-const opp = {
+const OPP = {
     0: 1,
     1: 0
 };
@@ -50,3 +77,5 @@ const pointDict = {
     2: "30",
     3: "40",
 };
+//start match
+event_manager(0,null,null,null);
