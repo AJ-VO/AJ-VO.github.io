@@ -48,10 +48,11 @@ function backup_data(event){
         return;
     }
     else {
+        //need to string vars?
         myTracker["backup_information"]["stats"] = JSON.stringify(myTracker);
         myTracker["backup_information"]["playerOnServe"] = playerOnServe;
         myTracker["backup_information"]["scores"] = SCORES;
-        myTracker["backup_information"]["currentPoints"] = currentPoints;
+        myTracker["backup_information"]["currentPoints"] = String(currentPoints);
         myTracker["backup_information"]["players"] = PLAYERS;
         myTracker["backup_information"]["currentServe"] = currentServe;
         myTracker["backup_information"]["momentum"] = MOMENTUM;
@@ -74,6 +75,9 @@ function update_score(winner){
     //check tiebreakStatus
     //check breakpointStatus
     //check deuceStatus
+    if (currentPoints[winner] == 3 && currentPoints[winner] == currentPoints[opp_id(winner)]){
+        //deuce
+    }
 }
 function check_game_state(winner){
     //add game win
