@@ -281,10 +281,79 @@ function update_live_stats(event, serve, winner){
     //update ui
     //parse json
     fakeTracker = JSON.stringify(tracker)
-    document.getElementById("stat_layer").innerHTML = fakeTracker;
+    //document.getElementById("stat_layer").innerHTML = fakeTracker;
     //backup button
     //onclick=undo_event()
     //document.getElementById("undo_layer").innerHTML = `<button>Précédent/Annulé Dernier Point</button>`;
+    if (fakeTracker != null){
+        console.log("lol");
+        document.getElementById("stat_layer").innerHTML = 
+        `
+        <table border="1">
+        <thead>
+        <tr>
+            <th>`+tracker["data"][0]["player_name"]+`</th>
+            <th>VS</th>
+            <th>`+tracker["data"][1]["player_name"]+`</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr align="center">
+            <td>`+tracker["data"][0]["service"]["1_serve_p"]+`</td>
+            <td>Premier Service (%)</td>
+            <td>`+tracker["data"][1]["service"]["1_serve_p"]+`</td>
+        </tr>
+        <tr align="center">
+            <td>`+tracker["data"][0]["service"]["df"]+`</td>
+            <td>Double Fautes</td>
+            <td>`+tracker["data"][1]["service"]["df"]+`</td>
+        </tr>
+        <tr align="center">
+            <td>`+tracker["data"][0]["service"]["total_services"]+`</td>
+            <td>Services</td>
+            <td>`+tracker["data"][1]["service"]["total_services"]+`</td>
+        </tr>
+        <tr align="center">
+            <td>`+tracker["data"][0]["service"]["1_win"]+`</td>
+            <td>Premier Service Gagné (%)</td>
+            <td>`+tracker["data"][1]["service"]["1_win"]+`</td>
+        </tr>
+        <tr align="center">
+            <td>`+tracker["data"][0]["service"]["2_win"]+`</td>
+            <td>Deuxième Service Gagné (%)</td>
+            <td>`+tracker["data"][1]["service"]["2_win"]+`</td>
+        </tr>
+        <tr align="center">
+            <td>`+tracker["data"][0]["points"]["total_points_won"]+`</td>
+            <td>Points gagnés</td>
+            <td>`+tracker["data"][1]["points"]["total_points_won"]+`</td>
+        </tr>
+        <tr align="center">
+            <td>`+tracker["data"][0]["points"]["ue"]+`</td>
+            <td>Erreur Non-Forcée</td>
+            <td>`+tracker["data"][1]["points"]["ue"]+`</td>
+        </tr>
+        <tr align="center">
+            <td>`+tracker["data"][0]["points"]["fe"]+`</td>
+            <td>Force l'erreur</td>
+            <td>`+tracker["data"][1]["points"]["fe"]+`</td>
+        </tr>
+        <tr align="center">
+            <td>`+tracker["data"][0]["points"]["w"]+`</td>
+            <td>Coup Gagnant</td>
+            <td>`+tracker["data"][1]["points"]["w"]+`</td>
+        </tr>
+        <tr align="center">
+            <td>`+tracker["data"][0]["points"]["aggresive_margin"]+`</td>
+            <td>Marge Agressive</td>
+            <td>`+tracker["data"][1]["points"]["aggresive_margin"]+`</td>
+        </tr>
+        </tbody>
+        </table>
+        `
+        ;
+    }
+
 }
 //checklist for breaks in the match
 //only if score changes
