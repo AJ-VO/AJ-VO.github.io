@@ -284,7 +284,7 @@ function update_live_stats(event, serve, winner){
     document.getElementById("stat_layer").innerHTML = fakeTracker;
     //backup button
     //onclick=undo_event()
-    document.getElementById("undo_layer").innerHTML = `<button>Précédent/Annulé Dernier Point</button>`;
+    //document.getElementById("undo_layer").innerHTML = `<button>Précédent/Annulé Dernier Point</button>`;
 }
 //checklist for breaks in the match
 //only if score changes

@@ -3,12 +3,15 @@
     <head>
         <link rel="icon" type="image/x-icon" href="https://aj-vo.github.io/img/favicon.png">
         <meta charset="UTF-8">
+        <title>Tracker</title>
+
     </head>
-    <body>
+    <body bgcolor="green">
 
         <center>
 
         <p><u>v. 0.2</u></p>
+        <h2>Tennis Tracker</h2>
         
         <div id="error_message"></div>
         <br>
@@ -39,11 +42,11 @@
             var matchString = main_player+"-"+opponent+"-"+server;
             if ((main_player == "" || opponent == "")){
                 console.log("Not ready");
-                document.getElementById("error_message").innerHTML = "<br>Missing inputs! (Players Missing)";
+                document.getElementById("error_message").innerHTML = "<br>Missing inputs! (Joueur Manquant)";
             }
             else if (server != "0" && server != "1"){
                 console.log("Not ready");
-                document.getElementById("error_message").innerHTML = "<br>Missing inputs! (Server Missing)";
+                document.getElementById("error_message").innerHTML = "<br>Missing inputs! (Serveur Manquant)";
             }
             else{
                 console.log("Ready");
