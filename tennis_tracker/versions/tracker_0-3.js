@@ -89,7 +89,7 @@ function button_layout(layout){
 function event_manager(nextLayout, event, winner, serve){
 
     //whatever event, backup any data that could be edited
-    backup_data(event);
+    backup_data(event); 
 
     //if event
     if (winner == null && serve == null){
