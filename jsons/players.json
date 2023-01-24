@@ -3,14 +3,14 @@
         "name": "F\u00e9lix Ostiguy",
         "g": "g",
         "id": 12,
-        "gp": 4,
-        "wins": 4,
+        "gp": 5,
+        "wins": 5,
         "losses": 0,
-        "elo": 1831,
+        "elo": 1878,
         "t_wins": 0,
         "t_losses": 0,
         "img": "img/players/test.png",
-        "streak": 4
+        "streak": 5
     },
     {
         "name": "Anne-Catherine Forcier",
@@ -143,19 +143,6 @@
         "streak": 0
     },
     {
-        "name": "Justin Gautrais",
-        "g": "g",
-        "id": 20,
-        "gp": 0,
-        "wins": 0,
-        "losses": 0,
-        "elo": 1500,
-        "t_wins": 0,
-        "t_losses": 0,
-        "img": "img/players/test.png",
-        "streak": 0
-    },
-    {
         "name": "Th\u00e9o Aicardi",
         "g": "g",
         "id": 23,
@@ -221,17 +208,17 @@
         "streak": -1
     },
     {
-        "name": "Paulina Desmarais",
-        "g": "w",
-        "id": 7,
+        "name": "Justin Gautrais",
+        "g": "g",
+        "id": 20,
         "gp": 1,
         "wins": 0,
         "losses": 1,
-        "elo": 1464,
+        "elo": 1453,
         "t_wins": 0,
         "t_losses": 0,
         "img": "img/players/test.png",
-        "streak": 0
+        "streak": -1
     },
     {
         "name": "Camille Girard",
@@ -258,6 +245,19 @@
         "t_losses": 0,
         "img": "img/players/test.png",
         "streak": -1
+    },
+    {
+        "name": "Vicky Lachance",
+        "g": "w",
+        "id": 2,
+        "gp": 7,
+        "wins": 3,
+        "losses": 4,
+        "elo": 1414,
+        "t_wins": 0,
+        "t_losses": 0,
+        "img": "img/players/test.png",
+        "streak": 1
     },
     {
         "name": "Nicolas Leclair",
@@ -299,16 +299,16 @@
         "streak": -2
     },
     {
-        "name": "Vicky Lachance",
+        "name": "Paulina Desmarais",
         "g": "w",
-        "id": 2,
-        "gp": 6,
-        "wins": 2,
-        "losses": 4,
-        "elo": 1286,
+        "id": 7,
+        "gp": 2,
+        "wins": 0,
+        "losses": 2,
+        "elo": 1336,
         "t_wins": 0,
         "t_losses": 0,
         "img": "img/players/test.png",
-        "streak": -4
+        "streak": -1
     }
 ]

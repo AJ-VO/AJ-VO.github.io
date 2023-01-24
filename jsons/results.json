@@ -1,5 +1,27 @@
 [
     {
+        "winner": "F\u00e9lix Ostiguy",
+        "loser": "Justin Gautrais",
+        "score": "6-2",
+        "date": "January 23, 2023",
+        "winnerELO": 1831,
+        "loserELO": 1500,
+        "winnerGain": 47,
+        "loserGain": -47,
+        "msDate": 1674519904319
+    },
+    {
+        "winner": "Vicky Lachance",
+        "loser": "Paulina Desmarais",
+        "score": "5-2",
+        "date": "January 23, 2023",
+        "winnerELO": 1286,
+        "loserELO": 1464,
+        "winnerGain": 128,
+        "loserGain": -128,
+        "msDate": 1674519886730
+    },
+    {
         "winner": "Anne-Catherine Forcier",
         "loser": "Vicky Lachance",
         "score": "6-4",

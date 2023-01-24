@@ -137,13 +137,13 @@ def standings_bell_curve():#Show bell curve of current standings
 
     y = pdf(x)
 
-    plt.style.use('seaborn')
-    plt.figure(figsize = (6, 6))
-    plt.plot(x, y, color = 'black',
-            linestyle = 'dashed')
+    #plt.style.use('seaborn')
+    #plt.figure(figsize = (6, 6))
+    #plt.plot(x, y, color = 'black',
+            #linestyle = 'dashed')
 
-    plt.scatter( x, y, marker = 'o', s = 25, color = 'red')
-    plt.show()
+    #plt.scatter( x, y, marker = 'o', s = 25, color = 'red')
+    #plt.show()
 
 def dump_json_file(file, myData):#Dump to specific file
 
