@@ -1,5 +1,0 @@
-Create New TRACKER
-
-- Save state in json file
-- Rewind Button
-- Change score (Add point, remove point)
